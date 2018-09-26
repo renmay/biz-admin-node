@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <title>{{ ctx.app.config.title }}</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html" />
+    <![endif]-->
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="{{ ctx.app.config.api.static }}/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="{{ ctx.app.config.api.static }}/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="{{ ctx.app.config.api.static }}/css/animate.css" rel="stylesheet">
+    <link href="{{ ctx.app.config.api.static }}/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="{{ ctx.app.config.api.static }}/js/plugins/layer/laydate/need/laydate.css" rel="stylesheet">
+    <link href="{{ ctx.app.config.api.static }}/css/plugins/clockpicker/clockpicker.css" rel="stylesheet">
+
+
+    <link href="{{ ctx.app.config.api.static }}/css/plugins/summernote/summernote.css" rel="stylesheet">
+    <link href="{{ ctx.app.config.api.static }}/css/plugins/webuploader/webuploader.css" rel="stylesheet">
+    <link href="{{ ctx.app.config.api.static }}/css/plugins/chosen/chosen.css" rel="stylesheet">
+    <link href="{{ ctx.app.config.api.static }}/css/plugins/jasny/jasny-bootstrap.min.css" rel="stylesheet">
+    <link href="{{ ctx.app.config.api.static }}/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="{{ ctx.app.config.api.static }}/css/plugins/steps/jquery.steps.css" rel="stylesheet">
+    <link href="{{ ctx.app.config.api.static }}/css/style.css?v=4.1.0" rel="stylesheet">
+    {% block style %}{% endblock %}
+
+</head>
+
+<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+<div id="wrapper">
+    {% block nav %}{% include "include/sidebar.html" %}{% endblock %}
+    <!--右侧部分开始-->
+    <div id="page-wrapper" class="page-wrapper gray-bg dashbard-1">
+    {% block top %}{% include "include/top.html" %}{% endblock %}
+    {% block body %}{% endblock %}
+    </div>
+</div>
+
+<!-- 全局js -->
+<script src="{{ ctx.app.config.api.static }}/js/jquery.min.js?v=2.1.4"></script>
+<script src="{{ ctx.app.config.api.static }}/js/bootstrap.min.js?v=3.3.6"></script>
+<script src="{{ ctx.app.config.api.static }}/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="{{ ctx.app.config.api.static }}/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="{{ ctx.app.config.api.static }}/js/plugins/layer/layer.min.js"></script>
+
+<!-- Flot -->
+<script src="{{ ctx.app.config.api.static }}/js/plugins/flot/jquery.flot.js"></script>
+<script src="{{ ctx.app.config.api.static }}/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+<script src="{{ ctx.app.config.api.static }}/js/plugins/flot/jquery.flot.resize.js"></script>
+<script src="{{ ctx.app.config.api.static }}/js/plugins/flot/jquery.flot.pie.js"></script>
+
+<!-- 第三方插件 -->
+<script src="{{ ctx.app.config.api.static }}/js/plugins/pace/pace.min.js"></script>
+<script src="{{ ctx.app.config.api.static }}/js/plugins/validate/jquery.validate.min.js"></script>
+<script src="{{ ctx.app.config.api.static }}/js/plugins/validate/messages_zh.min.js"></script>
+<script src="{{ ctx.app.config.api.static }}/js/plugins/layer/layer.min.js"></script>
+<script src="{{ ctx.app.config.api.static }}/js/plugins/layer/laydate/laydate.js"></script>
+<script src="{{ ctx.app.config.api.static }}/js/plugins/webuploader/webuploader.min.js"></script>
+<script src="{{ ctx.app.config.api.static }}/js/plugins/clockpicker/clockpicker.js"></script>
+<script src="{{ ctx.app.config.api.static }}/js/plugins/echarts/echarts.min.js"></script>
+
+<!-- Peity -->
+<script src="{{ ctx.app.config.api.static }}/js/plugins/peity/jquery.peity.min.js"></script>
+<!-- Full Calendar -->
+<script src="{{ ctx.app.config.api.static }}/js/plugins/fullcalendar/moment.min.js"></script>
+<script src="{{ ctx.app.config.api.static }}/js/plugins/fullcalendar/fullcalendar.min.js"></script>
+<script src="{{ ctx.app.config.api.static }}/js/plugins/fullcalendar/locale/zh-cn.js"></script>
+<!-- SUMMERNOTE -->
+<script src="{{ ctx.app.config.api.static }}/js/plugins/summernote/summernote.min.js"></script>
+<script src="{{ ctx.app.config.api.static }}/js/plugins/summernote/summernote-zh-CN.js"></script>
+<!-- Input Mask-->
+<script src="{{ ctx.app.config.api.static }}/js/plugins/jasny/jasny-bootstrap.min.js"></script>
+<!-- Chosen -->
+<script src="{{ ctx.app.config.api.static }}/js/plugins/chosen/chosen.jquery.js"></script>
+
+<!-- 扩展form-validate -->
+<script src="{{ ctx.app.config.api.static }}/js/form-validate.js"></script>
+
+
+<!-- iCheck -->
+<script src="{{ ctx.app.config.api.static }}/js/plugins/iCheck/icheck.min.js"></script>
+<!-- vue -->
+<script src="{{ ctx.app.config.api.static }}/js/plugins/vue/vue.min.js"></script>
+<script src="{{ ctx.app.config.api.static }}/js/plugins/axios/axios.min.js"></script>
+<!-- Peity -->
+
+<!-- 自定义js -->
+<script src="{{ ctx.app.config.api.static }}/js/upload.js?v=1.0.0"></script>
+<script src="{{ ctx.app.config.api.static }}/js/base.js?v=4.1.0"></script>
+<script src="{{ ctx.app.config.api.static }}/js/index.js"></script>
+<script src="{{ ctx.app.config.api.static }}/js/content.js"></script>
+
+
+{% block js %}{% endblock %}
+</body>
+
+</html>

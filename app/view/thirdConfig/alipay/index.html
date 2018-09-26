@@ -1,0 +1,60 @@
+{% extends "_layout.html" %}
+{% import "component/pagination.njk" as pagination %}
+{% import "component/table.njk" as table %}
+{% import "component/search.njk" as search %}
+{% import "component/forms.njk" as forms %}
+
+{# 样式代码 #}
+{% block style %}
+
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+
+                <div class="ibox-content" style="position: relative;">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <form class="page-search-form">
+
+                            </form>
+                            <h3 style="font-weight: 400;">阿里配置信息：</h3>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="ibox-tools">
+                                <a href="/thirdConfig/alipay/edit" class="btn btn-info">编辑</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <form class="form-horizontal m-t from" id="form" action="/thirdConfig/alipay/edit" method="post"
+                              data-href="/thirdConfig/alipay">
+                            {{ forms.readonly('服务商Id', 'sysServiceProviderId', data.sysServiceProviderId, '服务商Id','requireed') }}
+                            {{ forms.readonly('appId', 'appId', data.appId, 'appId','requireed') }}
+                            {{ forms.readonly('encryptKey', 'encryptKey', data.encryptKey, 'encryptKey','requireed') }}
+                            {{ forms.readonly('encryptType', 'encryptType', data.encryptType, 'encryptType','requireed') }}
+                            {{ forms.readonly('商户私钥', 'merchantPrivateKey', data.merchantPrivateKey, '商户私钥，您的PKCS8格式RSA2私钥','requireed') }}
+                            {{ forms.readonly('阿里公钥', 'alipayPublicKey', data.alipayPublicKey, '阿里公钥','requireed') }}
+                            {{ forms.readonly('异步通知路径', 'notifyUrl', data.notifyUrl, '服务器异步通知页面路径  需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问','requireed') }}
+                            {{ forms.readonly('同步通知路径', 'returnUrl', data.returnUrl, '页面跳转同步通知页面路径 需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问','requireed') }}
+                        </form>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+  $(".btn-group").hide(10);
+</script>
+
+{% endblock %}

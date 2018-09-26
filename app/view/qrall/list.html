@@ -1,0 +1,140 @@
+{% extends "_layout.html" %}
+{% import "component/pagination.njk" as pagination %}
+{% import "component/table.njk" as table %}
+{% import "component/search.njk" as search %}
+
+{# 样式代码 #}
+{% block style %}
+
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <form class="page-search-form">
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">状态</span>
+                                        <select class="form-control m-b" name="bindingStatus">
+                                            <option value="">全部</option>
+                                            <option value="1" {% if params.bindingStatus == 1%}selected{% endif %}>已绑定</option>
+                                            <option value="0" {% if params.bindingStatus == 0%}selected{% endif %}>未绑定</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="input-group col-sm-4">
+                                    <input type="text" name="likeNo" id="likeNo" value="{{params.likeNo}}"
+                                           placeholder="请输入二维码编号" class="input-sm form-control"/>
+                                    <span class="input-group-btn">
+                                <button type="button" class="btn btn-sm btn-info page-reset-btn">重置</button>
+                                <button type="button" class="btn btn-sm btn-info page-search-btn"><i
+                                        class="fa fa-search"></i>搜索</button>
+                                </span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="ibox-tools">
+                                <a href="/qrall/addqr" class="btn btn-info btn-xm">生成二维码</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="table-responsive">
+                        <form id="table-form">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <!--<th><input type="checkbox" onclick="selectAll(this.checked)"></th>-->
+                                    <th></th>
+                                    <th>二维码编号</th>
+                                    <th>效果图</th>
+                                    <th>二维码</th>
+                                    <!--<th>url</th>-->
+                                    <th>绑定状态</th>
+                                    <th>添加时间</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for item in data.list %}
+                                <tr>
+                                    <td>
+                                        <!--<input type="checkbox" value="{{ item.id }}" class="i-checks" name="check">-->
+                                    </td>
+                                    <td width="160">{{ item.no}}</td>
+                                    <td class="image" style="padding-right: 8%;">
+                                        <a download="{{item.no}}" href="{{ctx.app.config.api.image}}/{{item.image}}"
+                                           target="_blank"><img alt="image" class="image"
+                                                                src="{{ ctx.helper.showImage(item.image, 50, 50, 'fixed') }}"></a>
+
+                                    </td>
+                                    <td class="image" style="padding-right: 8%;">
+                                        <a download="{{item.no}}" href="{{ctx.app.config.api.image}}/{{item.path}}" target="_blank"><img alt="path" class="image"
+                                                                                       src="{{ ctx.helper.showImage(item.path, 50, 50, 'fixed') }}"></a>
+                                    </td>
+                                    <!--<td>{{ item.url }}</td>-->
+                                    <td>
+                                        {% if item.bindingStatus %}已绑定
+                                        {% else%}未绑定
+                                        {% endif %}
+                                    </td>
+                                    <td>{{ item.createTime }}</td>
+                                    <!--<td data-id="{{ item.id }}">-->
+                                    <!--<a href="/qrall/edit?id={{item.id}}">编辑</a>-->
+                                    <!--<a class="del" data-id="{{ item.id }}" data-href="/qrall/delete">删除</a>-->
+                                    <!--</td>-->
+                                </tr>
+                                {% else %}
+                                暂无数据
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="btn-region clearfix">
+                        <div class="pull-left">
+                            <!--<button href="" id="batch-del-btn" class="btn btn-danger btn-sm js-batch"-->
+                                    <!--data-url="/qrall/delete" data-confirm="确定删除选中的模块吗?" data-original-title=""-->
+                                    <!--title="">批量删除-->
+                            <!--</button>-->
+                        </div>
+                        <div class="pull-right">
+                            {{ pagination.pagination(data, params, '/qrall') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+
+    function selectAll(selectStatus){
+        console.log(selectStatus);
+        //根据name属性获取到单选框的input，使用each方法循环设置所有单选框的选中状态
+        checkboxes = $("input[name='check']");
+        console.log(checkboxes);
+        checkboxes.each(function(i,n){
+            console.log(1234);
+            checkboxes[i].attr = selectStatus;
+        });
+        $.each(function (checkboxes) {
+
+        })
+    }
+</script>
+
+{% endblock %}

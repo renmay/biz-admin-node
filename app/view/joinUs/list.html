@@ -1,0 +1,87 @@
+{% extends "_layout.html" %}
+{% import "component/pagination.njk" as pagination %}
+{% import "component/table.njk" as table %}
+{% import "component/search.njk" as search %}
+
+{# 样式代码 #}
+{% block style %}
+
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+<div class="row">
+    <div class="col-sm-12">
+        <div class="ibox float-e-margins">
+
+            <div class="ibox-content">
+                <div class="row">
+                    {{ search.text('电子邮箱', 'email', params.email) }}
+                    {{ search.text('电话', 'mobile', params.mobile, true) }}
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="table-responsive">
+                   <form id="table-form">
+                   		<table class="table table-striped">
+                           <thead>
+                           <tr>
+                               	<th></th>
+								<th>状态</th>
+								<th>姓名</th>
+								<th>电话</th>
+								<th>电子邮箱</th>
+                               <th>操作</th>
+                           </tr>
+                           </thead>
+                           <tbody>
+                           {% for item in data.list %}
+                               <tr>
+                                   <td>
+                                       <input type="checkbox" value="{{ item.id }}" class="i-checks" name="check">
+                                   </td>
+   									<td>{% if item.status == 1 %}待处理
+                                            {% elif item.status == 2 %}处理中
+                                            {% elif item.status == 3 %}已处理
+                                            {% elif item.status == 0 %}刪除
+                                        {% else %}错误
+                                        {% endif %}</td>
+   									<td>{{item.name}}</td>
+   									<td>{{item.mobile}}</td>
+   									<td>{{item.email}}</td>
+   									<td>{{item.createTime}}</td>
+                                   <td data-id="{{ item.id }}">
+                                       <a href="/join/us/edit?id={{item.id}}">查看</a>
+                                       <a class="del" data-id="{{ item.id }}" data-href="/join/us/delete">已处理</a>
+                                       <a class="del" data-id="{{ item.id }}" data-href="/join/us/delete">删除</a>
+                                   </td>
+                               </tr>
+                           {% else %}
+                               	暂无数据
+                           {% endfor %}
+                           </tbody>
+                       </table>
+                   </form>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="btn-region clearfix">
+                    <div class="pull-right">
+                        {{ pagination.pagination(data, params, '/join/us') }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+
+
+</script>
+
+{% endblock %}

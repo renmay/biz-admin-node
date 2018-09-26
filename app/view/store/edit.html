@@ -1,0 +1,104 @@
+{% extends "_layout.html" %}
+{% import "component/forms.njk" as forms %}
+
+{# 样式代码 #}
+{% block style %}
+<link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>店铺信息</h5>
+
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t from" id="form" action="/store/edit" method="post" data-href="/store">
+                        {{ forms.hidden('id', data.id) }}
+                        {{ forms.readonly('店铺名称', 'name', data.name, '请输入店铺名称', 'required') }}
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">行业</label>
+                            <div class="col-sm-8">
+                                <select class="form-control m-b" name="startTime" disabled>
+                                    <option value="1" {{ 'selected' if data.type == '1' }}>酒店</option>
+                                    <option value="2" {{ 'selected' if data.type == '2' }}>餐饮</option>
+                                    <option value="3" {{ 'selected' if data.type == '3' }}>娱乐</option>
+                                    <option value="4" {{ 'selected' if data.type == '4' }}>景区</option>
+                                    <option value="5" {{ 'selected' if data.type == '5' }}>特产</option>
+                                    <option value="5" {{ 'selected' if data.type == '6' }}>旅行社</option>
+                                </select>
+                            </div>
+                        </div>
+                        {{ forms.readonly('简介', 'intro', data.intro, '请输入简介', '') }}
+                        {{ forms.readonly('联系人', 'linkMan', data.linkMan, '请输入联系人', 'required') }}
+                        {{ forms.readonly('联系电话', 'mobile', data.mobile, '请输入联系电话', '') }}
+                        {{ forms.readonly('销售量', 'sales', data.sales, '请输入销售量', 'required') }}
+                        {{ forms.readonly('点击量', 'clickCount', data.clickCount, '请输入点击量', 'required') }}
+                        {{ forms.readonly('评分', 'grade', data.grade, '请输入评分', 'required') }}
+                        {{ forms.readonly('评论数量', 'commentCount', data.commentCount, '请输入评论数量', 'required') }}
+                        {{ forms.readonly('详细地址', 'address', data.address, '请输入详细地址', 'required') }}
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">状态</label>
+                            <div class="col-sm-8">
+                                <select class="form-control m-b" name="status" disabled>
+                                    <option value="1" {{ 'selected' if data.status == '1' }}>正常营业</option>
+                                    <option value="2" {{ 'selected' if data.status == '0' }}>店铺关停</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-10">
+                                <button style="margin-right: 20px;" class="btn btn-info" type="button"><a
+                                        href="/store" style="color: white;: white;">返回</a></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>`
+    </div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+    $(function () {
+        var e = "";
+        $("#form").validate({
+            rules: {
+                name: "required",
+                username: {
+                    required: true
+                },
+                mobile: {
+                    required: true
+                },
+                type: "required",
+                sex: "required",
+            },
+            messages: {
+                name: {
+                    required: e + "请输入打印机名称"
+                },
+                username: {
+                    required: e + "请输入打印机编码",
+                    remote: '打印机已经被添加过'
+                },
+                mobile: {
+                    required: e + "请输入打印机密钥"
+                },
+            },
+            submitHandler: function() {
+              asyncSubmitForm($("#form"));
+            }
+        });
+
+    });
+</script>
+
+{% endblock %}

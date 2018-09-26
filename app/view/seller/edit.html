@@ -1,0 +1,103 @@
+{% extends "_layout.html" %}
+{% import "component/forms.njk" as forms %}
+
+{# 样式代码 #}
+{% block style %}
+<link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>添加用户</h5>
+
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t from" id="form" action="/seller/edit" method="post" data-href="/seller">
+                    	{{ forms.hidden('id', data.id) }}
+						{{ forms.text('名称', 'name', data.name, '请输入名称', 'required') }}
+						{{ forms.text('用户名', 'username', data.username, '请输入用户名', 'required') }}
+						{{ forms.text('手机号', 'mobile', data.mobile, '请输入手机号', 'required') }}
+						{{ forms.password('密码', 'password', '', '留空表示不修改') }}
+						{{ forms.radios('员工类型', 'type', [{text: '管理员', value: 1}, {text: '员工', value: 2}], data.type) }}
+						{{ forms.radios('性别', 'sex', [{text: '男', value: 1}, {text: '女', value: 0}], data.sex) }}
+
+                        {% if data.id != 1 %}
+						<div class="form-group">
+						    <label class="col-sm-2 control-label">用户权限</label>
+                            <div class="col-sm-8">
+                                <div class="checkbox">
+                                    {% for item in menus %}
+                                        {% set isCheck = false %}
+                                        {% for id in data.menuIds %}
+                                            {% if item.id == id %}
+                                                {% set isCheck = true %}
+                                            {% endif %}
+                                        {% endfor %}
+                                    <label style="width: 120px;">
+                                        <input type="checkbox" class="i-checks" {{ 'checked' if isCheck else '' }} name="menuIds" value="{{ item.id }}">{{ item.name }}
+                                    </label>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        {{ forms.submit() }}
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+    $(function () {
+        var e = "";
+        $("#form").validate({
+            rules: {
+                name: "required",
+                username: {
+                    required: true
+                },
+                mobile: {
+                    required: true
+                },
+                type: "required",
+                sex: "required",
+            },
+            messages: {
+                name: {
+                    required: e + "请输入名称"
+                },
+                username: {
+                    required: e + "请输入用户名",
+                    remote: '用户已经存在'
+                },
+                mobile: {
+                    required: e + "请输入手机号"
+                },
+                type: {
+                    required: e + "请输入类型 1.管理员 2.员工 "
+                },
+                sex: {
+                    required: e + "请输入性别"
+                },
+            },
+            submitHandler: function() {
+              asyncSubmitForm($("#form"));
+            }
+        });
+
+    });
+</script>
+
+{% endblock %}

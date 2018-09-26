@@ -1,0 +1,100 @@
+{% import "component/forms.njk" as forms %}
+{% extends "_layout_without_side.html" %}
+{% import "component/pagination.njk" as pagination %}
+{% import "component/table.njk" as table %}
+{% import "component/search.njk" as search %}
+
+{# 样式代码 #}
+{% block style %}
+
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <form class="page-search-form">
+                            </form>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="ibox-tools">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="table-responsive">
+                        <form id="table-form">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>营业状态</th>
+                                    <th>排序权重</th>
+                                    <th>店铺商品</th>
+                                    <th>商家</th>
+                                    <th>店铺url</th>
+                                    <th>是否自营</th>
+                                    <th>设为自营</th>
+                                    <th>操作</th>
+                                    <th>查看模块</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for item in data.list %}
+                                <tr>
+
+                                    <td>{{item.name}}</td>
+                                    <td>
+                                        {% if item.type == 1 %}酒店
+                                        {% elif item.type == 2 %}餐饮
+                                        {% elif item.type == 3 %}娱乐
+                                        {% elif item.type == 4 %}景区
+                                        {% elif item.type == 5 %}特产
+                                        {% elif item.type == 5 %}旅行社
+                                        {% endif %}
+                                    </td>
+                                    <td>{{item.linkMan}}</td>
+                                    <td>{{item.mobile}}</td>
+                                    <td>{{item.sales}}</td>
+                                    <td>{{item.grade}}</td>
+                                    <td>{{item.commentCount}}</td>
+                                    <td>{{item.clickCount}}</td>
+                                    <td>{{item.createTime}}</td>
+                                    <td>{% if item.status == 1 %}营业中
+                                        {% elif item.status == 0 %}
+                                        <span style="color: #b40000;">店铺关停</span>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                {% else %}
+                                暂无数据
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="btn-region clearfix">
+                        <div class="pull-left">
+                            <!--<button href="" id="batch-del-btn" class="btn btn-danger btn-sm js-batch" data-url="/store/delete" data-confirm="确定删除选中的店铺吗?" data-original-title="" title="">批量删除</button>-->
+                        </div>
+                        <div class="pull-right">
+                            {{ pagination.pagination(data, params, '/store') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "_layout.html" %}
+{% import "component/pagination.njk" as pagination %}
+{% import "component/table.njk" as table %}
+{% import "component/search.njk" as search %}
+{% import "component/constant.njk" as constant %}
+{% import "component/forms.njk" as forms %}
+
+
+{# 样式代码 #}
+{% block style %}
+
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h3>订单导出</h3>
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <form class="form-horizontal m-t from" id="form" action="/export" method="post" data-href="#">
+                        {{ forms.radios('请选择导出订单类型：', 'exportType', [{text: '商品订单', value: '1'}, {text: '水费订单', value:
+                        '2'},{text: '话费订单', value: '3'}]) }}
+                        {{ forms.date_range('时间范围', 'gtCreateTime', 'ltCreateTime') }}
+                        <button class="btn btn-info col-sm-offset-9" type="submit">确定导出excel</button>
+                        <!--{{ forms.submit() }}-->
+                    </form>
+                    <div class="hr-line-dashed"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+    // $(function () {
+    //     var e = "";
+    //     $(".form").validate({
+    //         rules: {
+    //             type: "required",
+    //             gtCreateTime: "required",
+    //             ltCreateTime: "required",
+    //         },
+    //         messages: {
+    //             name: {
+    //                 required: e + "请输入商品名称（+规格名称）"
+    //             },
+    //             jingle: {
+    //                 required: e + "请输入商品广告词"
+    //             },
+    //         },
+    //         submitHandler: function () {
+    //             asyncSubmitForm($(".form"));
+    //         }
+    //     });
+    // });
+</script>
+
+{% endblock %}

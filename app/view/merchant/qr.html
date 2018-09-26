@@ -1,0 +1,120 @@
+{% extends "_layout.html" %}
+{% import "component/pagination.njk" as pagination %}
+{% import "component/table.njk" as table %}
+{% import "component/search.njk" as search %}
+
+{# 样式代码 #}
+{% block style %}
+
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <div class="row">
+                        <form class="page-search-form">
+                            <div class="form-group col-sm-6">
+                                <div class="col-sm-12">
+                                    <input id="startTime" name="gtCreateTime" value="{{params.gtCreateTime}}"
+                                           placeholder="开始日期"
+                                           class="form-control layer-date {{ class }}" readonly
+                                           onclick="laydate({istime:  false, format: 'YYYY/MM/DD'})">
+                                    <label class="" style="vertical-align: bottom;">-</label>
+                                    <input id="endTime" name="ltCreateTime" value="{{params.ltCreateTime}}"
+                                           placeholder="结束日期"
+                                           class="form-control layer-date {{ class }}" readonly
+                                           onclick="laydate({istime: false, format: 'YYYY/MM/DD'})">
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon">支付方式</span>
+                                    <select class="form-control m-b" name="payType">
+                                        <option value="">全部</option>
+                                        <option value="3" {% if params.payType== 3%}selected{% endif %}>支付宝</option>
+                                        <option value="9" {% if params.payType== 9%}selected{% endif %}>微信</option>
+                                    </select>
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-info page-reset-btn">重置</button>
+                                        <button type="button" class="btn btn-sm btn-info page-search-btn"><i
+                                                class="fa fa-search"></i>搜索</button>
+                                        </span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+
+                    <div class="table-responsive">
+                        <form id="table-form">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>商家姓名</th>
+                                    <th>店铺</th>
+                                    <th>手机号</th>
+                                    <th>支付方式</th>
+                                    <th>支付金额</th>
+                                    <th>支付时间</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for item in data.list %}
+                                <tr>
+                                    <td>
+                                    </td>
+                                    <td>{{item.linkname}}</td>
+                                    <td>
+                                        {{item.storeName}}
+                                    </td>
+                                    <td>{{item.mobile}}</td>
+                                    <td>
+                                        {% if item.payType == 9 %}
+                                        微信
+                                        {% elif item.payType == 3 %}
+                                        支付宝
+                                        {% else %}
+                                        未知
+                                        {% endif %}
+                                    </td>
+                                    <td>￥{{item.amount}}</td>
+                                    <td>{{item.payTime}}</td>
+                                </tr>
+                                {% else %}
+                                暂无数据
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="btn-region clearfix">
+                        <div class="pull-left">
+                            <form class="form-horizontal m-t from" id="form" action="/merchant/qrExport?params"
+                                  method="post"
+                                  data-href="/merchant">
+                                <a class="btn btn-info btn-sm"
+                                   href="/merchant/qrExport?gtCreateTime={{params.gtCreateTime}}&ltCreateTime={{params.ltCreateTime}}&payType={{params.payType}}">导出excel</a>
+                            </form>
+                        </div>
+                        <div class="pull-right">
+                            {{ pagination.pagination(data, params, '/merchant/qr') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{#js代码#}
+
+{% block js %}
+
+{% endblock %}

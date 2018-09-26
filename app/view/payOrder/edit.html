@@ -1,0 +1,115 @@
+{% extends "_layout.html" %}
+{% import "component/forms.njk" as forms %}
+
+{# 样式代码 #}
+{% block style %}
+<link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>添加支付订单</h5>
+
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t from" id="form" action="/pay/order/edit" method="post" data-href="/pay/order">
+                    	{{ forms.hidden('id', data.id) }}
+						{{ forms.text('订单id', 'orderId', data.orderId, '请输入订单id', 'required') }}
+						{{ forms.text('订单号', 'payNo', data.payNo, '请输入订单号', 'required') }}
+						{{ forms.text('外部交易订单号', 'outTradeNo', data.outTradeNo, '请输入外部交易订单号', 'required') }}
+						{{ forms.text('支付账户', 'memberId', data.memberId, '请输入支付账户', 'required') }}
+						{{ forms.text('支付金额', 'amount', data.amount, '请输入支付金额', 'required') }}
+						{{ forms.text('付款单状态', 'status', data.status, '请输入付款单状态', 'required') }}
+						{{ forms.text('创建时间', 'createTime', data.createTime, '请输入创建时间', 'required') }}
+						{{ forms.text('结束时间', 'finishTime', data.finishTime, '请输入结束时间', 'required') }}
+						{{ forms.text('付款单描述', 'remark', data.remark, '请输入付款单描述', 'required') }}
+						{{ forms.text('支付渠道', 'payType', data.payType, '请输入支付渠道', 'required') }}
+						{{ forms.text('第三方返回的最终交易状态', 'thirdPartyStatus', data.thirdPartyStatus, '请输入第三方返回的最终交易状态', 'required') }}
+						{{ forms.text('ip', 'ip', data.ip, '请输入ip', 'required') }}
+						{{ forms.text('参数', 'params', data.params, '请输入参数', 'required') }}
+                        {{ forms.submit() }}
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+    $(function () {
+        var e = "";
+        $("#form").validate({
+            rules: {
+                orderId: "required",
+                payNo: "required",
+                outTradeNo: "required",
+                memberId: "required",
+                amount: "required",
+                status: "required",
+                createTime: "required",
+                finishTime: "required",
+                remark: "required",
+                payType: "required",
+                thirdPartyStatus: "required",
+                ip: "required",
+                params: "required",
+            },
+            messages: {
+                orderId: {
+                    required: e + "请输入订单id"
+                },
+                payNo: {
+                    required: e + "请输入订单号"
+                },
+                outTradeNo: {
+                    required: e + "请输入外部交易订单号"
+                },
+                memberId: {
+                    required: e + "请输入支付账户"
+                },
+                amount: {
+                    required: e + "请输入支付金额"
+                },
+                status: {
+                    required: e + "请输入付款单状态"
+                },
+                createTime: {
+                    required: e + "请输入创建时间"
+                },
+                finishTime: {
+                    required: e + "请输入结束时间"
+                },
+                remark: {
+                    required: e + "请输入付款单描述"
+                },
+                payType: {
+                    required: e + "请输入支付渠道"
+                },
+                thirdPartyStatus: {
+                    required: e + "请输入第三方返回的最终交易状态"
+                },
+                ip: {
+                    required: e + "请输入ip"
+                },
+                params: {
+                    required: e + "请输入参数"
+                },
+            },
+            submitHandler: function() {
+              asyncSubmitForm($("#form"));
+            }
+        });
+
+    });
+</script>
+
+{% endblock %}

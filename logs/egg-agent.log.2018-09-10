@@ -1,0 +1,13 @@
+2018-09-07 15:02:29,977 INFO 18167 [egg-logrotator] agent logger reload: got log-reload message
+2018-09-07 16:33:07,265 INFO 22456 [egg:logger] init all loggers with options: {"dir":"/Users/renmay/biz-node/biz-admin/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"biz-admin-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2018-09-07 16:33:07,499 INFO 22456 [egg:core] dump config after load, 6ms
+2018-09-07 16:33:07,540 INFO 22456 [egg-watcher:agent] watcher start success
+2018-09-07 16:33:07,563 INFO 22456 [egg:core] dump config after ready, 9ms
+2018-09-07 16:36:50,390 INFO 22499 [egg:logger] init all loggers with options: {"dir":"/Users/renmay/biz-node/biz-admin/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"biz-admin-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2018-09-07 16:36:50,691 INFO 22499 [egg:core] dump config after load, 44ms
+2018-09-07 16:36:50,749 INFO 22499 [egg-watcher:agent] watcher start success
+2018-09-07 16:36:50,770 INFO 22499 [egg:core] dump config after ready, 6ms
+2018-09-10 17:07:51,559 INFO 3606 [egg:logger] init all loggers with options: {"dir":"/Users/renmay/biz-node/biz-admin/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"biz-admin-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2018-09-10 17:07:51,825 INFO 3606 [egg:core] dump config after load, 11ms
+2018-09-10 17:07:51,883 INFO 3606 [egg-watcher:agent] watcher start success
+2018-09-10 17:07:51,911 INFO 3606 [egg:core] dump config after ready, 10ms

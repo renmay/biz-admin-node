@@ -1,0 +1,26 @@
+{# 统计 #}
+{% macro block(title, trend='', time='') %}
+    <div class="ibox">
+        <div class="ibox-content">
+            <h5 class="m-b-md">{{title}}</h5>
+            <h2 class="text-navy">
+                <i class="fa fa-play fa-rotate-270"></i>{{ trend }}
+            </h2>
+            <small>更新时间：{{ time }}</small>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro block2(title, number='', time='') %}
+<div class="col-sm-3">
+    <div class="ibox">
+        <div class="ibox-content">
+            <h5>{{ title }}</h5>
+            <h2>{{ number }}</h2>
+            <div id="sparkline1"></div>
+        </div>
+    </div>
+</div>
+{% endmacro %}
+
+

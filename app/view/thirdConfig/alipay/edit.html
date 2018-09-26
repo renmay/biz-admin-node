@@ -1,0 +1,79 @@
+{% extends "_layout.html" %}
+{% import "component/forms.njk" as forms %}
+
+{# 样式代码 #}
+{% block style %}
+<link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>阿里配置信息</h5>
+
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t from" id="form" action="/thirdConfig/alipay/edit" method="post" data-href="/thirdConfig/alipay">
+                        {{ forms.text('服务商Id', 'sysServiceProviderId', data.sysServiceProviderId, '服务商Id','requireed') }}
+                        {{ forms.text('appId', 'appId', data.appId, 'appId','requireed') }}
+                        {{ forms.text('encryptKey', 'encryptKey', data.encryptKey, 'encryptKey','requireed') }}
+                        {{ forms.text('encryptType', 'encryptType', data.encryptType, 'encryptType','requireed') }}
+                        {{ forms.text('商户私钥', 'merchantPrivateKey', data.merchantPrivateKey, '商户私钥，您的PKCS8格式RSA2私钥','requireed') }}
+                        {{ forms.text('阿里公钥', 'alipayPublicKey', data.alipayPublicKey, '阿里公钥','requireed') }}
+                        {{ forms.text('异步通知路径', 'notifyUrl', data.notifyUrl, '服务器异步通知页面路径  需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问','requireed') }}
+                        {{ forms.text('同步通知路径', 'returnUrl', data.returnUrl, '页面跳转同步通知页面路径 需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问','requireed') }}
+                        <div style="position: relative;">
+                            <a href="/thirdConfig/alipay" class="btn btn-info"
+                               style="position: absolute;right: 26%;top: 0;">返回</a>
+                            {{ forms.submit() }}
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+    {#js代码#}
+    {% block js %}
+    <script>
+      $(function () {
+        var e = "";
+        $("#form").validate({
+          rules: {
+            name: "required",
+            username: {
+              required: true
+            },
+            mobile: {
+              required: true
+            },
+            type: "required",
+            sex: "required",
+          },
+          messages: {
+            name: {
+              required: e + "请输入打印机名称"
+            },
+            username: {
+              required: e + "请输入打印机编码",
+              remote: '打印机已经被添加过'
+            },
+            mobile: {
+              required: e + "请输入打印机密钥"
+            },
+          },
+          submitHandler: function() {
+            asyncSubmitForm($("#form"));
+          }
+        });
+
+      });
+    </script>
+
+    {% endblock %}

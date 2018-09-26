@@ -1,0 +1,155 @@
+{% extends "_layout.html" %}
+{% import "component/forms.njk" as forms %}
+
+{# 样式代码 #}
+{% block style %}
+<link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>添加会员</h5>
+
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t from" id="form" action="/member/edit" method="post" data-href="/member">
+                    	{{ forms.hidden('id', data.id) }}
+						{{ forms.text('手机号', 'mobile', data.mobile, '请输入手机号', 'required') }}
+						{{ forms.text('电子邮箱', 'email', data.email, '请输入电子邮箱', 'required') }}
+						{{ forms.text('salt', 'salt', data.salt, '请输入salt', 'required') }}
+						{{ forms.text('登录密码', 'password', data.password, '请输入登录密码', 'required') }}
+						{{ forms.text('交易密码', 'tradePassword', data.tradePassword, '请输入交易密码', 'required') }}
+						{{ forms.text('姓名', 'name', data.name, '请输入姓名', 'required') }}
+						{{ forms.text('昵称', 'nickName', data.nickName, '请输入昵称', 'required') }}
+						{{ forms.text('头像', 'avatar', data.avatar, '请输入头像', 'required') }}
+						{{ forms.text('注册ip', 'regip', data.regip, '请输入注册ip', 'required') }}
+						{{ forms.text('是否可用', 'status', data.status, '请输入是否可用', 'required') }}
+						{{ forms.text('性别', 'sex', data.sex, '请输入性别', 'required') }}
+						{{ forms.text('备注', 'memo', data.memo, '请输入备注', 'required') }}
+						{{ forms.text('注册时间', 'regtime', data.regtime, '请输入注册时间', 'required') }}
+						{{ forms.text('更新时间', 'updateTime', data.updateTime, '请输入更新时间', 'required') }}
+						{{ forms.text('会员积分', 'points', data.points, '请输入会员积分', 'required') }}
+						{{ forms.text('冻结积分', 'freezePoints', data.freezePoints, '请输入冻结积分', 'required') }}
+						{{ forms.text('可用金额', 'money', data.money, '请输入可用金额', 'required') }}
+						{{ forms.text('冻结金额', 'freezeMoney', data.freezeMoney, '请输入冻结金额', 'required') }}
+						{{ forms.text('微信openid', 'openid', data.openid, '请输入微信openid', 'required') }}
+						{{ forms.text('微信unionid', 'unionid', data.unionid, '请输入微信unionid', 'required') }}
+						{{ forms.text('昵称', 'nickname', data.nickname, '请输入昵称', 'required') }}
+                        {{ forms.submit() }}
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+    $(function () {
+        var e = "";
+        $("#form").validate({
+            rules: {
+                mobile: "required",
+                email: "required",
+                salt: "required",
+                password: "required",
+                tradePassword: "required",
+                name: "required",
+                nickName: "required",
+                avatar: "required",
+                regip: "required",
+                status: "required",
+                sex: "required",
+                memo: "required",
+                regtime: "required",
+                updateTime: "required",
+                points: "required",
+                freezePoints: "required",
+                money: "required",
+                freezeMoney: "required",
+                openid: "required",
+                unionid: "required",
+                nickname: "required",
+            },
+            messages: {
+                mobile: {
+                    required: e + "请输入手机号"
+                },
+                email: {
+                    required: e + "请输入电子邮箱"
+                },
+                salt: {
+                    required: e + "请输入salt"
+                },
+                password: {
+                    required: e + "请输入登录密码"
+                },
+                tradePassword: {
+                    required: e + "请输入交易密码"
+                },
+                name: {
+                    required: e + "请输入姓名"
+                },
+                nickName: {
+                    required: e + "请输入昵称"
+                },
+                avatar: {
+                    required: e + "请输入头像"
+                },
+                regip: {
+                    required: e + "请输入注册ip"
+                },
+                status: {
+                    required: e + "请输入是否可用"
+                },
+                sex: {
+                    required: e + "请输入性别"
+                },
+                memo: {
+                    required: e + "请输入备注"
+                },
+                regtime: {
+                    required: e + "请输入注册时间"
+                },
+                updateTime: {
+                    required: e + "请输入更新时间"
+                },
+                points: {
+                    required: e + "请输入会员积分"
+                },
+                freezePoints: {
+                    required: e + "请输入冻结积分"
+                },
+                money: {
+                    required: e + "请输入可用金额"
+                },
+                freezeMoney: {
+                    required: e + "请输入冻结金额"
+                },
+                openid: {
+                    required: e + "请输入微信openid"
+                },
+                unionid: {
+                    required: e + "请输入微信unionid"
+                },
+                nickname: {
+                    required: e + "请输入昵称"
+                },
+            },
+            submitHandler: function() {
+              asyncSubmitForm($("#form"));
+            }
+        });
+
+    });
+</script>
+
+{% endblock %}

@@ -1,0 +1,176 @@
+{% extends "_layout.html" %}
+{% import "component/pagination.njk" as pagination %}
+{% import "component/table.njk" as table %}
+{% import "component/search.njk" as search %}
+{% import "component/constant.njk" as constant %}
+
+{# 样式代码 #}
+{% block style %}
+
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <form class="page-search-form">
+                                <div class="col-sm-3">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">性别</span>
+                                        <select class="form-control m-b" name="sex">
+                                            <option value="">全部</option>
+                                            <option value="1" {% if params.sex == 1%}selected{% endif %}>男</option>
+                                            <option value="0" {% if params.sex == 0%}selected{% endif %}>女</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">状态</span>
+                                        <select class="form-control m-b" name="status">
+                                            <option value="">全部</option>
+                                            <option value="1" {% if params.status == 1%}selected{% endif %}>正常</option>
+                                            <option value="2" {% if params.status == 2%}selected{% endif %}>待支付</option>
+                                            <option value="3" {% if params.status == 3%}selected{% endif %}>待领取</option>
+                                            <option value="4" {% if params.status == 4%}selected{% endif %}>过期</option>
+                                            <option value="5" {% if params.status == 5%}selected{% endif %}>取消申请</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-3">
+                                    <div class="input-group">
+                                        <input type="text" name="likeName" id="likeName" value="{{params.likeName}}"
+                                               placeholder="请输入姓名" class="input-sm form-control"/>
+                                        <span class="input-group-btn">
+                                <button type="button" class="btn btn-sm btn-info page-reset-btn">重置</button>
+                                <button type="button" class="btn btn-sm btn-info page-search-btn"><i
+                                        class="fa fa-search"></i>搜索</button>
+                                </span>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-3">
+                                    <div class="input-group ">
+                                        <input type="text" name="likeMobile" id="likeMobile" value="{{params.likeMobile}}"
+                                               placeholder="请输入手机号" class="input-sm form-control"/>
+                                        <span class="input-group-btn">
+                                <button type="button" class="btn btn-sm btn-info page-reset-btn">重置</button>
+                                <button type="button" class="btn btn-sm btn-info page-search-btn"><i
+                                        class="fa fa-search"></i>搜索</button>
+                                </span>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="table-responsive">
+                        <form id="table-form">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>订单号</th>
+                                    <th>姓名</th>
+                                    <th>性别</th>
+                                    <th>出生年月</th>
+                                    <th>手机号</th>
+                                    <th>身份证号</th>
+                                    <th>地址</th>
+                                    <th>创建时间</th>
+                                    <!--<th>卡类型</th>-->
+                                    <th>状态</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for item in data.list %}
+                                <tr>
+                                    <td>
+                                        <!--<input type="checkbox" value="{{ item.id }}" class="i-checks" name="check">-->
+                                    </td>
+                                    <td>{{item.orderNo}}</td>
+                                    <td>{{item.name}}</td>
+                                    <td>
+                                        {% if item.sex == 1 %}
+                                        男
+                                        {% elif item.sex == 2 %}
+                                        女
+                                        {% endif %}
+                                    </td>
+                                    <td>{{item.birth}}</td>
+                                    <td>{{item.mobile}}</td>
+                                    <td>{{item.idCard}}</td>
+                                    <td>{{item.address}}</td>
+                                    <td>{{item.createTime}}</td>
+                                    <td>
+                                        {% if item.status == 1 %}
+                                        正常
+                                        {% elif item.status == 2 %}
+                                        待支付
+                                        {% elif item.status == 3 %}
+                                        待领取
+                                        <a class="operate" data-id="{{item.id}}" data-href="/annual/faka">发卡</a>
+                                        {% elif item.status == 4 %}
+                                        过期
+                                        {% elif item.status == -1 %}
+                                        取消申请（未支付）
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                {% else %}
+                                暂无数据
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="btn-region clearfix">
+                        <div class="pull-right">
+                            {{ pagination.pagination(data, params, '/annual') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+    $(function () {
+        $(".operate").on("click", function () {
+            id = $(this).attr("data-id");
+            console.log(id);
+            let url = $(this).attr("data-href");
+            layer.confirm('你确定执行此操作?', {icon: 3, title: '提示'}, function (index) {
+                $.ajax({
+                    url: url,
+                    data: {"id": id},
+                    dataType: 'json',
+                    type: 'post',
+                    success: function (data) {
+                        if (data.code == 200) {
+                            window.location.reload();
+                        }
+                    }
+                });
+                layer.close(index);
+            });
+        });
+    });
+</script>
+
+
+{% endblock %}

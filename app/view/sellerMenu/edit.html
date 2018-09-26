@@ -1,0 +1,65 @@
+{% extends "_layout.html" %}
+{% import "component/forms.njk" as forms %}
+
+{# 样式代码 #}
+{% block style %}
+<link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>添加商家菜单</h5>
+
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t from" id="form" action="/seller/menu/edit" method="post" data-href="/seller/menu">
+                    	{{ forms.hidden('id', data.id) }}
+						{{ forms.text('名称', 'name', data.name, '请输入名称', 'required') }}
+						{{ forms.text('url', 'url', data.url, '请输入url', 'required') }}
+						{{ forms.text('排序', 'sort', data.sort, '请输入sort', 'required') }}
+                        {{ forms.submit() }}
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+    $(function () {
+        var e = "";
+        $("#form").validate({
+            rules: {
+                name: "required",
+                url: "required",
+                sort: "required",
+            },
+            messages: {
+                name: {
+                    required: e + "请输入名称"
+                },
+                url: {
+                    required: e + "请输入url"
+                },
+                sort: {
+                    required: e + "请输入sort"
+                },
+            },
+            submitHandler: function() {
+              asyncSubmitForm($("#form"));
+            }
+        });
+
+    });
+</script>
+
+{% endblock %}

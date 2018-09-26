@@ -1,0 +1,9 @@
+2018-08-29 16:12:04,819 INFO 39874 [egg-logrotator] agent logger reload: got log-reload message
+2018-08-30 14:52:00,690 INFO 53164 [egg:logger] init all loggers with options: {"dir":"/Users/renmay/biz-node/biz-admin/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"biz-admin-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2018-08-30 14:52:00,915 INFO 53164 [egg:core] dump config after load, 7ms
+2018-08-30 14:52:00,965 INFO 53164 [egg-watcher:agent] watcher start success
+2018-08-30 14:52:00,985 INFO 53164 [egg:core] dump config after ready, 4ms
+2018-08-30 15:14:26,417 INFO 53406 [egg:logger] init all loggers with options: {"dir":"/Users/renmay/biz-node/biz-admin/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"biz-admin-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2018-08-30 15:14:26,640 INFO 53406 [egg:core] dump config after load, 8ms
+2018-08-30 15:14:26,719 INFO 53406 [egg-watcher:agent] watcher start success
+2018-08-30 15:14:26,739 INFO 53406 [egg:core] dump config after ready, 6ms

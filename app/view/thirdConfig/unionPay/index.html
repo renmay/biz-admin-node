@@ -1,0 +1,60 @@
+{% extends "_layout.html" %}
+{% import "component/pagination.njk" as pagination %}
+{% import "component/table.njk" as table %}
+{% import "component/search.njk" as search %}
+{% import "component/forms.njk" as forms %}
+
+{# 样式代码 #}
+{% block style %}
+
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+
+                <div class="ibox-content" style="position: relative;">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <form class="page-search-form">
+
+                            </form>
+                            <h3 style="font-weight: 400;">银联配置：</h3>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="ibox-tools">
+                                <a href="/thirdConfig/union/pay/edit" class="btn btn-info">编辑</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <form class="form-horizontal m-t from" id="form" action="/thirdConfig/union/pay/edit" method="post"
+                              data-href="/thirdConfig/union/pay">
+                            {{ forms.readonly('机构商户号', 'instMid', data.instMid, '机构商户号','requireed') }}
+                            {{ forms.readonly('来源系统', 'msgSrc', data.msgSrc, '来源系统','requireed') }}
+                            {{ forms.readonly('来源系统Id', 'msgSrcId', data.msgSrcId, '来源系统Id','requireed') }}
+                            {{ forms.readonly('通讯秘钥', 'key', data.key, '通讯秘钥','requireed') }}
+                            {{ forms.readonly('支付请求url', 'payUrl', data.payUrl, '支付请求url','requireed') }}
+                            {{ forms.readonly('url', 'url', data.url, 'url','requireed') }}
+                            {{ forms.readonly('成功之后返回的url', 'returnUrl', data.returnUrl, '成功之后返回的url','requireed') }}
+                            {{ forms.readonly('服务器异步通知url', 'notifyUrl', data.notifyUrl, '服务器异步通知url','requireed') }}
+                        </form>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+  $(".btn-group").hide(10);
+</script>
+
+{% endblock %}

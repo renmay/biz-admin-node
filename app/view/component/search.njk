@@ -1,0 +1,99 @@
+{#select 还需要调整  #}
+{% macro form(items, params) %}
+    <form class="page-search-form">
+        {% for item in items %}
+            {% if 'select' == item.type %}
+            <div class="col-sm-3">
+                <div class="input-group">
+                    {% if loop.last %}
+                    <select class="form-control m-b" name="account">
+                        {% for option in item.options %}
+                            <option value="{{ option.id }}">{{ option.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-sm btn-primary page-reset-btn">重置</button>
+                        <button type="button" class="btn btn-sm btn-primary page-search-btn"><i class="fa fa-search"></i>搜索</button>
+                    </span>
+                    {% else %}
+                    <span class="input-group-addon">{{ item.label }}</span>
+                    <select class="form-control m-b" name="account">
+                        {% for option in item.options %}
+                            <option value="{{ option.id }}">{{ option.name }}</option>
+                        {% endfor %}
+                    </select>
+                    {% endif %}
+                </div>
+            </div>
+            {% else %}
+            <div class="col-sm-2">
+                <div class="input-group">
+                    <input type="text" name="{{ item.name }}" value="{{ params.mobile }}" placeholder="{{ item.label }}" class="input-sm form-control" />
+                    {% if loop.last %}
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-sm btn-info page-reset-info">重置</button>
+                        <button type="button" class="btn btn-sm btn-info page-search-info"><i class="fa fa-search"></i>搜索</button>
+                    </span>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+
+    </form>
+{% endmacro %}
+
+{% macro text(label, name, value, last = false) %}
+    <div class="col-sm-{{ '3' if last else '2' }}">
+        <div class="input-group">
+            <input type="text" name="{{ name }}" value="{{ value }}" placeholder="{{ label }}" class="input-sm form-control" />
+            {% if last %}
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-sm btn-info page-reset-info">重置</button>
+                <button type="button" class="btn btn-sm btn-info page-search-info"><i class="fa fa-search"></i>搜索</button>
+            </span>
+            {% endif %}
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro select(label, name, options, selected, last = false) %}
+    <div class="col-sm-3">
+        <div class="input-group">
+            {% if last %}
+                <select class="form-control m-b" name="account">
+                    <option value="">全部</option>
+                    {% for option in item.options %}
+                        <option value="{{ option.id }}" {{ 'selected' if option.id == selected else '' }}>{{ option.name }}</option>
+                    {% endfor %}
+                </select>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-sm btn-info page-reset-btn">重置</button>
+                    <button type="button" class="btn btn-sm btn-info page-search-btn"><i class="fa fa-search"></i>搜索</button>
+                </span>
+            {% else %}
+                <span class="input-group-addon">{{ label }}</span>
+                <select class="form-control m-b" name="{{ name }}">
+                    <option value="">全部</option>
+                    {% for option in options %}
+                        <option value="{{ option.id }}" {{ 'selected' if option.id == selected else '' }}>{{ option.name }}</option>
+                    {% endfor %}
+                </select>
+            {% endif %}
+        </div>
+    </div>
+{% endmacro %}
+
+
+{% macro btn(label, name, value, last = false) %}
+    <div class="col-sm-{{ '3' if last else '2' }}">
+        <div class="input-group">
+            {% if last %}
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-sm btn-info page-reset-info">重置</button>
+                <button type="button" class="btn btn-sm btn-info page-search-info"><i class="fa fa-search"></i>搜索</button>
+            </span>
+            {% endif %}
+        </div>
+    </div>
+{% endmacro %}

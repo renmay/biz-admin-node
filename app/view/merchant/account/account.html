@@ -1,0 +1,129 @@
+{% extends "_layout.html" %}
+{% import "component/pagination.njk" as pagination %}
+{% import "component/table.njk" as table %}
+{% import "component/search.njk" as search %}
+
+{# 样式代码 #}
+{% block style %}
+
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <div class="row">
+                        <form class="page-search-form">
+                            <div class="col-sm-3">
+                                <div class="input-group">
+                                    <span class="input-group-addon">身份</span>
+                                    <select class="form-control m-b" name="managerType">
+                                        <option value="">全部</option>
+                                        <option value="1" {% if params.managerType == 1%}selected{% endif %}>管理员</option>
+                                        <option value="2" {% if params.managerType == 2%}selected{% endif %}>店长</option>
+                                        <option value="3" {% if params.managerType == 3%}selected{% endif %}>员工</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="input-group">
+                                    <input type="text" name="likeMobile" id="like" value="{{params.likeMobile}}"
+                                           placeholder="请输入商家手机号" class="input-sm form-control"/>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="input-group">
+                                    <input type="text" name="likeLinkname" id="likeLinkname"
+                                           value="{{params.likeLinkname}}"
+                                           placeholder="请输入姓名" class="input-sm form-control"/>
+                                    <span class="input-group-btn">
+                                <button type="button" class="btn btn-sm btn-info page-reset-btn">重置</button>
+                                <button type="button" class="btn btn-sm btn-info page-search-btn"><i
+                                        class="fa fa-search"></i>搜索</button>
+                                </span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+
+                    <div class="table-responsive">
+                        <form id="table-form">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>商家姓名</th>
+                                    <th>店铺</th>
+                                    <th>身份</th>
+                                    <th>手机号</th>
+                                    <th>账户余额</th>
+                                    <th>冻结金额</th>
+                                    <th>总金额</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for item in data.list %}
+                                <tr>
+                                    <td>
+                                        <!--<input type="checkbox" value="{{ item.id }}" class="i-checks" name="check">-->
+                                    </td>
+                                    <td>{{item.linkname}}</td>
+                                    <td>
+                                        {{item.storeName}}
+                                    </td>
+                                    <td>
+                                        {% if item.managerType == 1 %}
+                                        管理员
+                                        {% elif item.managerType == 2 %}
+                                        店长
+                                        {% elif item.managerType == 3 %}
+                                        员工
+                                        {% else %}
+                                        未知
+                                        {% endif %}
+                                    </td>
+                                    <td>{{item.mobile}}</td>
+                                    <td>￥{{item.amount}}</td>
+                                    <td>￥{{item.freezeAmount}}</td>
+                                    <td>￥{{item.totalAmount}}</td>
+                                </tr>
+                                {% else %}
+                                暂无数据
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="btn-region clearfix">
+                        <div class="pull-left">
+                            <!--<button href="" id="batch-del-btn" class="btn btn-danger btn-sm js-batch"-->
+                            <!--data-url="/merchant/delete" data-confirm="确定删除选中的商家吗?" data-original-title=""-->
+                            <!--title="">-->
+                            <!--批量删除-->
+                            <!--</button>-->
+                        </div>
+                        <div class="pull-right">
+                            {{ pagination.pagination(data, params, '/merchant/account') }}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+
+</script>
+
+{% endblock %}

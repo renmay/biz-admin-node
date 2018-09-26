@@ -1,0 +1,116 @@
+{% extends "_layout.html" %}
+{% import "component/pagination.njk" as pagination %}
+{% import "component/table.njk" as table %}
+{% import "component/search.njk" as search %}
+{% import "component/constant.njk" as constant %}
+
+{# 样式代码 #}
+{% block style %}
+
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <form class="page-search-form">
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input type="text" name="likeUsername" id="likeUsername" value="{{params.likeUsername}}"
+                                               placeholder="请输入用户名" class="input-sm form-control"/>
+                                        <span class="input-group-btn">
+                                <button type="button" class="btn btn-sm btn-info page-reset-btn">重置</button>
+                                <button type="button" class="btn btn-sm btn-info page-search-btn"><i
+                                        class="fa fa-search"></i>搜索</button>
+                                </span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input type="text" name="likeIntro" id="likeIntro" value="{{params.likeIntro}}"
+                                               placeholder="请输入操作概述" class="input-sm form-control"/>
+                                        <span class="input-group-btn">
+                                <button type="button" class="btn btn-sm btn-info page-reset-btn">重置</button>
+                                <button type="button" class="btn btn-sm btn-info page-search-btn"><i
+                                        class="fa fa-search"></i>搜索</button>
+                                </span>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input type="text" name="likeUrl" id="likeUrl" value="{{params.likeUrl}}"
+                                               placeholder="请输入操作接口" class="input-sm form-control"/>
+                                        <span class="input-group-btn">
+                                <button type="button" class="btn btn-sm btn-info page-reset-btn">重置</button>
+                                <button type="button" class="btn btn-sm btn-info page-search-btn"><i
+                                        class="fa fa-search"></i>搜索</button>
+                                </span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="table-responsive">
+                        <form id="table-form">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>用户名</th>
+                                    <th>用户id</th>
+                                    <th>操作接口</th>
+                                    <th>操作参数</th>
+                                    <th>操作概述</th>
+                                    <th>创建时间</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for item in data.list %}
+                                <tr>
+                                    <td>
+                                        <!--<input type="checkbox" value="{{ item.id }}" class="i-checks" name="check">-->
+                                    </td>
+                                    <td>{{item.username}}</td>
+                                    <td>{{item.userId}}</td>
+                                    <td>{{item.url}}</td>
+                                    <td width="500">{{item.params}}</td>
+                                    <td>{{item.intro}}</td>
+                                    <td>{{item.createTime}}</td>
+                                </tr>
+                                {% else %}
+                                暂无数据
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="btn-region clearfix">
+                        <div class="pull-right">
+                            {{ pagination.pagination(data, params, '/log') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+
+
+</script>
+
+{% endblock %}

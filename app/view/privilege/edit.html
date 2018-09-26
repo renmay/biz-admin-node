@@ -1,0 +1,91 @@
+{% extends "_layout.html" %}
+{% import "component/forms.njk" as forms %}
+
+{# 样式代码 #}
+{% block style %}
+<link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>添加优惠卷</h5>
+
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t from" id="form" action="/privilege/edit" method="post" data-href="/privilege">
+                    	{{ forms.hidden('id', data.id) }}
+                    	{{ forms.label('优惠类型', '满减优惠') }}
+
+                    	<div class="form-group">
+                            <label class="col-sm-2 control-label">优惠卷类型</label>
+                            <div class="col-sm-3">
+                                <select class="form-control m-b" name="type">
+                                    <option value="1" {{ 'selected' if data.type == 1 }}>新会员优惠卷</option>
+                                    <option value="0" {{ 'selected' if data.type == 0 }}>其他</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    	{{ forms.date(label='过期时间', name='expiresTime', value=data.expiresTime, format='YYYY/MM/DD', tip = '留空表示不过期') }}
+						{{ forms.text('优惠名称', 'name', data.name, '请输入优惠名称', 'required') }}
+						{{ forms.text('优惠金额', 'value', data.value, '请输入优惠金额', 'required') }}
+						{{ forms.text('优惠条件', 'condition', data.condition, '请输入优惠条件', 'required') }}
+						{{ forms.text('排序', 'sort', data.sort, '请输入排序', 'required') }}
+                        {{ forms.submit() }}
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+    $(function () {
+        var e = "";
+        $("#form").validate({
+            rules: {
+                name: "required",
+                value: {
+                    required: true,
+                    number: true
+                },
+                condition: {
+                    required: true,
+                    number: true
+                },
+                sort:  {
+                    required: true,
+                    number: true
+                }
+            },
+            messages: {
+                name: {
+                    required: e + "请输入优惠名称"
+                },
+                value: {
+                    required: e + "请输入优惠结果"
+                },
+                condition: {
+                    required: e + "请输入优惠条件"
+                },
+                sort: {
+                    required: e + "请输入排序"
+                }
+            },
+            submitHandler: function() {
+              asyncSubmitForm($("#form"));
+            }
+        });
+
+    });
+</script>
+
+{% endblock %}

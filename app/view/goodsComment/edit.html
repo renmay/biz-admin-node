@@ -1,0 +1,80 @@
+{% extends "_layout.html" %}
+{% import "component/forms.njk" as forms %}
+
+{# 样式代码 #}
+{% block style %}
+<link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>添加商品评论</h5>
+
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t from" id="form" action="/goods/comment/edit" method="post" data-href="/goods/comment">
+                    	{{ forms.hidden('id', data.id) }}
+						{{ forms.text('商品id', 'goodsId', data.goodsId, '请输入商品id', 'required') }}
+						{{ forms.text('用户id', 'memberId', data.memberId, '请输入用户id', 'required') }}
+						{{ forms.text('创建时间', 'createTime', data.createTime, '请输入创建时间', 'required') }}
+						{{ forms.text('图片', 'image', data.image, '请输入图片', 'required') }}
+						{{ forms.text('名称', 'name', data.name, '请输入名称', 'required') }}
+						{{ forms.text('介绍', 'jingle', data.jingle, '请输入介绍', 'required') }}
+                        {{ forms.submit() }}
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+    $(function () {
+        var e = "";
+        $("#form").validate({
+            rules: {
+                goodsId: "required",
+                memberId: "required",
+                createTime: "required",
+                image: "required",
+                name: "required",
+                jingle: "required",
+            },
+            messages: {
+                goodsId: {
+                    required: e + "请输入商品id"
+                },
+                memberId: {
+                    required: e + "请输入用户id"
+                },
+                createTime: {
+                    required: e + "请输入创建时间"
+                },
+                image: {
+                    required: e + "请输入图片"
+                },
+                name: {
+                    required: e + "请输入名称"
+                },
+                jingle: {
+                    required: e + "请输入介绍"
+                },
+            },
+            submitHandler: function() {
+              asyncSubmitForm($("#form"));
+            }
+        });
+
+    });
+</script>
+
+{% endblock %}

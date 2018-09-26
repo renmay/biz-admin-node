@@ -1,0 +1,111 @@
+{% extends "_layout.html" %}
+{% import "component/forms.njk" as forms %}
+
+{# 样式代码 #}
+{% block style %}
+<link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>商家银联账号信息配置</h5>
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t from" id="form" action="/merchantUnionPayInfo/edit" method="post"
+                          data-href="#">
+                        {{ forms.hidden('id', data.id) }}
+                        {{ forms.hidden('merchantId', data.merchantId ) }}
+                        {{ forms.hidden('storeId', data.storeId) }}
+                        {{ forms.text('名称', 'name', data.name, '请输入名称', 'required') }}
+                        {{ forms.text('终端号', 'tid', data.tid, '请输入终端号', 'required') }}
+                        {{ forms.text('集团号', 'groupId', data.groupId, '请输入集团号', 'required') }}
+                        {{ forms.text('企业用户号', 'merNo', data.merNo, '请输入企业用户号', 'required') }}
+                        {{ forms.text('商户编号', 'mid', data.mid, '请输入商户编号', 'required') }}
+                        <div class="form-group">
+                            <label class="col-xs-12 col-sm-3 col-md-2 control-label">卡信息：</label>
+                            <div class="col-sm-8 col-xs-12">
+                                <input name="orginCardInfo" class="form-control" value="{{data.orginCardInfo}}"
+                                       onkeyup="this.value=this.value.replace(/[^0-9|\.]/g,'')" type="text"
+                                       minlength="10">
+                                <span class="help-block m-b-none"><i class="fa fa-info-circle"></i> 请输入卡信息</span>
+                            </div>
+                        </div>
+
+                        <div style="position: relative;">
+                            <a href="/merchant" class="btn btn-info"
+                               style="position: absolute;right: 26%;top: 0;">返回</a>
+                            {{ forms.submit() }}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+    {#js代码#}
+    {% block js %}
+    <script>
+      $(function () {
+        var e = "";
+        $("#form").validate({
+          rules: {
+            name: "required",
+            groupId: "required",
+            merchantId: "required",
+            storeId: "required",
+            merNo: "required",
+            mid: "required",
+            tid: "required",
+            cardInfo: "required",
+            orginCardInfo: "required",
+            createTime: "required",
+            updateTime: "required",
+            status: "required",
+          },
+          messages: {
+            name: {
+              required: e + "请输入名称"
+            },
+            groupId: {
+              required: e + "请输入集团号"
+            },
+            merchantId: {
+              required: e + "请输入商家id"
+            },
+            storeId: {
+              required: e + "请输入店铺id"
+            },
+            merNo: {
+              required: e + "请输入企业用户号"
+            },
+            mid: {
+              required: e + "请输入商户编号"
+            },
+            orginCardInfo: {
+              required: e + "请输入卡信息"
+            },
+            createTime: {
+              required: e + "请输入创建时间"
+            },
+            updateTime: {
+              required: e + "请输入更新时间"
+            },
+            status: {
+              required: e + "请输入状态"
+            },
+          },
+          submitHandler: function () {
+            asyncSubmitForm($("#form"));
+          }
+        });
+
+      });
+    </script>
+
+    {% endblock %}

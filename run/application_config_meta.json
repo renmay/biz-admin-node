@@ -1,0 +1,387 @@
+{
+  "url": {
+    "auth": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "upload": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "login": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "account": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "productCombo": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "district": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "districtQuery": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "fundLog": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "product": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "productDelete": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "productLanguage": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "productCategory": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "productGroup": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "productBookingRemind": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "guestbook": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "joinUs": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "orderConfig": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "refundList": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "productComment": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "payOrder": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "privilege": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "member": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "merchant": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "merchantMenu": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "merchantMobileIsExist": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "merchantUsernameIsExist": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "selleModifyPassword": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "sms": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "merchantAuth": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "custom": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "customCase": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "customCategory": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "constellation": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "chef": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "merchantAuthAudit": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "merchantAuthAuditInfo": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "merchantAuthAuditSuccess": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "merchantAuthAuditFailure": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "module": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "bankcard": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "users": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "order": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "goods": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "alliance": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "store": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "storeModule": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "getModuleList": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "getOrder": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "export": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "merchantConfig": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "systemConfig": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "orderPriceStatistic": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "orderNumberStatistic": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "merchantStatistic": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "memberStatistic": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "banner": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "annual": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "annualConfig": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "money": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "businessAccount": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "prepaid": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "water": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "qr": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "log": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "version": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "roadbook": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "storeCustom": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "merchantUnionPayInfo": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "thirdConfig": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "thirdAccountConfig": "/Users/renmay/biz-node/biz-admin/config/config.default.js"
+  },
+  "keys": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+  "title": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+  "api": {
+    "base": "/Users/renmay/biz-node/biz-admin/config/config.local.js",
+    "common": "/Users/renmay/biz-node/biz-admin/config/config.local.js",
+    "static": "/Users/renmay/biz-node/biz-admin/config/config.local.js",
+    "image": "/Users/renmay/biz-node/biz-admin/config/config.local.js"
+  },
+  "view": {
+    "defaultViewEngine": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "root": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-view@2.1.0@egg-view/config/config.default.js",
+    "cache": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-view@2.1.0@egg-view/config/config.local.js",
+    "defaultExtension": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-view@2.1.0@egg-view/config/config.default.js",
+    "mapping": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-view@2.1.0@egg-view/config/config.default.js"
+  },
+  "static": {
+    "prefix": "/Users/renmay/biz-node/biz-admin/config/config.local.js",
+    "dir": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-static@2.1.1@egg-static/config/config.default.js",
+    "dynamic": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-static@2.1.1@egg-static/config/config.default.js",
+    "preload": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-static@2.1.1@egg-static/config/config.default.js",
+    "buffer": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-static@2.1.1@egg-static/config/config.default.js",
+    "maxFiles": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-static@2.1.1@egg-static/config/config.default.js"
+  },
+  "i18n": {
+    "defaultLocale": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "dirs": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-i18n@2.0.0@egg-i18n/config/config.default.js",
+    "queryField": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-i18n@2.0.0@egg-i18n/config/config.default.js",
+    "cookieField": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-i18n@2.0.0@egg-i18n/config/config.default.js",
+    "cookieMaxAge": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-i18n@2.0.0@egg-i18n/config/config.default.js"
+  },
+  "security": {
+    "csrf": {
+      "enable": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+      "useSession": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-security@2.2.3@egg-security/config/config.default.js",
+      "ignoreJSON": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-security@2.2.3@egg-security/config/config.default.js",
+      "cookieName": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-security@2.2.3@egg-security/config/config.default.js",
+      "sessionName": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-security@2.2.3@egg-security/config/config.default.js",
+      "headerName": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-security@2.2.3@egg-security/config/config.default.js",
+      "bodyName": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-security@2.2.3@egg-security/config/config.default.js",
+      "queryName": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-security@2.2.3@egg-security/config/config.default.js"
+    },
+    "domainWhiteList": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-security@2.2.3@egg-security/config/config.default.js",
+    "protocolWhiteList": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-security@2.2.3@egg-security/config/config.default.js",
+    "defaultMiddleware": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-security@2.2.3@egg-security/config/config.default.js",
+    "xframe": {
+      "enable": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-security@2.2.3@egg-security/config/config.default.js",
+      "value": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-security@2.2.3@egg-security/config/config.default.js"
+    },
+    "hsts": {
+      "enable": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-security@2.2.3@egg-security/config/config.local.js",
+      "maxAge": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-security@2.2.3@egg-security/config/config.default.js",
+      "includeSubdomains": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-security@2.2.3@egg-security/config/config.default.js"
+    },
+    "dta": {
+      "enable": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-security@2.2.3@egg-security/config/config.default.js"
+    },
+    "methodnoallow": {
+      "enable": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-security@2.2.3@egg-security/config/config.default.js"
+    },
+    "noopen": {
+      "enable": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-security@2.2.3@egg-security/config/config.default.js"
+    },
+    "nosniff": {
+      "enable": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-security@2.2.3@egg-security/config/config.default.js"
+    },
+    "referrerPolicy": {
+      "enable": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-security@2.2.3@egg-security/config/config.default.js",
+      "value": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-security@2.2.3@egg-security/config/config.default.js"
+    },
+    "xssProtection": {
+      "enable": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-security@2.2.3@egg-security/config/config.default.js",
+      "value": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-security@2.2.3@egg-security/config/config.default.js"
+    },
+    "csp": {
+      "enable": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-security@2.2.3@egg-security/config/config.default.js",
+      "policy": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-security@2.2.3@egg-security/config/config.default.js"
+    },
+    "ssrf": {
+      "ipBlackList": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-security@2.2.3@egg-security/config/config.default.js",
+      "checkAddress": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-security@2.2.3@egg-security/config/config.default.js"
+    }
+  },
+  "redis": {
+    "client": {
+      "host": "/Users/renmay/biz-node/biz-admin/config/config.local.js",
+      "db": "/Users/renmay/biz-node/biz-admin/config/config.local.js",
+      "port": "/Users/renmay/biz-node/biz-admin/config/config.local.js",
+      "password": "/Users/renmay/biz-node/biz-admin/config/config.local.js"
+    },
+    "default": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-redis@1.0.2@egg-redis/config/config.default.js",
+    "app": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-redis@1.0.2@egg-redis/config/config.default.js",
+    "agent": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-redis@1.0.2@egg-redis/config/config.default.js"
+  },
+  "session": {
+    "key": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "prefix": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "maxAge": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "httpOnly": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "encrypt": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "rolling": "/Users/renmay/biz-node/biz-admin/config/config.default.js"
+  },
+  "logger": {
+    "consoleLevel": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "dir": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+    "encoding": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+    "env": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+    "level": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+    "disableConsoleAfterReady": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+    "outputJSON": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+    "buffer": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+    "appLogName": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+    "coreLogName": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+    "agentLogName": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+    "errorLogName": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+    "coreLogger": {
+      "consoleLevel": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.local.js"
+    },
+    "allowDebugAtProd": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js"
+  },
+  "middleware": "/Users/renmay/biz-node/biz-admin/config/config.default.js",
+  "auth": {
+    "ignore": "/Users/renmay/biz-node/biz-admin/config/config.default.js"
+  },
+  "development": {
+    "watchDirs": "/Users/renmay/biz-node/biz-admin/config/config.local.js",
+    "ignoreDirs": "/Users/renmay/biz-node/biz-admin/config/config.local.js",
+    "fastReady": "/Users/renmay/biz-node/biz-admin/config/config.local.js",
+    "reloadOnDebug": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-development@2.4.1@egg-development/config/config.default.js",
+    "overrideDefault": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-development@2.4.1@egg-development/config/config.default.js"
+  },
+  "helper": {
+    "shtml": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-security@2.2.3@egg-security/config/config.default.js"
+  },
+  "jsonp": {
+    "limit": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-jsonp@2.0.0@egg-jsonp/config/config.default.js",
+    "callback": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-jsonp@2.0.0@egg-jsonp/config/config.default.js",
+    "csrf": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-jsonp@2.0.0@egg-jsonp/config/config.default.js"
+  },
+  "onerror": {
+    "errorPageUrl": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-onerror@2.1.0@egg-onerror/config/config.default.js",
+    "appErrorFilter": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-onerror@2.1.0@egg-onerror/config/config.default.js",
+    "templatePath": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-onerror@2.1.0@egg-onerror/config/config.default.js"
+  },
+  "watcher": {
+    "type": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-watcher@3.0.0@egg-watcher/config/config.local.js",
+    "eventSources": {
+      "default": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-watcher@3.0.0@egg-watcher/config/config.default.js",
+      "development": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-watcher@3.0.0@egg-watcher/config/config.default.js"
+    }
+  },
+  "multipart": {
+    "autoFields": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-multipart@2.1.0@egg-multipart/config/config.default.js",
+    "defaultCharset": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-multipart@2.1.0@egg-multipart/config/config.default.js",
+    "fieldNameSize": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-multipart@2.1.0@egg-multipart/config/config.default.js",
+    "fieldSize": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-multipart@2.1.0@egg-multipart/config/config.default.js",
+    "fields": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-multipart@2.1.0@egg-multipart/config/config.default.js",
+    "fileSize": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-multipart@2.1.0@egg-multipart/config/config.default.js",
+    "files": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-multipart@2.1.0@egg-multipart/config/config.default.js",
+    "fileExtensions": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-multipart@2.1.0@egg-multipart/config/config.default.js",
+    "whitelist": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-multipart@2.1.0@egg-multipart/config/config.default.js"
+  },
+  "customLogger": {
+    "scheduleLogger": {
+      "consoleLevel": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-schedule@3.3.0@egg-schedule/config/config.default.js",
+      "file": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-schedule@3.3.0@egg-schedule/config/config.default.js"
+    }
+  },
+  "logrotator": {
+    "filesRotateByHour": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/config/config.default.js",
+    "hourDelimiter": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/config/config.default.js",
+    "filesRotateBySize": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/config/config.default.js",
+    "maxFileSize": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/config/config.default.js",
+    "maxFiles": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/config/config.default.js",
+    "rotateDuration": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/config/config.default.js",
+    "maxDays": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/config/config.default.js"
+  },
+  "nunjucks": {
+    "autoescape": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-view-nunjucks@2.2.0@egg-view-nunjucks/config/config.default.js",
+    "throwOnUndefined": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-view-nunjucks@2.2.0@egg-view-nunjucks/config/config.default.js",
+    "trimBlocks": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-view-nunjucks@2.2.0@egg-view-nunjucks/config/config.default.js",
+    "lstripBlocks": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-view-nunjucks@2.2.0@egg-view-nunjucks/config/config.default.js",
+    "cache": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-view-nunjucks@2.2.0@egg-view-nunjucks/config/config.local.js"
+  },
+  "sessionRedis": {
+    "name": "/Users/renmay/biz-node/biz-admin/node_modules/_egg-session-redis@1.0.0@egg-session-redis/config/config.default.js"
+  },
+  "env": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+  "name": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+  "proxy": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+  "protocolHeaders": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+  "ipHeaders": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+  "hostHeaders": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+  "pkg": {
+    "name": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+    "version": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+    "description": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+    "private": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+    "dependencies": {
+      "egg": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "egg-redis": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "egg-scripts": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "egg-session-redis": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "egg-static": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "egg-validate": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "egg-view-nunjucks": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "ioredis": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "moment": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "nunjucks": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js"
+    },
+    "devDependencies": {
+      "autod": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "autod-egg": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "egg-bin": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "egg-ci": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "egg-mock": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "eslint": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "eslint-config-egg": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "webstorm-disable-index": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js"
+    },
+    "engines": {
+      "node": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js"
+    },
+    "scripts": {
+      "start": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "stop": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "dev": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "debug": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "test": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "test-local": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "cov": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "lint": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "ci": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "autod": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js"
+    },
+    "ci": {
+      "version": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js"
+    },
+    "repository": {
+      "type": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "url": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js"
+    },
+    "author": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+    "license": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js"
+  },
+  "baseDir": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+  "HOME": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+  "rundir": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+  "dump": {
+    "ignore": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js"
+  },
+  "confusedConfigurations": {
+    "bodyparser": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+    "notFound": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+    "sitefile": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+    "middlewares": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+    "httpClient": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js"
+  },
+  "notfound": {
+    "pageUrl": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js"
+  },
+  "siteFile": {
+    "/favicon.ico": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js"
+  },
+  "bodyParser": {
+    "enable": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+    "encoding": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+    "formLimit": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+    "jsonLimit": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+    "strict": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+    "queryString": {
+      "arrayLimit": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "depth": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "parameterLimit": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js"
+    }
+  },
+  "httpclient": {
+    "enableDNSCache": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+    "dnsCacheMaxLength": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+    "dnsCacheMaxAge": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+    "request": {
+      "timeout": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js"
+    },
+    "httpAgent": {
+      "keepAlive": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "freeSocketKeepAliveTimeout": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "maxSockets": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "maxFreeSockets": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js"
+    },
+    "httpsAgent": {
+      "keepAlive": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "freeSocketKeepAliveTimeout": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "maxSockets": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "maxFreeSockets": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js"
+    }
+  },
+  "meta": {
+    "enable": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+    "logging": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js"
+  },
+  "coreMiddleware": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+  "workerStartTimeout": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+  "cluster": {
+    "listen": {
+      "path": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "port": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+      "hostname": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js"
+    }
+  },
+  "clusterClient": {
+    "maxWaitTime": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js",
+    "responseTimeout": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js"
+  },
+  "onClientError": "/Users/renmay/biz-node/biz-admin/node_modules/_egg@2.10.0@egg/config/config.default.js"
+}

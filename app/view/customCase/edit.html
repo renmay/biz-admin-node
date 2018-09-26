@@ -1,0 +1,95 @@
+{% extends "_layout.html" %}
+{% import "component/forms.njk" as forms %}
+
+{# 样式代码 #}
+{% block style %}
+<link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>添加定制案例</h5>
+
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t from" id="form" action="/custom/case/edit" method="post" data-href="/custom/case">
+                    	{{ forms.hidden('id', data.id) }}
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">类型</label>
+                            <div class="col-sm-8">
+                                <select class="form-control m-b" name="type">
+                                    <option value="1" {{ 'selected' if data.type == 1 }}>私人定制</option>
+                                    <option value="2" {{ 'selected' if data.type == 2 }}>企业定制</option>
+                                </select>
+                            </div>
+                        </div>
+
+						{{ forms.text('名称', 'name', data.name, '请输入名称', 'required') }}
+                        {{ forms.images(
+                            label = '图片',
+                            fileList = [{
+                                name: 'image',
+                                value: data.image,
+                                url: ctx.helper.showImage(data.image, 160, 160, 'fixed'),
+                                text: 'PC'
+                            }]
+                        )}}
+                        {{ forms.text('排序', 'sort', data.sort, '请输入sort', 'required') }}
+						{{ forms.textarea('描述', 'info', data.info, '请输入描述', 'required') }}
+						{{ forms.textarea('备注', 'remark', data.remark, '请输入备注') }}
+
+                        {{ forms.submit() }}
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+    $(function () {
+        var e = "";
+        $("#form").validate({
+            rules: {
+                type: "required",
+                name: "required",
+                image: "required",
+                info: "required",
+                sort: "required",
+            },
+            messages: {
+                type: {
+                    required: e + "请输入类型"
+                },
+                name: {
+                    required: e + "请输入名称"
+                },
+                image: {
+                    required: e + "请输入图片"
+                },
+                info: {
+                    required: e + "请输入描述"
+                },
+                sort: {
+                    required: e + "请输入sort"
+                },
+            },
+            submitHandler: function() {
+              asyncSubmitForm($("#form"));
+            }
+        });
+
+    });
+</script>
+
+{% endblock %}

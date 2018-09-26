@@ -1,0 +1,96 @@
+{% extends "_layout.html" %}
+{% import "component/pagination.njk" as pagination %}
+{% import "component/table.njk" as table %}
+{% import "component/search.njk" as search %}
+
+{# 样式代码 #}
+{% block style %}
+
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <div class="row">
+                        <form class="page-search-form">
+                            <div class="col-sm-3">
+                                <div class="input-group">
+                                    <input type="text" name="name" id="name"
+                                           value="{{params.name}}"
+                                           placeholder="请输入店铺名称" class="input-sm form-control"/>
+                                    <span class="input-group-btn">
+                                <button type="button" class="btn btn-sm btn-info page-reset-btn">重置</button>
+                                <button type="button" class="btn btn-sm btn-info page-search-btn"><i
+                                        class="fa fa-search"></i>搜索</button>
+                                </span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+
+                    <div class="table-responsive">
+                        <form id="table-form">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>店铺</th>
+                                    <th>账户余额</th>
+                                    <th>冻结金额</th>
+                                    <th>总金额</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for item in data.list %}
+                                <tr>
+                                    <td>
+                                        <!--<input type="checkbox" value="{{ item.id }}" class="i-checks" name="check">-->
+                                    </td>
+                                    <td>
+                                        {{item.storeName}}
+                                    </td>
+                                    <td>￥{{item.amount}}</td>
+                                    <td>￥{{item.freezeAmount}}</td>
+                                    <td>￥{{item.totalAmount}}</td>
+                                </tr>
+                                {% else %}
+                                暂无数据
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="btn-region clearfix">
+                        <div class="pull-left">
+                            <!--<button href="" id="batch-del-btn" class="btn btn-danger btn-sm js-batch"-->
+                            <!--data-url="/merchant/delete" data-confirm="确定删除选中的商家吗?" data-original-title=""-->
+                            <!--title="">-->
+                            <!--批量删除-->
+                            <!--</button>-->
+                        </div>
+                        <div class="pull-right">
+                            {{ pagination.pagination(data, params, '/merchant/account/statistic') }}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+
+</script>
+
+{% endblock %}

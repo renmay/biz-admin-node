@@ -1,0 +1,63 @@
+{% extends "_layout.html" %}
+{% import "component/forms.njk" as forms %}
+
+{# 样式代码 #}
+{% block style %}
+<link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>发送短信</h5>
+
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t from" id="form" action="/sms/send" method="post" data-href="/privilege">
+                    	<div class="form-group">
+                            <label class="col-sm-2 control-label">会员</label>
+                            <div class="col-sm-3">
+                                <select class="form-control m-b" name="status">
+                                    <option value="1" {{ 'selected' if data.type == 1 }}>指定会员</option>
+                                    <option value="2" {{ 'selected' if data.type == 2 }}>所有会员</option>
+                                </select>
+                            </div>
+                        </div>
+						{{ forms.text('手机号', 'mobile', '', '请输入会员手机号，如指定所有会员可不填。') }}
+						{{ forms.text('模板id', 'templateId', '', '请输入阿里云后台的模板id') }}
+                        {{ forms.submit() }}
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+    $(function () {
+        var e = "";
+        $("#form").validate({
+            rules: {
+                expiresTime: "required"
+            },
+            messages: {
+                expiresTime: {
+                    required: e + "请输入过期时间"
+                }
+            },
+            submitHandler: function() {
+              asyncSubmitForm($("#form"));
+            }
+        });
+
+    });
+</script>
+
+{% endblock %}

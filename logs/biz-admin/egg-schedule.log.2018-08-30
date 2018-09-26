@@ -1,0 +1,22 @@
+2018-08-30 14:52:02,110 INFO 53164 [Timer] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js next time will execute at 2018-08-31 00:00:00.000
+2018-08-30 14:52:02,111 INFO 53164 [Timer] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js next time will execute at 2018-08-31 00:00:01.000
+2018-08-30 15:07:37,540 INFO 39874 [1535612857529201447339950185] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js triggered, send random by agent
+2018-08-30 15:07:37,565 INFO 39874 [Timer] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js next time will execute at 2018-08-31 00:00:00.000
+2018-08-30 15:07:38,490 INFO 39874 [1535612858484201448298076487] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js triggered, send random by agent
+2018-08-30 15:07:38,491 INFO 39874 [Timer] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js next time will execute at 2018-08-31 00:00:01.000
+2018-08-30 15:14:27,918 INFO 53406 [Timer] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js next time will execute at 2018-08-31 00:00:00.000
+2018-08-30 15:14:27,919 INFO 53406 [Timer] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js next time will execute at 2018-08-31 00:00:01.000
+2018-08-31 15:51:34,754 INFO 39874 [1535701894710233389840760058] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js triggered, send random by agent
+2018-08-31 15:51:34,780 INFO 39874 [Timer] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js next time will execute at 2018-09-01 00:00:00.000
+2018-08-31 15:51:34,712 INFO 53406 [1535701894696233389831357198] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js triggered, send random by agent
+2018-08-31 15:51:34,853 INFO 53406 [Timer] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js next time will execute at 2018-09-01 00:00:00.000
+2018-08-31 15:51:34,917 INFO 53407 [1535701894696233389831357198] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js task received by app
+2018-08-31 15:51:34,963 INFO 53407 [1535701894696233389831357198] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js executing by app
+2018-08-31 15:51:35,039 INFO 53407 [1535701894696233389831357198] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js execute succeed, used 72ms
+2018-08-31 15:51:35,669 INFO 53407 [1535701895669233390798653736] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js task received by app
+2018-08-31 15:51:35,670 INFO 53407 [1535701895669233390798653736] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js executing by app
+2018-08-31 15:51:35,681 INFO 53407 [1535701895669233390798653736] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js execute succeed, used 10ms
+2018-08-31 15:51:35,669 INFO 53406 [1535701895669233390798653736] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js triggered, send random by agent
+2018-08-31 15:51:35,672 INFO 53406 [Timer] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js next time will execute at 2018-09-01 00:00:01.000
+2018-08-31 15:51:35,685 INFO 39874 [1535701895684233390814533749] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js triggered, send random by agent
+2018-08-31 15:51:35,702 INFO 39874 [Timer] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js next time will execute at 2018-09-01 00:00:01.000

@@ -1,0 +1,96 @@
+{% extends "_layout.html" %}
+{% import "component/forms.njk" as forms %}
+
+{# 样式代码 #}
+{% block style %}
+<link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>添加用户账号信息</h5>
+
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t from" id="form" action="/merchantConfig/edit" method="post" data-href="/merchantConfig">
+                    	{{ forms.hidden('id', data.id) }}
+						<!--{{ forms.number('商户id', 'merchantId', data.merchantId, '请输入商户id', 'required') }}-->
+						{{ forms.number('手续费', 'fee', data.fee, '请输入手续费', 'required') }}
+						{{ forms.number('单笔最大手续费', 'maxFee', data.maxFee, '请输入单笔最大手续费', 'required') }}
+						{{ forms.number('单笔最大交易额', 'singleMaxAmount', data.singleMaxAmount, '请输入单笔最大交易额', 'required') }}
+						{{ forms.number('每天最大交易额', 'maxAmount', data.maxAmount, '请输入每天最大交易额', 'required') }}
+						{{ forms.number('免费提现额度', 'freeWithdraw', data.freeWithdraw, '请输入免费提现额度', 'required') }}
+						{{ forms.number('每天提现次数', 'withdrawTimes', data.withdrawTimes, '请输入每天提现次数', 'required') }}
+						{{ forms.number('提现到账时间（小时）', 'withdrawArrival', data.withdrawArrival, '请输入提现到账时间（小时）', 'required') }}
+                        {{ forms.date('创建时间', 'createTime', data.createTime, '') }}
+
+
+                        {{ forms.submit() }}
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+    $(function () {
+        var e = "";
+        $("#form").validate({
+            rules: {
+                merchantId: "required",
+                fee: "required",
+                maxFee: "required",
+                singleMaxAmount: "required",
+                maxAmount: "required",
+                freeWithdraw: "required",
+                withdrawTimes: "required",
+                withdrawArrival: "required",
+                createTime: "required",
+            },
+            messages: {
+                merchantId: {
+                    required: e + "请输入商户id"
+                },
+                fee: {
+                    required: e + "请输入手续费"
+                },
+                maxFee: {
+                    required: e + "请输入单笔最大手续费"
+                },
+                singleMaxAmount: {
+                    required: e + "请输入单笔最大交易额"
+                },
+                maxAmount: {
+                    required: e + "请输入每天最大交易额"
+                },
+                freeWithdraw: {
+                    required: e + "请输入免费提现额度"
+                },
+                withdrawTimes: {
+                    required: e + "请输入每天提现次数"
+                },
+                withdrawArrival: {
+                    required: e + "请输入提现到账时间 0 或者负数为实时到账"
+                },
+                createTime: {
+                    required: e + "请输入创建时间"
+                },
+            },
+            submitHandler: function() {
+              asyncSubmitForm($("#form"));
+            }
+        });
+
+    });
+</script>
+
+{% endblock %}

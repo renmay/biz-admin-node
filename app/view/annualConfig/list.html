@@ -1,0 +1,79 @@
+{% extends "_layout.html" %}
+{% import "component/pagination.njk" as pagination %}
+{% import "component/table.njk" as table %}
+{% import "component/search.njk" as search %}
+{% import "component/forms.njk" as forms %}
+
+{# 样式代码 #}
+{% block style %}
+
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+
+                <div class="ibox-content" style="position: relative;">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <form class="page-search-form">
+
+                            </form>
+                            <h3 style="font-weight: 400;">年卡信息：</h3>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="ibox-tools">
+                                <a href="/annualConfig/edit?id={{data.id}}" class="btn btn-info">编辑</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+
+                        <form class="form-horizontal m-t from" id="form" action="/annualConfig/edit" method="post"
+                              data-href="/annualConfig">
+                            {{ forms.hidden('id', data.id) }}
+                            {{ forms.readonly('年卡名称', 'name', data.name, '请输入年卡名称', 'required') }}
+                            {{ forms.readonly('价格', 'price', data.price, '请输入价格', '') }}
+                            {{ forms.readonly('市场价', 'marketPrice', data.marketPrice, '请输入市场价', '') }}
+                            {{ forms.readonly('联系电话', 'mobile', data.mobile, '请输入市场价', '') }}
+                            {{ forms.readonly('详细地址', 'detail', data.detail, '请输入详细地址', '') }}
+                            {{ forms.readonly('介绍', 'intro', data.intro, '请输入介绍', '') }}
+                            {{ forms.images(
+                            label = '图片',
+                            fileList = [{
+                            name: 'image',
+                            value: data.image,
+                            url: ctx.helper.showImage(data.image, 160, 160, 'fixed'),
+                            text: 'images'
+                            }]
+                            )}}
+                            <div class="form-group" readonly>
+                                <label class="col-sm-2 control-label">购买须知：</label>
+                                <div class="col-sm-8">
+                                    <textarea name="notice" class="summernote" readonly>{{ data.notice }}</textarea>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <!--<td data-id="{{ item.id }}">-->
+                    <!--<a href="/annualConfig/edit?id={{data.id}}">编辑</a>-->
+                    <!--</td>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+        $(".btn-group").hide(10);
+</script>
+
+{% endblock %}

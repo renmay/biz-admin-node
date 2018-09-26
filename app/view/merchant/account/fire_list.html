@@ -1,0 +1,182 @@
+{% extends "_layout.html" %}
+{% import "component/pagination.njk" as pagination %}
+{% import "component/table.njk" as table %}
+{% import "component/search.njk" as search %}
+
+{# 样式代码 #}
+{% block style %}
+
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <div class="row">
+                        <form class="page-search-form">
+                            <!--<div class="col-sm-2">-->
+                                <!--<div class="input-group">-->
+                                    <!--<input type="text" name="likeMobile" id="like" value="{{params.likeMobile}}"-->
+                                           <!--placeholder="请输入联系人手机号" class="input-sm form-control"/>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <div class="col-sm-3">
+                                <div class="input-group">
+                                    <input type="text" name="likeLinkname" id="likeLinkname"
+                                           value="{{params.likeLinkname}}"
+                                           placeholder="请输入商家姓名" class="input-sm form-control"/>
+                                    <span class="input-group-btn">
+                                <button type="button" class="btn btn-sm btn-info page-reset-btn">重置</button>
+                                <button type="button" class="btn btn-sm btn-info page-search-btn"><i
+                                        class="fa fa-search"></i>搜索</button>
+                                </span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+
+                    <div class="table-responsive">
+                        <form id="table-form">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>商家姓名</th>
+                                    <th>收款人姓名</th>
+                                    <th>店铺</th>
+                                    <th>手机号</th>
+                                    <th>总金额</th>
+                                    <th>开户行</th>
+                                    <th>手续费</th>
+                                    <th>银行帐号</th>
+                                    <th>编辑银行卡</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for item in data.list %}
+                                <tr>
+                                    <td>
+                                    </td>
+                                    <td>{{item.baseName}}</td>
+                                    <td>{{item.linkName}}</td>
+                                    <td>{{item.storeName}}</td>
+                                    <td>{{item.mobile}}</td>
+                                    <td>￥{{item.totalAmount}}</td>
+
+                                    <td>{{item.accountName}}</td>
+                                    <td>{{item.fee}}
+                                        <a class="fee" data-id="{{item.id}}">编辑</a>
+                                    </td>
+                                    <td>
+                                        {{item.account}}
+                                    </td>
+                                    <td>
+                                        {% if item.account%}
+                                        <a class="bind" data-id="{{item.id}}">编辑银行卡</a>
+                                        {% else %}
+                                        <a class="bind" data-id="{{item.id}}">绑定</a>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if item.account%}
+                                        <a class="operate" data-id="{{item.merchantAccountId}}"
+                                           data-href="/merchant/fire">打款</a>
+                                        {% endif %}
+                                        </td>
+                                </tr>
+                                {% else %}
+                                暂无数据
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="btn-region clearfix">
+                        <div class="pull-left">
+
+                        </div>
+                        <div class="pull-right">
+                            {{ pagination.pagination(data, params, '/merchant/fire') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+  $(function () {
+    $(".operate").on("click", function () {
+      id = $(this).attr("data-id");
+      let url = $(this).attr("data-href");
+      layer.confirm('你确定执行此操作?', {icon: 3, title: '提示'}, function (index) {
+        $.ajax({
+          url: url,
+          data: {"id": id},
+          dataType: 'json',
+          type: 'post',
+          success(data) {
+            if (data.code == 200) {
+              window.location.reload();
+            } else {
+              layer.msg(data.message);
+            }
+          },
+        });
+        layer.close(index);
+      });
+    });
+  });
+
+  $(".bind").click(function () {
+    let id = $(this).attr("data-id");
+    console.log(id);
+    layer.open({
+      type: 2,
+      fixed: false, //不固定
+      title: '',
+      shadeClose: true,
+      shade: false,
+      maxmin: true, //开启最大化最小化按钮
+      area: ['800px', '400px'],
+      content: [
+        '/merchant/bind?merchantId=' + id],
+      end: function () {
+        location.reload();
+      }
+    });
+
+  });
+  $(".fee").click(function () {
+      let id = $(this).attr("data-id");
+      console.log(id);
+      layer.open({
+          type: 2,
+          fixed: false, //不固定
+          title: '',
+          shadeClose: true,
+          shade: false,
+          maxmin: true, //开启最大化最小化按钮
+          area: ['800px', '400px'],
+          content: [
+              '/merchant/fee?merchantId=' + id],
+          end: function () {
+              location.reload();
+          }
+      });
+
+  });
+</script>
+
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends "_layout.html" %}
+{% import "component/pagination.njk" as pagination %}
+{% import "component/table.njk" as table %}
+{% import "component/search.njk" as search %}
+{% import "component/constant.njk" as constant %}
+{# 样式代码 #}
+{% block style %}
+
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+<div class="row">
+    <div class="col-sm-12">
+        <div class="ibox float-e-margins">
+
+            <div class="ibox-content">
+                <div class="row">
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="table-responsive">
+                   <form id="table-form">
+                   		<table class="table table-striped">
+                           <thead>
+                           <tr>
+                               	<th></th>
+								<th>支付订单</th>
+								<th>第三方订单号</th>
+								<th>支付金额</th>
+                                <th>交易状态</th>
+								<th>创建时间</th>
+								<th>支付时间</th>
+								<th>支付方式</th>
+                               <th>退款原因</th>
+								<th>ip</th>
+                           </tr>
+                           </thead>
+                           <tbody>
+                           {% for item in data.list %}
+                               <tr>
+                                   <td>
+                                       <input type="checkbox" value="{{ item.id }}" class="i-checks" name="check">
+                                   </td>
+   									<td>{{item.payNo}}</td>
+   									<td>{{item.outTradeNo}}</td>
+   									<td>{{item.amount}}</td>
+   									<td>{{ constant.pay_status(item.status) }}</td>
+   									<td>{{item.createTime}}</td>
+   									<td>{{item.finishTime}}</td>
+   									<td>{{ constant.pay_type(item.payType) }}</td>
+                                    <td>{{item.reason}}</td>
+   									<td>{{item.ip}}</td>
+                               </tr>
+                           {% else %}
+                               	暂无数据
+                           {% endfor %}
+                           </tbody>
+                       </table>
+                   </form>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="btn-region clearfix">
+                    <div class="pull-right">
+                        {{ pagination.pagination(data, params, '/pay/order') }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+
+
+</script>
+
+{% endblock %}

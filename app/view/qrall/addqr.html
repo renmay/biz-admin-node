@@ -1,0 +1,111 @@
+{% extends "_layout.html" %}
+{% import "component/forms.njk" as forms %}
+
+{# 样式代码 #}
+{% block style %}
+<link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+<style>
+
+</style>
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>生成二维码</h5>
+                </div>
+
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t from" id="form" action="/qrall/addqr" method="post"
+                          data-href="/qrall">
+                        {{ forms.number('生成二维码数量', 'number', data.number, '当前已有'+count+'张未绑定二维码，每次生成数量不能大于1000。（若生成数量过多，提交后请耐心等待数据同步）', 'required') }}
+                        <div style="position: relative;">
+                            <a href="/qrall" class="btn btn-info"
+                               style="position: absolute;right: 26%;top: 0;">返回</a>
+                            {{ forms.submit() }}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+    {#js代码#}
+    {% block js %}
+    <script>
+        $(function () {
+            var e = "";
+            $("#form").validate({
+                rules: {
+                    name: "required",
+                    jingle: "required",
+                    price: "required",
+                    promotionPrice: "required",
+                    marketPrice: "required",
+                    serial: "required",
+                    spec: "required",
+                    storage: "required",
+                    createTime: "required",
+                    specValue: "required",
+                    alarm: "required",
+                    sku: "required",
+                    image: "required",
+                    images: "required",
+                },
+                messages: {
+                    name: {
+                        required: e + "请输入商品名称（+规格名称）"
+                    },
+                    jingle: {
+                        required: e + "请输入商品广告词"
+                    },
+                    price: {
+                        required: e + "请输入商品价格"
+                    },
+                    promotionPrice: {
+                        required: e + "请输入商品促销价格"
+                    },
+                    marketPrice: {
+                        required: e + "请输入市场价"
+                    },
+                    serial: {
+                        required: e + "请输入商家编号"
+                    },
+                    spec: {
+                        required: e + "请输入商品规格序列化"
+                    },
+                    storage: {
+                        required: e + "请输入商品库存"
+                    },
+                    createTime: {
+                        required: e + "请输入商品添加时间"
+                    },
+                    specValue: {
+                        required: e + "请输入商品规格序列化"
+                    },
+                    alarm: {
+                        required: e + "请输入预警值"
+                    },
+                    sku: {
+                        required: e + "请输入sku"
+                    },
+                    image: {
+                        required: e + "请输入商品首图"
+                    },
+                    images: {
+                        required: e + "请输入商品图片"
+                    },
+                },
+                submitHandler: function () {
+                    asyncSubmitForm($("#form"));
+                }
+            });
+
+        });
+    </script>
+    {% endblock %}

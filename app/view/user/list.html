@@ -1,0 +1,96 @@
+{% extends "_layout.html" %}
+{% import "component/pagination.njk" as pagination %}
+{% import "component/table.njk" as table %}
+{% import "component/search.njk" as search %}
+
+{# 样式代码 #}
+{% block style %}
+
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+<div class="row">
+    <div class="col-sm-12">
+        <div class="ibox float-e-margins">
+
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <form class="page-search-form">
+                            {{ search.text('手机号', 'mobile', params.mobile) }}
+                            {{ search.select('角色', 'role', [{
+                                id: '1',
+                                name: '管理员'
+                            },{
+                                id: '2',
+                                name: '测试员'
+                            }], params.role) }}
+                            {{ search.text('姓名', 'name', params.name, true) }}
+                        </form>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="ibox-tools">
+                            <a href="/user/edit" class="btn btn-primary btn-xm">添加用户</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="table-responsive">
+                   <form id="table-form">
+                       {%
+                           set columns = [{
+                               title: '图片',
+                               type: 'image',
+                               key: 'avatar'
+                           }, {
+                               title: '名字',
+                               key: 'name'
+                           }, {
+                               title: '手机',
+                               key: 'mobile'
+                           }, {
+                               title: '邮箱',
+                               key: 'email'
+                           }, {
+                               title: '创建时期',
+                               key: 'createTime'
+                           }, {
+                               title: '操作',
+                               type: 'operate',
+                                url:'/user',
+                                btns: [
+                                    'delete', 'edit'
+                                ],
+                                data: '<a href="/user/edit">test</a>'
+                           }]
+                       %}
+                       {{ table.base(data.list, columns) }}
+                   </form>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="btn-region clearfix">
+                    <div class="pull-left">
+                        <button href="" id="batch-del-btn" class="btn btn-danger btn-sm js-batch" data-url="/user/delete" data-confirm="确定删除选中的桌台吗?" data-original-title="" title="">批量删除</button>
+                    </div>
+                    <div class="pull-right">
+                        {{ pagination.pagination(data, params, '/user') }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+
+
+</script>
+
+{% endblock %}

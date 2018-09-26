@@ -1,0 +1,143 @@
+{% extends "_layout.html" %}
+{% import "component/forms.njk" as forms %}
+
+{# 样式代码 #}
+{% block style %}
+<link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>商户审核</h5>
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t from" id="form" action="/merchant/audit" method="post"
+                          data-href="/merchant">
+                        {{ forms.hidden('id', data.id) }}
+                        {{ forms.readonly('姓名', 'name', data.name, '请输入姓名', 'required') }}
+                        {{ forms.readonly('店铺名称', 'storeName', data.storeName, '请输入店铺名称', 'required') }}
+                        <!--{{ forms.readonly('联系电话', 'mobile', data.mobile, '请输入联系电话', 'required') }}-->
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">行业</label>
+                            <div class="col-sm-8">
+                                <select class="form-control m-b" name="type" disabled>
+                                    <option value="1" {{
+                                    'selected' if data.type == 1 }}>酒店</option>
+                                    <option value="2" {{
+                                    'selected' if data.type == 2 }}>餐饮</option>
+                                    <option value="3" {{
+                                    'selected' if data.type == 3 }}>娱乐</option>
+                                    <option value="4" {{
+                                    'selected' if data.type == 4 }}>景区</option>
+                                    <option value="5" {{
+                                    'selected' if data.type == 5 }}>特产</option>
+                                    <option value="6" {{
+                                    'selected' if data.type == 6 }}>旅行社</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">性别</label>
+                            <div class="col-sm-8">
+                                <select class="form-control m-b" name="sex" disabled>
+                                    <option value="1" {{
+                                    'selected' if data.sex == 1 }}>男</option>
+                                    <option value="2" {{
+                                    'selected' if data.sex == 0 }}>女</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        {{ forms.readonly('拒绝原因', 'authResult', data.authResult, '请输入审核意见', 'required') }}
+
+
+                        <div class="formimg" style="padding-left: 20px;">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">身份证正面：&nbsp;</label>
+                                <a href="{{ctx.app.config.api.image}}/{{data.idCard}}" target="_blank"><img
+                                        class="img-responsive"
+                                        src="{{ ctx.helper.showImage(data.idCard, 160, 120, 'fixed') }}"></a>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">身份证反面：&nbsp;</label>
+                                <a href="{{ctx.app.config.api.image}}/{{data.idCardNegative}}" target="_blank"><img
+                                        class="img-responsive"
+                                        src=" {{ ctx.helper.showImage(data.idCardNegative, 160, 120, 'fixed') }}"></a>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">营业执照：&nbsp;</label>
+                                <a href="{{ctx.app.config.api.image}}/{{data.businessLicense}}" target="_blank"><img
+                                        class="img-responsive"
+                                        src="{{ ctx.helper.showImage(data.businessLicense, 160, 120, 'fixed') }}"></a>
+                            </div>
+                            <div class="from-group" style="padding-right: 60px;">
+                                <label class="col-sm-2 control-label">店铺照片：&nbsp;</label>
+                                <a href="{{ctx.app.config.api.image}}/{{data.storeImage}}" target="_blank"><img
+                                        class="img-responsive"
+                                        src="{{ ctx.helper.showImage(data.storeImage, 160, 120, 'fixed') }}"></a>
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-10">
+                                <a href="/merchant" style="margin-right: 20px;" class="btn btn-info"
+                                   type="button">返回</a>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+    {#js代码#}
+    {% block js %}
+    <script>
+      $(function () {
+        var e = "";
+        $("#form").validate({
+          rules: {
+            linkName: "required",
+            username: {
+              required: true
+            },
+            mobile: {
+              required: true
+            },
+            userType: "required",
+            sex: "required",
+          },
+          messages: {
+            linkName: {
+              required: e + "请输入姓名"
+            },
+            username: {
+              required: e + "请输入用户名",
+              remote: '用户已经存在'
+            },
+            mobile: {
+              required: e + "请输入手机号"
+            },
+            userType: {
+              required: e + "请输入类型 1.管理员 2.员工 "
+            },
+            sex: {
+              required: e + "请输入性别"
+            },
+          },
+          submitHandler: function () {
+            asyncSubmitForm($("#form"));
+          }
+        });
+
+      });
+    </script>
+    {% endblock %}

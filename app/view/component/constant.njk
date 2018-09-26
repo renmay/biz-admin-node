@@ -1,0 +1,64 @@
+{% macro status(status) %}
+    {% if status == 1 %}待支付
+    {% elif status == 2 %}已支付
+    {% elif status == 3 %}配送中
+    {% elif status == 4 %}已收货
+    {% elif status == 5 %}待退款
+    {% elif status == 10 %}结束
+    {% elif status == 0 %}删除
+    {% elif status == -1 %}用户取消
+    {% elif status == -2 %}超时未支付
+    {% elif status == -3 %}已退款
+    {% else %}状态错误
+    {% endif %}
+{% endmacro %}
+
+{% macro pay_status(status) %}
+    {% if status == 1 %}待支付
+    {% elif status == 2 %}已支付
+    {% elif status == 0 %}关闭
+    {% elif status == -1 %}用户取消
+    {% elif status == -2 %}超时未支付
+    {% elif status == -3 %}商家关闭
+    {% else %}状态错误
+    {% endif %}
+{% endmacro %}
+
+{% macro source(status) %}
+    {% if status == 1 %}WEB
+    {% elif status == 2 %}WEB
+    {% elif status == 3 %}Android
+    {% elif status == 4 %}IOS
+    {% else %}其他
+    {% endif %}
+{% endmacro %}
+
+{% macro pay_type(status) %}
+    {% if status == 1 %}微信
+    {% elif status == 2 %}支付宝
+    {% elif status == 3 %}余额
+    {% else %}其他
+    {% endif %}
+{% endmacro %}
+
+{% macro sex(status) %}
+    {% if status == 1 %}男
+    {% elif status == 0 %}女
+    {% else %}未知
+    {% endif %}
+{% endmacro %}
+
+{% macro rank(status) %}
+    {% if status == 1 %}普通会员
+    {% elif status == 2 %}高级会员
+    {% else %}未知
+    {% endif %}
+{% endmacro %}
+
+{% macro guestbook_type(status) %}
+    {% if status == 1 %}问题
+    {% elif status == 2 %}私人定制
+    {% elif status == 3 %}企业定制
+    {% else %}其他
+    {% endif %}
+{% endmacro %}

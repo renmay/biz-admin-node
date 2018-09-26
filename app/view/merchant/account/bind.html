@@ -1,0 +1,32 @@
+{% import "component/forms.njk" as forms %}
+{% extends "_layout_without_side.html" %}
+
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>商家绑定银行卡</h5>
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t from" id="form" action="/merchant/bind" method="post" data-href="/store">
+                        {{ forms.hidden('id', id) }}
+                        {{ forms.hidden('merchantId', merchantId) }}
+                        {{ forms.text('持卡人姓名', 'name', data.name, '请输入持卡人姓名', 'required') }}
+                        {{ forms.text('开户行', 'accountName', data.accountName, '请输入开户行', 'required') }}
+                        {{ forms.text('银行卡号', 'account', data.account, '请输入银行卡号', 'required') }}
+                        {{ forms.number('联系电话', 'mobile', data.mobile, '请输入联系电话', '') }}
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-9">
+                                <!--<button style="margin-right: 20px;" class="btn btn-info" type="button"><a-->
+                                        <!--href="/merchant/account/fire" style="color: white;: white;">返回</a></button>-->
+                                <button class="btn btn-info" type="submit">提交</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

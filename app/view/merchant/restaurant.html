@@ -1,0 +1,249 @@
+{% extends "_layout.html" %}
+{% import "component/pagination.njk" as pagination %}
+{% import "component/table.njk" as table %}
+{% import "component/search.njk" as search %}
+
+{# 样式代码 #}
+{% block style %}
+
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <div class="row">
+                        <form class="page-search-form">
+                            <div class="col-sm-3">
+                                <div class="input-group">
+                                    <span class="input-group-addon">状态</span>
+                                    <select class="form-control m-b" name="status">
+                                        <option value="">全部</option>
+                                        <option {% if params.status == 1 %} selected {% endif %} value="1">正常</option>
+                                        <option {% if params.status == 2 %} selected {% endif %} value="2">未提交审核资料</option>
+                                        <option {% if params.status == 3 %} selected {% endif %} value="3">待审核</option>
+                                        <option {% if params.status == 4 %} selected {% endif %} value="4">审核未通过</option>
+                                        <option {% if params.status == 5 %} selected {% endif %} value="5">店铺资料待完善</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="input-group">
+                                    <span class="input-group-addon">身份</span>
+                                    <select class="form-control m-b" name="managerType">
+                                        <option value="">全部</option>
+                                        <option value="1" {% if params.managerType == 1%}selected{% endif %}>管理员</option>
+                                        <option value="2" {% if params.managerType == 2%}selected{% endif %}>店长</option>
+                                        <option value="3" {% if params.managerType == 3%}selected{% endif %}>员工</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="input-group">
+                                    <input type="text" name="likeMobile" id="like" value="{{params.likeMobile}}"
+                                           placeholder="请输入商家手机号" class="input-sm form-control"/>
+                                    <span class="input-group-btn">
+                                <button type="button" class="btn btn-sm btn-info page-reset-btn">重置</button>
+                                <button type="button" class="btn btn-sm btn-info page-search-btn"><i
+                                        class="fa fa-search"></i>搜索</button>
+                                </span>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="input-group">
+                                    <input type="text" name="likeLinkname" id="likeLinkname"
+                                           value="{{params.likeLinkname}}"
+                                           placeholder="请输入姓名" class="input-sm form-control"/>
+                                    <span class="input-group-btn">
+                                <button type="button" class="btn btn-sm btn-info page-reset-btn">重置</button>
+                                <button type="button" class="btn btn-sm btn-info page-search-btn"><i
+                                        class="fa fa-search"></i>搜索</button>
+                                </span>
+                                </div>
+                            </div>
+                        </form>
+                        <span style="padding-left: 20px;"><i class="fa fa-volume-down" aria-hidden="true"></i> 请在七个工作日之内审核</span>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+
+                    <div class="table-responsive">
+                        <form id="table-form">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>姓名</th>
+                                    <th>商家id</th>
+                                    <th>店铺</th>
+                                    <th>手机号</th>
+                                    <th>性别</th>
+                                    <th>行业分类</th>
+                                    <th>身份</th>
+                                    <th>创建时间</th>
+                                    <th>状态</th>
+                                    <th>商家详情</th>
+                                    <th>审核资料</th>
+                                    <th>银联绑定</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for item in data.list %}
+                                <tr>
+                                    <td>
+                                        <!--<input type="checkbox" value="{{ item.id }}" class="i-checks" name="check">-->
+                                    </td>
+                                    <td>{{item.linkname}}</td>
+                                    <td>{{item.id}}</td>
+                                    <td>
+                                        <a href="/store?id={{ item.storeId }}">{{item.storeName}}</a>
+                                    </td>
+                                    <td>{{item.mobile}}</td>
+                                    <td>
+                                        {% if item.sex == 1 %}
+                                        男
+                                        {% elif item.sex == 0 %}
+                                        女
+                                        {% else %}
+                                        未知
+                                        {% endif %}
+                                    </td>
+                                    <!--行业分类-->
+                                    <td>
+                                        {% if item.type == 1 %}
+                                        酒店
+                                        {% elif item.type == 2 %}
+                                        餐饮
+                                        {% elif item.type == 3 %}
+                                        娱乐
+                                        {% elif item.type == 4 %}
+                                        景区
+                                        {% elif item.type == 5 %}
+                                        特产
+                                        {% elif item.type == 5 %}
+                                        旅行社
+                                        {% else %}
+                                        未知
+                                        {% endif %}
+                                    </td>
+
+                                    <td>
+                                        {% if item.managerType == 1 %}
+                                        管理员
+                                        {% elif item.managerType == 2 %}
+                                        店长
+                                        {% elif item.managerType == 3 %}
+                                        员工
+                                        {% else %}
+                                        未知
+                                        {% endif %}
+                                    </td>
+                                    <td>{{item.createTime}}</td>
+                                    <td>
+                                        {% if item.status == 1 %}
+                                        正常
+                                        {% elseif item.status == 2 %}
+                                        未提交审核资料
+                                        {% elseif item.status == 3 %}
+                                        待审核
+                                        {% elseif item.status == 4 %}
+                                        审核未通过
+                                        {% elseif item.status == 5 %}
+                                        店铺资料待完善
+                                        {% elseif item.status == 0 %}
+                                        已禁用
+                                        {% else %}
+                                        已删除
+                                        {% endif %}
+                                    </td>
+                                    {% if item.status == 1 %}
+                                    <td data-id="{{ item.id }}">
+                                        <a href="/merchant/person?id={{item.id}}">查看详情</a>
+                                    </td>
+                                    {% elseif item.status == 2 %}
+                                    <td data-id="{{ item.id }}">
+                                        <span href="javascript:void(0);">无</span>
+                                    </td>
+                                    {% elseif item.status == 3 %}
+                                    <td data-id="{{ item.id }}">
+                                        <span href="javascript:void(0);">无</span>
+                                    </td>
+                                    {% elseif item.status == 4 %}
+                                    <td data-id="{{ item.id }}">
+                                        <span href="javascript:void(0);">无</span>
+                                    </td>
+                                    {% elseif item.status == 5 %}
+                                    <td data-id="{{ item.id }}">
+                                        <a href="/merchant/person?id={{item.id}}">查看详情</a>
+                                    </td>
+                                    {% else %}
+                                    <td>
+                                        <a href="/merchant/person?id={{item.id}}">查看详情</a>
+                                    </td>
+                                    {% endif %}
+                                    {% if item.status == 1 %}
+                                    <td>
+                                        <a href="/merchant/auditt?id={{item.id}}">查看审核资料</a>
+                                    </td>
+                                    {% elseif item.status == 2 %}
+                                    <td>
+                                        资料为空
+                                    </td>
+                                    {% elseif item.status == 3 %}
+                                    <td>
+                                        <a href="/merchant/audit?id={{item.id}}">审核</a>
+                                    </td>
+                                    {% elseif item.status == 4 %}
+                                    <td>
+                                        <a href="/merchant/auditt?id={{item.id}}">查看审核资料</a>
+                                    </td>
+                                    {% elseif item.status == 5 %}
+                                    <td>
+                                        <a href="/merchant/auditt?id={{item.id}}">查看审核资料</a>
+                                    </td>
+                                    {% else %}
+                                    <td>
+                                        <a href="/merchant/auditt?id={{item.id}}">查看审核资料</a>
+                                    </td>
+                                    {% endif %}
+                                    <td>
+                                        <a href="/merchantUnionPayInfo?merchantId={{item.id}}&storeId={{item.storeId}}">银联绑定</a>
+                                    </td>
+                                </tr>
+                                {% else %}
+                                暂无数据
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="btn-region clearfix">
+                        <div class="pull-left">
+                            <!--<button href="" id="batch-del-btn" class="btn btn-danger btn-sm js-batch"-->
+                                    <!--data-url="/merchant/delete" data-confirm="确定删除选中的商家吗?" data-original-title=""-->
+                                    <!--title="">-->
+                                <!--批量删除-->
+                            <!--</button>-->
+                        </div>
+                        <div class="pull-right">
+                            {{ pagination.pagination(data, params, '/merchant/restaurant') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+
+</script>
+
+{% endblock %}

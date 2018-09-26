@@ -1,0 +1,169 @@
+{% extends "_layout.html" %}
+{% import "component/pagination.njk" as pagination %}
+{% import "component/table.njk" as table %}
+{% import "component/search.njk" as search %}
+{% import "component/constant.njk" as constant %}
+
+{# 样式代码 #}
+{% block style %}
+<style>
+    .countdiv {
+        text-align: center;
+        padding-bottom: 100px;
+    }
+
+    .count {
+        font-size: 77px;
+        text-align: center;
+        color:  rgb(25,183,229);
+        padding-bottom: 100px;
+    }
+
+</style>
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content" style="background-color: ;">
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <form class="page-search-form">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="countdiv">
+                                    <h2>平台总用户</h2>
+                                    <a href="/users"
+                                       class="totalCount count"></a>
+                                </div>
+
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="countdiv col-sm-4">
+                                    <h3>今日新增</h3>
+                                    <a href="/users"
+                                       class="todayCount count"></a>
+                                </div>
+                                <div class="countdiv col-sm-4">
+                                    <h3>近一周新增</h3>
+                                    <a href="/users"
+                                       class="weekCount count"></a>
+                                </div>
+                                <div class="countdiv col-sm-4">
+                                    <h3>近一月新增</h3>
+                                    <a href="/users"
+                                       class="monthCount count"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div id="member" style="width: 100%;height: 500px;padding-top: 100px;">加载中...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+    $.ajax({
+        type: "get",
+        url: '/statistic/member/line',
+        dataType: "json",
+        async: false,
+        success: function (data) {
+            $(".totalCount").append(data.totalCount);
+            $(".todayCount").append(data.todayCount);
+            $(".weekCount").append(data.weekCount);
+            $(".monthCount").append(data.monthCount);
+            console.log(data);
+            var myChart = echarts.init(document.getElementById('member'));
+
+            let base =
+                {
+                    name: '最低气温',
+                    type: 'line',
+                    data: [1, -2, 2, 5, 3, 2, 0],
+                    markPoint: {
+                        data: [
+                            {name: '周最低', value: -2, xAxis: 1, yAxis: -1.5}
+                        ]
+                    },
+                    markLine: {
+                        data: [
+                            {type: 'average', name: '平均值'}
+                        ]
+                    }
+                }
+
+            series = [];
+
+            $.each(data.series, function (i) {
+                data.series[i].markPoint = base.markPoint;
+                data.series[i].markLine = base.markLine;
+                data.series[i].type = base.type;
+                series.push(data.series[i]);
+            });
+
+            option = {
+                title: {
+                    text: '用户增长曲线图',
+                    subtext: '最近14天'
+                },
+                tooltip: {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data: data.series
+                },
+                toolbox: {
+                  show: true,
+                  x: '80%',
+                  feature: {
+                        mark: {show: true},
+                        dataView: {show: true, readOnly: false},
+                        magicType: {show: true, type: ['line', 'bar']},
+                        restore: {show: true},
+                        saveAsImage: {show: true}
+                    }
+                },
+                calculable: true,
+                xAxis: [
+                    {
+                        type: 'category',
+                        boundaryGap: false,
+                        data: data.timeLine,
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'value',
+                        axisLabel: {
+                            formatter: '{value}'
+                        }
+                    }
+                ],
+                series: series,
+            };
+            myChart.setOption(option);
+        }
+    });
+
+
+</script>
+{% endblock %}

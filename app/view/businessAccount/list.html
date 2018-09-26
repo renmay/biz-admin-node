@@ -1,0 +1,132 @@
+{% extends "_layout.html" %}
+{% import "component/pagination.njk" as pagination %}
+{% import "component/table.njk" as table %}
+{% import "component/search.njk" as search %}
+{% import "component/constant.njk" as constant %}
+
+{# 样式代码 #}
+{% block style %}
+
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <form class="page-search-form">
+
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input type="text" name="likeName" id="likeName" value="{{params.likeName}}"
+                                               placeholder="请输入姓名" class="input-sm form-control"/>
+                                        <span class="input-group-btn">
+                                <button type="button" class="btn btn-sm btn-info page-reset-btn">重置</button>
+                                <button type="button" class="btn btn-sm btn-info page-search-btn"><i
+                                        class="fa fa-search"></i>搜索</button>
+                                </span>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input type="text" name="likeAccountName" id="likeAccountName"
+                                               value="{{params.likeAccountName}}"
+                                               placeholder="请输入账户名称" class="input-sm form-control"/>
+                                        <span class="input-group-btn">
+                                <button type="button" class="btn btn-sm btn-info page-reset-btn">重置</button>
+                                <button type="button" class="btn btn-sm btn-info page-search-btn"><i
+                                        class="fa fa-search"></i>搜索</button>
+                                </span>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input type="text" name="likeNickName" id="likeNickName"
+                                               value="{{params.likeNickName}}"
+                                               placeholder="请输入昵称" class="input-sm form-control"/>
+                                        <span class="input-group-btn">
+                                <button type="button" class="btn btn-sm btn-info page-reset-btn">重置</button>
+                                <button type="button" class="btn btn-sm btn-info page-search-btn"><i
+                                        class="fa fa-search"></i>搜索</button>
+                                </span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="table-responsive">
+                        <form id="table-form">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>图标</th>
+                                    <th>姓名</th>
+                                    <th>账户名称</th>
+                                    <th>昵称</th>
+                                    <th>账号</th>
+                                    <th>默认账户</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for item in data.list %}
+                                <tr>
+                                    <td>
+                                        <!--<input type="checkbox" value="{{ item.id }}" class="i-checks" name="check">-->
+                                    </td>
+                                    <td class="image" style="padding-right: 60px;">
+                                        <img alt="image" class="image"
+                                             src="{{ ctx.helper.showImage(item.icon, 50, 50, 'fixed') }}">
+                                    </td>
+                                    <td>{{item.name}}</td>
+
+                                    <td>{{item.accountName}}</td>
+
+                                    <td>{{item.nickname}}</td>
+                                    <td>{{item.account}}</td>
+                                    <td>
+                                        {% if item.isDefault %}
+                                        是
+                                        {% else %}
+                                        否
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                {% else %}
+                                暂无数据
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="btn-region clearfix">
+                        <div class="pull-right">
+                            {{ pagination.pagination(data, params, '/businessAccount') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+
+
+</script>
+
+{% endblock %}

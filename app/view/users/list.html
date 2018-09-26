@@ -1,0 +1,131 @@
+s{% extends "_layout.html" %}
+{% import "component/pagination.njk" as pagination %}
+{% import "component/table.njk" as table %}
+{% import "component/search.njk" as search %}
+{% import "component/constant.njk" as constant %}
+
+{# 样式代码 #}
+{% block style %}
+
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <form class="page-search-form">
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">性别</span>
+                                        <select class="form-control m-b" name="sex">
+                                            <option value="">请选择性别</option>
+                                            <option value="1">男</option>
+                                            <option value="0">女</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="input-group col-sm-12">
+                                        <input type="text" name="likeNickname" id="likeNickname" value="{{data.likeNickname}}"
+                                               placeholder="请输入昵称" class="input-sm form-control"/>
+                                        <!--<span class="input-group-btn">-->
+                                <!--<button type="button" class="btn btn-sm btn-info page-reset-btn">重置</button>-->
+                                <!--<button type="button" class="btn btn-sm btn-info page-search-btn"><i-->
+                                        <!--class="fa fa-search"></i>搜索</button>-->
+                                <!--</span>-->
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input type="text" name="likeArea" id="likeArea" value="{{data.likeArea}}"
+                                               placeholder="请输入地区" class="input-sm form-control"/>
+                                        <span class="input-group-btn">
+                                <button type="button" class="btn btn-sm btn-info page-reset-btn">重置</button>
+                                <button type="button" class="btn btn-sm btn-info page-search-btn"><i
+                                        class="fa fa-search"></i>搜索</button>
+                                </span>
+                                    </div>
+                                </div>
+                                <!--<div class="col-sm-4">-->
+                                    <!--<div class="input-group">-->
+                                        <!--<input type="text" name="likeMobile" id="likeMobile" value="{{data.likeMobile}}"-->
+                                               <!--placeholder="请输入手机号" class="input-sm form-control"/>-->
+                                        <!--<span class="input-group-btn">-->
+                                <!--<button type="button" class="btn btn-sm btn-info page-reset-btn">重置</button>-->
+                                <!--<button type="button" class="btn btn-sm btn-info page-search-btn"><i-->
+                                        <!--class="fa fa-search"></i>搜索</button>-->
+                                <!--</span>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            </form>
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="table-responsive">
+                        <form id="table-form">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>头像</th>
+                                    <th>昵称</th>
+                                    <th>性别</th>
+                                    <th>注册时间</th>
+                                    <th>地区</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for item in data.list %}
+
+                                <tr>
+                                    <td>
+                                        <!--<input type="checkbox" value="{{ item.id }}" class="i-checks" name="check">-->
+                                    </td>
+                                    <td class="image" style="padding-right: 60px;">
+                                        <a target="_blank" href="{{ ctx.helper.showImage(item.avatar,600, 600, 'fixed') }}"><img alt="image" class="image"
+                                                                           src="{{ ctx.helper.showImage(item.avatar, 50, 50, 'fixed') }}"></a>
+                                    </td>
+                                    <td>{{item.nickname}}</td>
+                                    <td>{{ constant.sex(item.sex) }}</td>
+                                    <!--<td>{{ctx.helper.date(item.birthday, 'MM月DD')}}</td>-->
+                                    <td>{{item.createTime}}</td>
+                                    <td>{{item.area}}</td>
+                                </tr>
+                                {% else %}
+                                暂无数据
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="btn-region clearfix">
+                        <div class="pull-left">
+                            <!--<a class="btn btn-info " href="/export">导出excel</a>-->
+                        </div>
+                        <div class="pull-right">
+                            {{ pagination.pagination(data, params, '/users') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+
+
+</script>
+
+{% endblock %}

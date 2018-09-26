@@ -1,0 +1,39 @@
+<div class="row border-bottom">
+    <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-info " href="#"><i class="fa fa-bars"></i> </a>
+        </div>
+        <ul class="nav navbar-top-links navbar-right">
+            {{ ctx.session.member.username }}
+            <li class="dropdown">
+                <a class="" data-toggle="modal" href="/logout">
+                    退出
+                </a>
+                <!--<a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">-->
+                    <!--设置-->
+                <!--</a>-->
+                <!--<ul class="dropdown-menu dropdown-messages" style="width: 100px;">-->
+                    <!--<li class="m-t-xs">-->
+                        <!--<div class="text-center link-block" style="padding: 10px 0;">-->
+                            <!--<a class="" data-toggle="modal" href="/merchant/modify/password" data-target="#modifyPasswodModal" style="padding: 3px 10px;">-->
+                                <!--<i class="fa fa-pencil"></i> <strong> 修改密码</strong>-->
+                            <!--</a>-->
+                        <!--</div>-->
+                        <!--<div class="text-center link-block" style="padding: 10px 0;">-->
+                            <!--<a class="" data-toggle="modal" href="/logout">-->
+                                <!--<i class="fa fa-user-times"></i> <strong>退出</strong>-->
+                            <!--</a>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<div class="modal inmodal" id="modifyPasswodModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content animated fadeIn">
+        </div>
+    </div>
+</div>

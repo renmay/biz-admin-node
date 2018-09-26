@@ -1,0 +1,86 @@
+{% extends "_layout.html" %}
+{% import "component/pagination.njk" as pagination %}
+{% import "component/table.njk" as table %}
+{% import "component/search.njk" as search %}
+{% import "component/constant.njk" as constant %}
+
+{# 样式代码 #}
+{% block style %}
+
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+<div class="row">
+    <div class="col-sm-12">
+        <div class="ibox float-e-margins">
+
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <form class="page-search-form">
+                        </form>
+                    </div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="table-responsive">
+                   <form id="table-form">
+                   		<table class="table table-striped">
+                           <thead>
+                           <tr>
+                               	<th></th>
+								<th>手机号</th>
+								<th>昵称</th>
+								<th>性别</th>
+                                <th>生日</th>
+								<th>注册时间</th>
+								<th>会员积分</th>
+								<th>会员等级</th>
+                           </tr>
+                           </thead>
+                           <tbody>
+                           {% for item in data.list %}
+                               <tr>
+                                   <td>
+                                       <input type="checkbox" value="{{ item.id }}" class="i-checks" name="check">
+                                   </td>
+   									<td>{{item.mobile}}</td>
+   									<td>{{item.nickname}}</td>
+   									<td>{{ constant.sex(item.sex) }}</td>
+                                    <td>{{ctx.helper.date(item.birthday, 'MM月DD')}}</td>
+   									<td>{{item.regtime}}</td>
+   									<td>{{item.point}}</td>
+   									<td>
+                                        {{ constant.rank(item.rank) }}
+                                    </td>
+                               </tr>
+                           {% else %}
+                               	暂无数据
+                           {% endfor %}
+                           </tbody>
+                       </table>
+                   </form>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="btn-region clearfix">
+                    <div class="pull-right">
+                        {{ pagination.pagination(data, params, '/member') }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+
+
+</script>
+
+{% endblock %}

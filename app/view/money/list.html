@@ -1,0 +1,182 @@
+{% extends "_layout.html" %}
+{% import "component/pagination.njk" as pagination %}
+{% import "component/table.njk" as table %}
+{% import "component/search.njk" as search %}
+{% import "component/constant.njk" as constant %}
+
+{# 样式代码 #}
+{% block style %}
+
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <form class="page-search-form">
+                                <!--<div class="col-sm-4">-->
+                                <!--<div class="input-group">-->
+                                <!--<span class="input-group-addon">提现状态</span>-->
+                                <!--<select class="form-control m-b" name="status">-->
+                                <!--<option value="">全部</option>-->
+                                <!--<option value="0" {% if params.status == 0%}selected{% endif %}>删除</option>-->
+                                <!--<option value="1" {% if params.status == 1%}selected{% endif %}>正常</option>-->
+                                <!--<option value="2" {% if params.status == 2%}selected{% endif %}>等待</option>-->
+                                <!--<option value="3" {% if params.status == 3%}selected{% endif %}>同意</option>-->
+                                <!--<option value="4" {% if params.status == 4%}selected{% endif %}>提现成功</option>-->
+                                <!--</select>-->
+                                <!--<span class="input-group-btn">-->
+                                <!--</span>-->
+                                <!--</div>-->
+                                <!--</div>-->
+
+                                <div class="row">
+                                    <div class="form-group col-sm-8">
+                                        <div class="col-sm-12">
+                                            <input id="startTime" name="gtCreateTime" value="{{params.gtCreateTime}}"
+                                                   placeholder="开始日期"
+                                                   class="form-control layer-date {{ class }}" readonly
+                                                   onclick="laydate({istime:  false, format: 'YYYY/MM/DD'})">
+                                            <label class="" style="vertical-align: bottom;">-</label>
+                                            <input id="endTime" name="ltCreateTime" value="{{params.ltCreateTime}}"
+                                                   placeholder="结束日期"
+                                                   class="form-control layer-date {{ class }}" readonly
+                                                   onclick="laydate({istime: false, format: 'YYYY/MM/DD'})">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-sm-4">
+                                        <div class="input-group">
+                                            <input type="text" name="likeName" id="likeName" value="{{params.likeName}}"
+                                                   placeholder="请输入用户名" class="input-sm form-control"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-sm-4">
+                                        <div class="input-group">
+                                            <input type="text" name="likeAccount" id="likeAccount"
+                                                   value="{{params.likeAccount}}"
+                                                   placeholder="请输入账户名称" class="input-sm form-control"/>
+                                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-sm btn-info page-reset-btn">重置</button>
+                                <button type="button" class="btn btn-sm btn-info page-search-btn"><i
+                                        class="fa fa-search"></i>搜索</button>
+                                </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="table-responsive">
+                        <form id="table-form">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>用户名</th>
+                                    <th>账户名称</th>
+                                    <th>提现金额</th>
+                                    <th>打款时间</th>
+                                    <th>创建时间</th>
+                                    <th>提现状态</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for item in data.list %}
+                                <tr>
+                                    <td>
+                                        <!--<input type="checkbox" value="{{ item.id }}" class="i-checks" name="check">-->
+                                    </td>
+                                    <td>{{item.name}}</td>
+                                    <td>{{item.account}}</td>
+                                    <td>{{item.amount}}</td>
+                                    <td>{{item.payTime}}</td>
+                                    <td>{{item.createTime}}</td>
+                                    <td>
+                                        {% if item.status == 0 %}
+                                        删除
+                                        {% elif item.status == 1 %}
+                                        正常
+                                        {% elif item.status == 2 %}
+                                        等待
+                                        {% elif item.status == 3 %}
+                                        同意
+                                        {% elif item.status == 4 %}
+                                        提现成功
+                                        {% endif %}
+                                    </td>
+                                    <td data-id="{{ item.id }}">
+                                        {% if item.status == 2 %}
+                                        <a class="operate" data-id="{{item.id}}"
+                                           data-href="/merchant/account/fire">打款</a>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                {% else %}
+                                暂无数据
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="btn-region clearfix">
+                        <div class="pull-left">
+                            <form class="form-horizontal m-t from" id="form" action="/money/exportMoney?params"
+                                  method="post"
+                                  data-href="/money">
+                                <a class="btn btn-info btn-sm"
+                                   href="/money/exportMoney?status={{params.status}}&likeName={{params.likeName}}&likeAccount={{params.likeAccount}}&gtCreateTime={{params.gtCreateTime}}&ltCreateTime={{params.ltCreateTime}}">导出excel</a>
+                            </form>
+                        </div>
+                        <div class="pull-right">
+                            {{ pagination.pagination(data, params, '/money') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+  $(function () {
+    $(".operate").on("click", function () {
+      id = $(this).attr("data-id");
+      let url = $(this).attr("data-href");
+      layer.confirm('你确定执行此操作?', {icon: 3, title: '提示'}, function (index) {
+        $.ajax({
+          url: url,
+          data: {"id": id},
+          dataType: 'json',
+          type: 'post',
+          success(data) {
+            if (data.code == 200) {
+              window.location.reload();
+            } else {
+              layer.msg(data.message);
+            }
+          },
+        });
+        layer.close(index);
+      });
+    });
+  });
+
+</script>
+
+{% endblock %}

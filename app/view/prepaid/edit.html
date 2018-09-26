@@ -1,0 +1,99 @@
+{% extends "_layout.html" %}
+{% import "component/forms.njk" as forms %}
+
+{# 样式代码 #}
+{% block style %}
+<link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>水费订单信息</h5>
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t from" id="form" action="/water/edit" method="post"
+                          data-href="/water">
+                        {{ forms.hidden('id', data.id) }}
+                        {{ forms.readonly('联系电话', 'mobile', data.mobile, '请输入创建时间', 'required') }}
+                        {{ forms.readonly('订单名称', 'orderName', data.orderName, '请输入订单名称', 'required') }}
+                        {{ forms.readonly('订单编号', 'orderNo', data.orderNo, '请输入订单编号', 'required') }}
+                        {{ forms.readonly('订单价格', 'price', data.price, '请输入', 'required') }}
+                        {{ forms.readonly('实际充值金额', 'amount', data.amount, '请输入', 'required') }}
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">订单状态：</label>
+                            <div class="col-sm-8">
+                                <select class="form-control m-b" name="status" disabled>
+                                    <option value="1" {{
+                                    'selected' if data.status == 1 }}>待支付</option>
+                                    <option value="2" {{
+                                    'selected' if data.status == 2 }}>接单</option>
+                                    <option value="3" {{
+                                    'selected' if data.status == 9 }}>完成</option>
+                                    <option value="4" {{
+                                    'selected' if data.status == 0 }}>用户取消</option>
+                                    <option value="4" {{
+                                    'selected' if data.status == -1 }}>支付超时</option>
+                                </select>
+                            </div>
+                        </div>
+                        {{ forms.readonly('创建时间', 'createTime', data.createTime, '请输入创建时间', 'required') }}
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-10">
+                                <a href="/prepaid" style="margin-right: 20px;" class="btn btn-info" type="button">返回</a>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+    {#js代码#}
+    {% block js %}
+    <script>
+        $(function () {
+            var e = "";
+            $("#form").validate({
+                rules: {
+                    linkName: "required",
+                    username: {
+                        required: true
+                    },
+                    mobile: {
+                        required: true
+                    },
+                    userType: "required",
+                    sex: "required",
+                },
+                messages: {
+                    linkName: {
+                        required: e + "请输入姓名"
+                    },
+                    username: {
+                        required: e + "请输入用户名",
+                        remote: '用户已经存在'
+                    },
+                    mobile: {
+                        required: e + "请输入手机号"
+                    },
+                    userType: {
+                        required: e + "请输入类型 1.管理员 2.员工 "
+                    },
+                    sex: {
+                        required: e + "请输入性别"
+                    },
+                },
+                submitHandler: function () {
+                    asyncSubmitForm($("#form"));
+                }
+            });
+
+        });
+    </script>
+    {% endblock %}

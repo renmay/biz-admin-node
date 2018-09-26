@@ -1,0 +1,102 @@
+{% extends "_layout.html" %}
+{% import "component/forms.njk" as forms %}
+
+{# 样式代码 #}
+{% block style %}
+<link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>添加用户</h5>
+
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t from" id="form" action="/user/edit" method="post" data-href="/user">
+                        {{ forms.hidden('id', params.id) }}
+
+                        {{ forms.time('时间', 'firstname', '12:23') }}
+                        {{ forms.time_range('时间范围', 'startTime', 'endTime', '13:12', '13:12') }}
+
+                        {{ forms.select_with_search('下拉选择', 'select', [{name: '1111', id: '1111'}, {name: '22222', id: '22222222'}], '22222222') }}
+
+
+                        {{ forms.editer('编辑器', 'editer', "这里写点提示的内容") }}
+
+                        {{ forms.upload('上传图片', 'image') }}
+
+                        {{ forms.date('时间', 'firstname', '2017-03-13', 'YYYY/MM/DD', false, 'required') }}
+                        {{ forms.date_range('时间范围', 'startTime', 'endTime', '2017-03-13 13:12:32', '2017-03-13 13:12:32') }}
+                        {{ forms.text('姓氏', 'firstname', data.firstname, '这里写点提示的内容', 'required') }}
+                        {{ forms.text('名字', 'lastname', data.name, '这里写点提示的内容', 'required') }}
+                        {{ forms.text('用户名', 'username', data.username, '这里写点提示的内容', 'required') }}
+                        {{ forms.password('密码', 'password', data.password, '这里写点提示的内容', 'required', 'password') }}
+                        {{ forms.password('确认密码', 'confirm_password', data.confirm_password, '这里写点提示的内容', 'required', 'confirm_password') }}
+                        {{ forms.text('E-mail', 'mail', data.mail, '这里写点提示的内容', 'required') }}
+                        {{ forms.checkbox('我已经认真阅读并同意《使用协议》', 'agree', true) }}
+
+                        {{ forms.radios('单选框', 'radio', [{text: '1111', value: '1111'}, {text: '22222', value: '22222222'}], '22222222') }}
+
+                        {{ forms.checkboxes('复选框', 'checkbox', [{text: '1111', value: '1111'}, {text: '22222', value: '22222222'}], '22222222') }}
+
+                        {{ forms.select('下拉选择', 'select', [{text: '1111', value: '1111'}, {text: '22222', value: '22222222'}], '22222222') }}
+
+                        {{ forms.submit() }}
+
+                        {{ forms.btns([
+                            {label: 'btn1', type: 'button'},{label: 'btn2', type: 'submit'}
+                        ]) }}
+
+                        {{ forms.a_group([
+                            {label: 'a1', href: '/user'},{label: 'a2', href: '/user'}
+                        ]) }}
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+
+<script>
+    $(function () {
+
+        $(".chosen-select").chosen();
+
+        var e = "";
+        $("#form").validate({
+            rules: {
+                username: "required",
+                password: {
+                    required: !0,
+                    minlength: 5
+                },
+            },
+            messages: {
+                username: {
+                    required: e + "请输入您的用户名",
+                    minlength: e + "用户名必须两个字符以上"
+                },
+                password: {
+                    required: e + "请输入您的密码",
+                    minlength: e + "密码必须5个字符以上"
+                }
+            },
+            submitHandler: function() {
+              asyncSubmitForm($("#form"));
+            }
+        });
+
+    });
+</script>
+
+{% endblock %}

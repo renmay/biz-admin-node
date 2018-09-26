@@ -1,0 +1,97 @@
+{% extends "_layout.html" %}
+{% import "component/pagination.njk" as pagination %}
+{% import "component/table.njk" as table %}
+{% import "component/search.njk" as search %}
+
+{# 样式代码 #}
+{% block style %}
+
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+<div class="row">
+    <div class="col-sm-12">
+        <div class="ibox float-e-margins">
+
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <form class="page-search-form">
+                        </form>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="ibox-tools">
+                            <a href="/privilege/edit" class="btn btn-primary btn-xm">添加优惠卷</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="table-responsive">
+                   <form id="table-form">
+                   		<table class="table table-striped">
+                           <thead>
+                           <tr>
+                               	<th></th>
+                                <th>优惠类型</th>
+								<th>优惠名称</th>
+								<th>优惠金额</th>
+								<th>优惠条件</th>
+								<th>排序</th>
+								<th>过期时间</th>
+                                <th>添加时间</th>
+                               <th>操作</th>
+                           </tr>
+                           </thead>
+                           <tbody>
+                           {% for item in data.list %}
+                               <tr>
+                                   <td>
+                                       <input type="checkbox" value="{{ item.id }}" class="i-checks" name="check">
+                                   </td>
+                                    <td>满减优惠</td>
+   									<td>{{item.name}}</td>
+   									<td>{{item.value}}</td>
+   									<td>{{item.condition}}</td>
+   									<td>{{item.sort}}</td>
+   									<td>{{item.expiresTime if item.expiresTime else '不过期'}}</td>
+                                   <td>{{item.createTime}}</td>
+                                   <td data-id="{{ item.id }}">
+                                       <a href="/privilege/send?id={{item.id}}">发放优惠卷</a>
+                                       <a href="/privilege/edit?id={{item.id}}">编辑</a>
+                                       <a class="del" data-id="{{ item.id }}" data-href="/privilege/delete">删除</a>
+                                   </td>
+                               </tr>
+                           {% else %}
+                               	暂无数据
+                           {% endfor %}
+                           </tbody>
+                       </table>
+                   </form>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="btn-region clearfix">
+                    <div class="pull-left">
+                        <button href="" id="batch-del-btn" class="btn btn-danger btn-sm js-batch" data-url="/privilege/delete" data-confirm="确定删除选中的优惠卷吗?" data-original-title="" title="">批量删除</button>
+                    </div>
+                    <div class="pull-right">
+                        {{ pagination.pagination(data, params, '/privilege') }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+
+
+</script>
+
+{% endblock %}

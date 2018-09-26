@@ -1,0 +1,57 @@
+{% extends "_layout.html" %}
+{% import "component/statistics.njk" as statistics %}
+
+{# 样式代码 #}
+{% block style %}
+<link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+
+<link href="css/animate.css" rel="stylesheet">
+<link href="css/style.css?v=4.1.0" rel="stylesheet">
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+
+<div class="wrapper wrapper-content">
+    <div class="ibox ">
+        <div class="ibox-title">
+            <h5>快捷操作</h5>
+        </div>
+        <div class="ibox-content">
+            <p>
+               点击下面快捷操作按钮进去具体功能操作
+            </p>
+            <div class="text-left">
+                <a class="btn btn-info" href="/goods">商品列表</a>
+                <a class="btn btn-info" href="/goods/combo">商品套餐列表</a>
+                <a class="btn btn-info" href="/order/deliver">待配送订单列表</a>
+                <a class="btn btn-info" href="/order/refund">待退款订单列表</a>
+            </div>
+            <div class="modal inmodal" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content animated fadeIn">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+
+<!--flotdemo-->
+<script type="text/javascript">
+    $(function() {
+        $(".btn-loading").click(function() {
+            var index = layer.load(2, {shade: [0.5]}); //0代表加载的风格，支持0-2
+
+        });
+    });
+</script>
+{% endblock %}

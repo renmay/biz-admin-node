@@ -1,0 +1,342 @@
+2018-08-29 16:12:04,811 INFO 39973 [egg-logrotator] app logger reload: got log-reload message
+2018-08-29 18:18:45,775 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 18:28:42,292 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 18:38:38,883 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 18:38:38,883 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 18:48:36,476 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 18:48:36,476 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 18:58:33,479 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 18:58:33,479 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 19:08:31,476 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 19:08:31,476 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 19:18:28,476 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 19:18:28,476 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 19:28:26,477 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 19:28:26,477 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 19:38:23,478 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 19:38:23,478 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 19:48:21,476 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 19:48:21,476 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 19:58:18,477 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 19:58:18,477 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 20:08:16,477 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 20:08:16,477 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 20:18:13,480 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 20:18:13,480 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 20:28:11,478 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 20:28:11,478 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 20:38:08,479 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 20:38:08,479 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 20:38:41,559 INFO 39973 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-08-29 20:48:06,479 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 20:48:06,479 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 20:58:03,480 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 20:58:03,480 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 21:08:00,480 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 21:08:00,480 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 21:17:58,480 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 21:17:58,480 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 21:27:55,481 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 21:27:55,481 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 21:37:52,482 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 21:37:52,482 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 21:47:50,481 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 21:47:50,481 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 21:57:47,482 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 21:57:47,482 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 22:07:45,482 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 22:07:45,482 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 22:17:42,483 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 22:17:42,483 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 22:27:39,483 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 22:27:39,483 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 22:37:37,488 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 22:37:37,488 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 22:47:34,483 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 22:47:34,483 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 22:57:31,485 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 22:57:31,485 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 23:07:29,482 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 23:07:29,482 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 23:17:26,483 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 23:27:24,482 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 23:27:24,483 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 23:27:29,246 INFO 39973 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-08-29 23:37:21,488 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 23:37:21,488 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 23:47:19,484 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 23:47:19,484 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-29 23:57:16,486 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-29 23:57:16,486 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 00:07:13,496 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 00:07:13,499 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 00:17:11,485 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 00:17:11,485 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 00:27:08,484 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 00:27:08,484 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 00:37:05,486 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 00:37:05,486 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 00:47:03,485 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 00:47:03,485 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 00:57:00,493 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 00:57:00,493 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 01:06:58,486 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 01:06:58,486 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 01:16:55,487 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 01:26:52,486 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 01:26:52,486 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 01:36:50,488 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 01:36:50,488 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 01:46:47,487 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 01:46:47,487 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 01:56:45,493 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 01:56:45,494 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 02:06:42,488 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 02:06:42,488 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 02:06:59,610 INFO 39973 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-08-30 02:16:40,489 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 02:16:40,489 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 02:26:37,488 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 02:36:34,488 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 02:46:32,489 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 02:46:32,489 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 02:56:29,489 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 02:56:29,489 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 03:06:27,490 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 03:06:27,490 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 03:16:24,490 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 03:16:24,490 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 03:26:21,490 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 03:26:21,490 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 03:36:19,490 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 03:36:19,490 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 03:46:16,492 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 03:46:16,492 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 03:56:14,491 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 03:56:14,492 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 04:06:11,491 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 04:06:11,491 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 04:16:08,491 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 04:16:08,492 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 04:26:06,492 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 04:26:06,492 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 04:36:03,493 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 04:36:03,494 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 04:46:01,492 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 04:46:01,492 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 04:46:30,851 INFO 39973 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-08-30 04:55:58,493 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 04:55:58,493 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 05:05:56,493 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 05:05:56,493 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 05:15:53,495 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 05:15:53,495 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 05:25:51,493 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 05:25:51,493 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 05:35:48,494 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 05:35:48,494 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 05:45:45,497 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 05:45:45,497 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 05:55:43,494 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 05:55:43,494 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 06:05:40,496 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 06:05:40,496 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 06:10:20,495 WARN 39973 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 06:10:20,496 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 10:06:23,111 WARN 39973 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 10:11:13,226 INFO 39973 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-08-30 10:32:24,062 INFO 39973 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-08-30 14:27:06,512 INFO 39973 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-08-30 14:52:01,757 INFO 53166 [egg:logger] init all loggers with options: {"dir":"/Users/renmay/biz-node/biz-admin/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"biz-admin-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-08-30 14:52:01,789 INFO 53166 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-08-30 14:52:01,789 INFO 53166 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-08-30 14:52:01,858 INFO 53166 [egg-redis] connecting redis://:Wd123456@120.79.0.38:6379/5
+2018-08-30 14:52:02,005 INFO 53166 [egg-static] starting static serve  -> /Users/renmay/biz-node/biz-admin/app/public
+2018-08-30 14:52:02,008 INFO 53166 [egg-security] use methodnoallow middleware
+2018-08-30 14:52:02,009 INFO 53166 [egg-security] use noopen middleware
+2018-08-30 14:52:02,010 INFO 53166 [egg-security] use nosniff middleware
+2018-08-30 14:52:02,011 INFO 53166 [egg-security] use xssProtection middleware
+2018-08-30 14:52:02,012 INFO 53166 [egg-security] use xframe middleware
+2018-08-30 14:52:02,013 INFO 53166 [egg-security] use dta middleware
+2018-08-30 14:52:02,013 INFO 53166 [egg-security] compose 6 middlewares into one security middleware
+2018-08-30 14:52:02,074 INFO 53166 [egg:core] dump config after load, 6ms
+2018-08-30 14:52:02,085 INFO 53166 [egg:core] dump config after ready, 6ms
+2018-08-30 14:52:02,111 INFO 53166 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-08-30 14:52:02,117 INFO 53166 [egg-watcher:app] watcher start success
+2018-08-30 14:52:02,238 INFO 53166 [egg-redis] instance[0] status OK, redis currentTime: #
+2018-08-30 15:14:27,550 INFO 53407 [egg:logger] init all loggers with options: {"dir":"/Users/renmay/biz-node/biz-admin/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"biz-admin-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-08-30 15:14:27,592 INFO 53407 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-08-30 15:14:27,592 INFO 53407 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-08-30 15:14:27,689 INFO 53407 [egg-redis] connecting redis://:Wd123456@120.79.0.38:6379/5
+2018-08-30 15:14:27,807 INFO 53407 [egg-static] starting static serve  -> /Users/renmay/biz-node/biz-admin/app/public
+2018-08-30 15:14:27,810 INFO 53407 [egg-security] use methodnoallow middleware
+2018-08-30 15:14:27,811 INFO 53407 [egg-security] use noopen middleware
+2018-08-30 15:14:27,811 INFO 53407 [egg-security] use nosniff middleware
+2018-08-30 15:14:27,812 INFO 53407 [egg-security] use xssProtection middleware
+2018-08-30 15:14:27,813 INFO 53407 [egg-security] use xframe middleware
+2018-08-30 15:14:27,814 INFO 53407 [egg-security] use dta middleware
+2018-08-30 15:14:27,814 INFO 53407 [egg-security] compose 6 middlewares into one security middleware
+2018-08-30 15:14:27,877 INFO 53407 [egg:core] dump config after load, 7ms
+2018-08-30 15:14:27,890 INFO 53407 [egg:core] dump config after ready, 7ms
+2018-08-30 15:14:27,916 INFO 53407 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-08-30 15:14:27,923 INFO 53407 [egg-watcher:app] watcher start success
+2018-08-30 15:14:28,042 INFO 53407 [egg-redis] instance[0] status OK, redis currentTime: #
+2018-08-30 18:34:22,630 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 18:44:40,138 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 18:54:56,724 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 18:54:56,729 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 19:05:13,174 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 19:15:10,880 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 19:15:10,881 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 19:25:27,244 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 19:35:44,758 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 19:46:02,752 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 19:46:02,753 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 19:56:00,739 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 19:56:00,740 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 20:06:17,255 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 20:16:25,372 INFO 53407 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-08-30 20:26:53,633 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 20:26:53,634 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 20:36:50,124 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 20:47:06,619 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 20:47:06,619 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 20:55:54,130 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 20:55:54,130 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 21:06:11,761 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 21:16:09,745 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 21:16:09,745 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 21:26:26,252 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 21:26:26,252 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 21:36:42,728 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 21:36:42,728 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 21:47:01,753 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 21:56:58,743 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 21:56:58,743 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 22:07:16,259 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 22:08:03,798 INFO 53407 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-08-30 22:17:32,739 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 22:27:51,772 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 22:37:48,749 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 22:37:48,749 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 22:48:05,258 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 22:58:22,772 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 22:58:22,772 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 23:08:40,766 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 23:08:40,767 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 23:18:37,754 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 23:18:37,754 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 23:28:55,276 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 23:39:11,785 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 23:49:29,769 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 23:49:29,770 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-30 23:59:27,755 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-30 23:59:27,755 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 00:09:44,280 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 00:10:27,929 INFO 53407 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-08-31 00:24:49,774 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-31 00:24:49,774 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 00:39:26,766 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 00:44:53,754 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-31 00:44:53,755 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 00:52:41,254 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 01:02:57,774 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-31 01:02:57,774 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 01:13:17,044 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 01:23:14,528 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 01:33:31,012 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-31 01:33:31,012 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 01:43:47,517 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 01:54:04,775 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-31 01:54:04,777 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 02:04:02,760 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-31 02:04:02,760 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 02:14:19,328 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-31 02:14:19,328 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 02:14:58,721 INFO 53407 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-08-31 02:34:53,347 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 02:45:09,839 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 02:55:07,344 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 03:05:23,841 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-31 03:05:23,841 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 03:15:41,475 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 03:25:58,159 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 03:35:54,662 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-31 03:35:54,662 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 03:46:11,176 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-31 03:46:11,176 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 03:56:28,708 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 04:06:45,781 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-31 04:06:45,784 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 04:16:43,769 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-31 04:16:43,769 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 04:17:23,488 INFO 53407 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-08-31 04:27:00,251 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 04:37:17,756 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-31 04:37:17,756 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 04:47:35,784 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 04:57:32,770 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-31 04:57:32,770 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 05:07:50,272 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 05:18:06,770 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-31 05:18:06,770 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 05:28:24,785 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-31 05:28:24,786 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 05:38:22,771 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-31 05:38:22,771 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 05:48:39,303 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 05:58:55,809 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 06:09:14,786 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 06:19:11,769 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-31 06:19:11,769 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 06:19:47,415 INFO 53407 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-08-31 06:29:29,275 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 06:39:45,768 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-31 06:39:45,769 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 06:50:03,808 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 07:00:01,775 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-31 07:00:01,775 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 07:10:18,322 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 07:20:35,852 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 07:30:53,791 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-31 07:30:53,792 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 07:40:50,779 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-31 07:40:50,779 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 07:51:07,280 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-31 07:51:07,280 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 08:01:24,783 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-31 08:01:24,783 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 08:11:42,806 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-31 08:11:42,806 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 08:21:39,782 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-31 08:21:39,782 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 08:22:11,463 INFO 53407 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-08-31 08:31:57,275 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 08:42:13,774 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-31 08:42:13,774 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 08:52:31,813 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-31 08:52:31,814 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 08:59:29,779 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 09:09:46,288 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 09:20:03,624 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-31 09:20:03,624 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 09:30:21,800 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 09:40:18,785 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 09:54:54,286 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 10:02:14,817 WARN 53407 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-08-31 10:02:14,818 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 10:04:26,385 INFO 53407 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-08-31 12:18:12,822 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 12:28:30,359 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 12:38:46,895 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 12:53:22,393 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 13:03:18,873 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 13:22:12,397 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 13:32:28,902 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 13:45:02,168 WARN 53407 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-08-31 13:48:43,250 INFO 53407 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-08-31 15:51:35,035 INFO 53407 [egg-logrotator] clean all log before 31 days
+2018-08-31 15:51:35,039 INFO 53407 [-/127.0.0.1/-/74ms SCHEDULE /__schedule?path=/Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js&type=worker&cron=0%200%20*%20*%20*] [egg-schedule] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js execute succeed, used 72ms
+2018-08-31 15:51:35,678 INFO 53407 [egg-logrotator] broadcast log-reload
+2018-08-31 15:51:35,680 INFO 53407 [egg-logrotator] rotate files success by DayRotator, files ["/Users/renmay/biz-node/biz-admin/logs/common-error.log -> /Users/renmay/biz-node/biz-admin/logs/common-error.log.2018-08-30","/Users/renmay/biz-node/biz-admin/logs/biz-admin-web.log -> /Users/renmay/biz-node/biz-admin/logs/biz-admin-web.log.2018-08-30","/Users/renmay/biz-node/biz-admin/logs/egg-web.log -> /Users/renmay/biz-node/biz-admin/logs/egg-web.log.2018-08-30","/Users/renmay/biz-node/biz-admin/logs/biz-admin/egg-schedule.log -> /Users/renmay/biz-node/biz-admin/logs/biz-admin/egg-schedule.log.2018-08-30","/Users/renmay/biz-node/biz-admin/logs/egg-agent.log -> /Users/renmay/biz-node/biz-admin/logs/egg-agent.log.2018-08-30"]
+2018-08-31 15:51:35,681 INFO 53407 [-/127.0.0.1/-/10ms SCHEDULE /__schedule?path=/Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js&type=worker&cron=1%200%200%20*%20*%20*] [egg-schedule] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js execute succeed, used 10ms

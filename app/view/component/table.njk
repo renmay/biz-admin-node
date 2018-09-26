@@ -1,0 +1,59 @@
+{# table 对于操作列 约定了delete edit 代表删除和编辑 url也做了约定 #}
+{% macro base(dataSource, columns) %}
+    {% if dataSource.length > 0 %}
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th></th>
+            {% for item in columns %}
+            <th>{{ item.title }}</th>
+            {% endfor %}
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in dataSource %}
+            <tr>
+                <td>
+                    <input type="checkbox" value="{{ item.id }}" class="i-checks" name="check">
+                </td>
+                {% for col in columns %}
+                    {% if col.type == 'image' %}
+                        <td class="image">
+                            <a href="{{ item[col.key] }}" target="_blank"><img alt="image" class="image" src="{{ item[col.key] }}"></a>
+                        </td>
+                    {% elif col.type == 'operate' %}
+                        <td data-id="{{ item.id }}">
+                            {% if 'edit' in col.btns %}
+                            <a href="{{ col.url }}/edit?id={{item.id}}">编辑</a>
+                            {% endif %}
+                            {% if 'delete' in col.btns %}
+                                <a class="del" data-id="{{ item.id }}" data-href="{{ col.url }}/delete">删除</a>
+                            {% endif %}
+                            {{ col.data | safe }}
+                        </td>
+                    {% else %}
+                        {% if col.filters %}
+                            {{ filters(col.filters, item[col.key]) }}
+                        {% else %}
+                            <td>{{ item[col.key] }}</td>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </tr>
+        {% else %}
+
+        {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+
+    {% endif %}
+{% endmacro %}
+
+{% macro filters(filter, value) %}
+    {% for item in filter %}
+        {% if item.value == value %}
+            <td>{{ item.text }}</td>
+        {% endif %}
+    {% endfor %}
+{% endmacro %}

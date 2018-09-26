@@ -1,0 +1,45 @@
+2018-09-17 11:30:49,328 ERROR 3607 nodejs.ETIMEDOUTError: read ETIMEDOUT
+    at TCP.onread (net.js:602:25)
+errno: "ETIMEDOUT"
+code: "ETIMEDOUT"
+syscall: "read"
+name: "ETIMEDOUTError"
+pid: 3607
+hostname: renmaydeMacBook-Pro.local
+
+2018-09-17 12:16:33,802 ERROR 3606 nodejs.ClusterClientNoResponseError: client no response in 574426ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/renmay/biz-node/biz-admin/node_modules/_cluster-client@2.1.1@cluster-client/lib/leader.js:74:23)
+    at ontimeout (timers.js:466:11)
+    at tryOnTimeout (timers.js:304:5)
+    at Timer.listOnTimeout (timers.js:267:5)
+name: "ClusterClientNoResponseError"
+pid: 3606
+hostname: renmaydeMacBook-Pro.local
+
+2018-09-17 12:23:50,404 ERROR 3606 nodejs.ClusterClientNoResponseError: client no response in 396571ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/renmay/biz-node/biz-admin/node_modules/_cluster-client@2.1.1@cluster-client/lib/leader.js:74:23)
+    at ontimeout (timers.js:466:11)
+    at tryOnTimeout (timers.js:304:5)
+    at Timer.listOnTimeout (timers.js:267:5)
+name: "ClusterClientNoResponseError"
+pid: 3606
+hostname: renmaydeMacBook-Pro.local
+
+2018-09-17 12:35:17,060 ERROR 3606 nodejs.ClusterClientNoResponseError: client no response in 646631ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/renmay/biz-node/biz-admin/node_modules/_cluster-client@2.1.1@cluster-client/lib/leader.js:74:23)
+    at ontimeout (timers.js:466:11)
+    at tryOnTimeout (timers.js:304:5)
+    at Timer.listOnTimeout (timers.js:267:5)
+name: "ClusterClientNoResponseError"
+pid: 3606
+hostname: renmaydeMacBook-Pro.local
+
+2018-09-17 12:43:15,340 ERROR 3607 nodejs.ETIMEDOUTError: read ETIMEDOUT
+    at TCP.onread (net.js:602:25)
+errno: "ETIMEDOUT"
+code: "ETIMEDOUT"
+syscall: "read"
+name: "ETIMEDOUTError"
+pid: 3607
+hostname: renmaydeMacBook-Pro.local
+

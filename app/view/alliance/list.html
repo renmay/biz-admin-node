@@ -1,0 +1,161 @@
+{% extends "_layout.html" %}
+{% import "component/pagination.njk" as pagination %}
+{% import "component/table.njk" as table %}
+{% import "component/search.njk" as search %}
+{% import "component/constant.njk" as constant %}
+
+{# 样式代码 #}
+{% block style %}
+
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <form class="page-search-form">
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">行业</span>
+                                        <select class="form-control m-b" name="type">
+                                            <option value="">全部</option>
+                                            <option value="1">酒店</option>
+                                            <option value="2">餐饮</option>
+                                            <option value="3">娱乐</option>
+                                            <option value="4">景区</option>
+                                            <option value="5">特产</option>
+                                            <option value="6">旅行社</option>
+                                        </select>
+                                        <span class="input-group-btn">
+
+                                    </span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">状态</span>
+                                        <select class="form-control m-b" name="status">
+                                            <option value="">全部</option>
+                                            <option value="1">发布邀请中</option>
+                                            <option value="2">联盟</option>
+                                            <option value="3">联盟（人数已满）</option>
+                                            <!--<option value="4">联盟已取消</option>-->
+                                            <option value="5">联盟已解散</option>
+                                        </select>
+                                        <span class="input-group-btn">
+
+                                    </span>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input type="text" name="unionName" id="unionName" value="{{data.unionName}}"
+                                               placeholder="请输入联盟名称" class="input-sm form-control"/>
+
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="table-responsive">
+                        <form id="table-form">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>头像</th>
+                                    <th>联盟名称</th>
+                                    <th>联盟发起人编号</th>
+                                    <th>月销量</th>
+                                    <th>行业类型</th>
+                                    <th>返点比例</th>
+                                    <th>创建日期</th>
+                                    <th>当前成员数</th>
+                                    <th>联盟成员数</th>
+                                    <th>当前申请数</th>
+                                    <th>状态</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for item in data.list %}
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" value="{{ item.id }}" class="i-checks" name="check">
+                                    </td>
+                                    <td class="image" style="padding-right: 30px;">
+                                        <a href="javascript:void(0);"><img alt="image" class="image"
+                                                                           src="{{ ctx.helper.showImage(item.avatar, 50, 50, 'fixed') }}"></a>
+                                    </td>
+                                    <td>{{item.unionName}}</td>
+                                    <td>{{item.id}}</td>
+                                    <td>
+                                        {% if item.type == 1 %}
+                                        酒店
+                                        {% elif item.type == 2 %}
+                                        餐饮
+                                        {% elif item.type == 3 %}
+                                        娱乐
+                                        {% elif item.type == 4 %}
+                                        景区
+                                        {% elif item.type == 5 %}
+                                        特产
+                                        {% elif item.type == 6 %}
+                                        旅行社
+                                        {% endif %}
+                                    </td>
+                                    <td>{{item.salesByMonth}}</td>
+                                    <td>{{item.rebate}}</td>
+                                    <!--<td>{{ctx.helper.date(item.issueDate, 'MM月DD')}}</td>-->
+                                    <td>{{item.issueDate}}</td>
+                                    <td>{{item.unionMemberCurrent}}</td>
+                                    <td>{{item.unionMemberNumber}}</td>
+                                    <td>{{item.unionApplyCurrent}}</td>
+                                    <td>
+                                        {% if item.status == 1 %}
+                                        发布邀请中
+                                        {% elif item.status == 2 %}
+                                        联盟
+                                        {% elif item.status == 3 %}
+                                        联盟（人数已满）
+                                        {% elif item.status == 5 %}
+                                        联盟已解散
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                {% else %}
+                                暂无数据
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="btn-region clearfix">
+                        <div class="pull-right">
+                            {{ pagination.pagination(data, params, '/alliance') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+
+
+</script>
+
+{% endblock %}

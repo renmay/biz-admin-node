@@ -1,0 +1,25 @@
+{# 分页组件 #}
+{% macro pagination(pagination, params, url) %}
+    {% if pagination.totalPage > 1 %}
+        <div class="btn-group">
+            {% set searchParam = '' %}
+            {% for key, value in params %}
+                {% if key  != 'pageNo' %}
+                    {% set searchParam = searchParam + key + '=' + value + '&'%}
+                {% endif %}
+            {% endfor %}
+            <p>第{{pagination.pageNo}}页,共{{pagination.totalPage}}页
+                {% if pagination.firstPage %}
+                    <a href="javascript:void(0);" class="btn btn-white disable" type="button"><i class="fa fa-chevron-left"></i></a>
+                {% else %}
+                    <a href="{{ url }}?{{ searchParam }}pageNo={{pagination.pretPage}}" class="btn btn-white" type="button"><i class="fa fa-chevron-left"></i></a>
+                {% endif %}
+                {% if pagination.lastPage %}
+                    <a href="javascript:void(0);" class="btn btn-white" type="button"><i class="fa fa-chevron-right"></i></a>
+                {% else %}
+                    <a href="{{ url }}?{{ searchParam }}pageNo={{pagination.nextPage}}" class="btn btn-white" type="button"><i class="fa fa-chevron-right"></i></a>
+                {% endif %}
+            </p>
+        </div>
+    {% endif %}
+{% endmacro %}

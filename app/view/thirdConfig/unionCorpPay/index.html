@@ -1,0 +1,58 @@
+{% extends "_layout.html" %}
+{% import "component/pagination.njk" as pagination %}
+{% import "component/table.njk" as table %}
+{% import "component/search.njk" as search %}
+{% import "component/forms.njk" as forms %}
+
+{# 样式代码 #}
+{% block style %}
+
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+
+                <div class="ibox-content" style="position: relative;">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <form class="page-search-form">
+                            </form>
+                            <h3 style="font-weight: 400;">银联打款配置：</h3>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="ibox-tools">
+                                <a href="/thirdConfig/union/corp/pay/edit" class="btn btn-info">编辑</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <form class="form-horizontal m-t from" id="form" action="/thirdConfig/union/corp/pay/edit" method="post"
+                              data-href="/thirdConfig/union/corp/pay">
+                            {{ forms.readonly('系统请求url', 'url', data.url, '系统请求url','required') }}
+                            {{ forms.readonly('版本号', 'verNo', data.verNo, '版本号','required') }}
+                            <!--{{ forms.readonly('识别入口', 'channelId;', data.channelId;, '商户资金自主管理系统唯一识别入口，固定 为 043;','') }}-->
+                            {{ forms.readonly('集团号', 'groupId', data.groupId, '集团接入商户资金自主管理系统的集团号， 接入时我司会为商户分配集团号，每个合作 商户单独生成一个六位的集团号','required') }}
+                            {{ forms.readonly('系统自己的私钥', 'privateKey', data.privateKey, '系统自己的私钥','required') }}
+                            {{ forms.readonly('银联的私钥', 'unionPrivateKey', data.unionPrivateKey, '银联的私钥','required') }}
+                            {{ forms.readonly('银联的公钥', 'unionPublicKey', data.unionPublicKey, '银联的公钥','required') }}
+                            <div style="position: relative;">
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+  $(".btn-group").hide(10);
+</script>
+
+{% endblock %}

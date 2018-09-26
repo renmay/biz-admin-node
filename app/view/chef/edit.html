@@ -1,0 +1,89 @@
+{% extends "_layout.html" %}
+{% import "component/forms.njk" as forms %}
+
+{# 样式代码 #}
+{% block style %}
+<link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>添加厨师</h5>
+
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t from" id="form" action="/chef/edit" method="post" data-href="/chef">
+                    	{{ forms.hidden('id', data.id) }}
+						{{ forms.text('姓名', 'name', data.name, '请输入姓名', 'required') }}
+						{{ forms.text('英文名', 'englishName', data.englishName, '请输入英文名', 'required') }}
+						{{ forms.textarea('介绍', 'detail', data.detail, '请输入详细') }}
+
+						{{ forms.images(
+						    label = '介绍图片',
+						    fileList = [{
+						            name: 'image',
+						            value: data.notice,
+						            url: ctx.helper.showImage(data.image, 160, 160, 'fixed'),
+                                    text: 'pc中文'
+						        },
+						        {
+						            name: 'imageMobile',
+						            value: data.imageMobile,
+						            url: ctx.helper.showImage(data.imageMobile, 160, 160, 'fixed'),
+                                    text: 'H5 中文'
+						        },
+						        {
+						            name: 'imageEn',
+						            value: data.imageEn,
+						            url: ctx.helper.showImage(data.imageEn, 160, 160, 'fixed'),
+                                    text: 'pc 英文'
+						        },
+						        {
+						            name: 'imageMobileEn',
+						            value: data.imageMobileEn,
+						            url: ctx.helper.showImage(data.imageMobileEn, 160, 160, 'fixed'),
+                                    text: 'H5 英文'
+						        }]
+						)}}
+                        {{ forms.submit() }}
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+    $(function () {
+        var e = "";
+        $("#form").validate({
+            rules: {
+                name: "required",
+                englishName: "required"
+            },
+            messages: {
+                name: {
+                    required: e + "请输入姓名"
+                },
+                englishName: {
+                    required: e + "请输入英文名"
+                }
+            },
+            submitHandler: function() {
+              asyncSubmitForm($("#form"));
+            }
+        });
+
+    });
+</script>
+
+{% endblock %}

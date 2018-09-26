@@ -1,0 +1,6 @@
+2018-09-17 00:00:01,610 INFO 3607 [egg-logrotator] app logger reload: got log-reload message
+2018-09-17 11:30:49,414 INFO 3607 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-09-17 12:16:33,801 WARN 3607 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-17 12:23:50,405 WARN 3607 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-17 12:35:17,060 WARN 3607 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-17 12:43:15,398 INFO 3607 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5

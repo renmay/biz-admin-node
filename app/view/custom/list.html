@@ -1,0 +1,132 @@
+{% extends "_layout.html" %}
+{% import "component/pagination.njk" as pagination %}
+{% import "component/table.njk" as table %}
+{% import "component/search.njk" as search %}
+
+{# 样式代码 #}
+{% block style %}
+
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <form class="page-search-form">
+                                <div class="col-sm-3">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">是否处理</span>
+                                        <select class="form-control m-b" name="status">
+                                            <option value="">全部</option>
+                                            <option value="1" {{ 'selected' if 1 == params.status else '' }}>否</option>
+                                            <option value="2" {{ 'selected' if 2 == params.status else '' }}>是</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-sm btn-info page-reset-btn">重置</button>
+                                    <button type="button" class="btn btn-sm btn-info page-search-btn"><i class="fa fa-search"></i>搜索</button>
+                                </span>
+                            </form>
+                        </div>
+                        <div class="col-sm-2">
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="table-responsive">
+                        <form id="table-form">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>订购类型</th>
+                                    <th>类型</th>
+                                    <th>姓名</th>
+                                    <th>手机号码</th>
+                                    <th>详细地址</th>
+                                    <th>开始时间</th>
+                                    <th>结束时间</th>
+                                    <th>人数</th>
+                                    <th>期望价格</th>
+                                    <th>是否提供场地</th>
+                                    <th>是否上门</th>
+                                    <th>订单创建时间</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for item in data.list %}
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" value="{{ item.id }}" class="i-checks" name="check">
+                                    </td>
+                                    <td>
+                                        {%if item.type == 1%}私人定制
+                                        {%elif item.type == 2%}企业定制
+                                        {%endif%}
+                                    </td>
+                                    <td>{{item.categoryName}}</td>
+                                    <td>{{item.name}}</td>
+                                    <td>{{item.mobile}}</td>
+                                    <td>{{item.areaInfo}} {{item.detail}}</td>
+                                    <td>{{ctx.helper.date(item.startTime, 'YYYY/MM/DD')}}</td>
+                                    <td>{{ctx.helper.date(item.endTime, 'YYYY/MM/DD')}}</td>
+                                    <td>{{item.people}}</td>
+                                    <td>{{item.price}}</td>
+                                    <td>
+                                        {%if item.place%}是
+                                        {%else%}否
+                                        {%endif%}
+                                    </td>
+                                    <td>
+                                        {%if item.home%}是
+                                        {%else%}否
+                                        {%endif%}
+                                    </td>
+                                    <td>{{item.createTime}}</td>
+                                    <td data-id="{{ item.id }}">
+                                        {%if item.status == 1%}
+                                        <a class="ajax" data-id="{{ item.id }}" data-href="/custom/view">处理</a>
+                                        {%endif%}
+                                        <a href="/custom/edit?id={{item.id}}">查看</a>
+                                        <a class="del" data-id="{{ item.id }}" data-href="/custom/delete">删除</a>
+                                    </td>
+                                </tr>
+                                {% else %}
+                                暂无数据
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="btn-region clearfix">
+                        <div class="pull-left">
+                            <button href="" id="batch-del-btn" class="btn btn-danger btn-sm js-batch" data-url="/custom/delete" data-confirm="确定删除选中的订单吗?" data-original-title="" title="">批量删除</button>
+                        </div>
+                        <div class="pull-right">
+                            {{ pagination.pagination(data, params, '/custom') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+
+
+</script>
+
+{% endblock %}

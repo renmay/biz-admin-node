@@ -1,0 +1,114 @@
+{% extends "_layout.html" %}
+{% import "component/pagination.njk" as pagination %}
+{% import "component/table.njk" as table %}
+{% import "component/search.njk" as search %}
+{% import "component/constant.njk" as constant %}
+
+{# 样式代码 #}
+{% block style %}
+
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <form class="page-search-form">
+                                <div class="input-group col-sm-4">
+                                    <input type="text" name="likeTitle" id="likeTitle" value="{{data.likeTitle}}"
+                                           placeholder="请输入标题" class="input-sm form-control"/>
+                                    <span class="input-group-btn">
+                                <button type="button" class="btn btn-sm btn-info page-reset-btn">重置</button>
+                                <button type="button" class="btn btn-sm btn-info page-search-btn"><i
+                                        class="fa fa-search"></i>搜索</button>
+                                </span>
+                                </div>
+
+                            </form>
+
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="ibox-tools">
+                                <a href="/banner/edit" class="btn btn-info btn-xm">添加轮播图</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="table-responsive">
+                        <form id="table-form">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>标题</th>
+                                    <th>图片</th>
+                                    <th>url</th>
+                                    <th>排序字段</th>
+                                    <th>创建时间</th>
+                                    <!--<th>更新时间</th>-->
+                                    <th>操作</th>
+                                </tr>
+
+                                </thead>
+                                <tbody>
+                                {% for item in data.list %}
+                                <tr>
+                                    <td>
+                                        <!--<input type="checkbox" value="{{ item.id }}" class="i-checks" name="check">-->
+                                    </td>
+                                    <td>{{ item.title }}</td>
+                                    <td class="image" style="width: 180px;">
+                                        <a href="/banner/edit?id={{ item.id }}"><img alt="image" class="image"
+                                                                                     src="{{ ctx.helper.showImage(item.image, 50, 50, 'fixed') }}"></a>
+                                    </td>
+                                    <!--<td>-->
+                                    <!--{% if item.type == 1 %}酒店-->
+                                    <!--{% elif item.type == 2 %}餐饮-->
+                                    <!--{% elif item.type == 3 %}娱乐-->
+                                    <!--{% elif item.type == 4 %}景区-->
+                                    <!--{% endif %}-->
+                                    <!--</td>-->
+                                    <td>{{ item.url }}</td>
+                                    <td>{{ item.sort }}</td>
+                                    <td>{{ item.createTime }}</td>
+                                    <!--<td>{{ item.updateTime }}</td>-->
+                                    <td data-id="{{ item.id }}">
+                                        <a href="/banner/edit?id={{item.id}}">编辑</a>
+                                        <a class="del" data-id="{{ item.id }}" data-href="/banner/delete">删除</a>
+                                    </td>
+                                </tr>
+                                {% else %}
+                                暂无数据
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="btn-region clearfix">
+                        <div class="pull-right">
+                            {{ pagination.pagination(data, params, '/banner') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+
+
+</script>
+
+{% endblock %}

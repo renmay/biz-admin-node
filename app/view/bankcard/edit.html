@@ -1,0 +1,171 @@
+{% extends "_layout.html" %}
+{% import "component/forms.njk" as forms %}
+
+{# 样式代码 #}
+{% block style %}
+<link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+<style>
+</style>
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>银行卡管理</h5>
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t from" id="form" action="/bankcard/edit" method="post"
+                          data-href="/bankcard">
+
+                        <!--<th>bin（卡号前六位）</th>-->
+                        {{ forms.hidden('id', data.id) }}
+                        {{ forms.text('银行名称', 'name', data.name, '请输入模块名称', 'required') }}
+                        {{ forms.text('银行简称', 'shortName', data.shortName, '请输入模银行简称', 'required') }}
+
+                        <!--{{ forms.text('bin（卡号前六位）', 'bin', data.bin, '请输入模块定价', 'required') }}-->
+
+                        {{ forms.images(
+                        label = 'logo',
+                        fileList = [{
+                        name: 'icon',
+                        value: data.icon,
+                        url: ctx.helper.showImage(data.icon, 160, 160, 'fixed'),
+                        text: 'icon'
+                        }]
+                        )}}
+
+                        {{ forms.images(
+                        label = '背景图',
+                        fileList = [{
+                        name: 'image',
+                        value: data.image,
+                        url: ctx.helper.showImage(data.image, 160, 160, 'fixed'),
+                        text: '背景图'
+                        }]
+                        )}}
+
+                        <!--{% if 'data.image' == '/img/no-image.png' %}-->
+                        <!--&lt;!&ndash;{{ forms.submit() }}&ndash;&gt;-->
+                        <!--{% else %}-->
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-3">
+                                <button class="btn btn-info" type="button" id="submitBtn" onclick="checkImage()">提交</button>
+                            </div>
+                        </div>
+
+                        <!--{% endif %}-->
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+    {#js代码#}
+    {% block js %}
+    <script>
+        function checkImage() {
+            if ($(":input[name='icon']")[0].value == "" || $(":input[name='image']")[0].value == ""){
+                alert("请输入银行卡logo和银行卡背景图 ");
+            }else{
+                $("#form").submit();
+            }
+        }
+
+        $(function () {
+
+            var e = "";
+            $("#form").validate({
+                rules: {
+                    name: "required",
+                    jingle: "required",
+                    price: "required",
+                    promotionPrice: "required",
+                    marketPrice: "required",
+                    serial: "required",
+                    spec: "required",
+                    storage: "required",
+                    createTime: "required",
+                    specValue: "required",
+                    alarm: "required",
+                    sku: "required",
+                    image: "required",
+                    images: "imgrequired",
+                },
+                messages: {
+                    name: {
+                        // required: e + "请输入商品名称（+规格名称）"
+                    },
+                    jingle: {
+                        required: e + "请输入商品广告词"
+                    },
+                    price: {
+                        required: e + "请输入商品价格"
+                    },
+                    promotionPrice: {
+                        required: e + "请输入商品促销价格"
+                    },
+                    marketPrice: {
+                        required: e + "请输入市场价"
+                    },
+                    serial: {
+                        required: e + "请输入商家编号"
+                    },
+                    spec: {
+                        required: e + "请输入商品规格序列化"
+                    },
+                    storage: {
+                        required: e + "请输入商品库存"
+                    },
+                    createTime: {
+                        required: e + "请输入商品添加时间"
+                    },
+                    specValue: {
+                        required: e + "请输入商品规格序列化"
+                    },
+                    alarm: {
+                        required: e + "请输入预警值"
+                    },
+                    icon: {
+                        required: e + "请输入商品icon"
+                    },
+                    image: {
+                        required: e + "请输入商品首图"
+                    },
+                    images: {
+                        required: e + "请输入商品图片"
+                    },
+                },
+                submitHandler: function () {
+                    asyncSubmitForm($("#form"));
+                }
+            });
+
+        });
+    </script>
+    <script>
+        // // alert($("#uploadbanke").parent().siblings().html());
+        // alert($(".form-img-preview").children("img").attr("src"));
+        // // $(".form-img-preview").children("img").attr("src", "");
+        // if ($(".form-img-preview").children("img").attr("src") == "/img/no-image.png") {
+        //     // alert($("#submitBtn").html());
+        //     $("#submitBtn").attr("disabled");
+        // } else {
+        //     $("#submitBtn").removeAttr("disabled");
+        // }
+        // $(".form-img-preview").click()
+
+        // function checkImage() {
+        //     alert("Hello");
+        //     return
+        // }
+
+    </script>
+
+
+    {% endblock %}

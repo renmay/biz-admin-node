@@ -1,0 +1,182 @@
+{% extends "_layout.html" %}
+{% import "component/forms.njk" as forms %}
+
+{# 样式代码 #}
+{% block style %}
+<link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>添加订单</h5>
+
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t from" id="form" action="/custom/edit" method="post" data-href="/custom">
+                    	{{ forms.hidden('id', data.id) }}
+
+
+
+						{{ forms.label('姓名', data.name) }}
+						{{ forms.label('手机号码', data.mobile) }}
+						{{ forms.label('姓名', data.name) }}
+
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 col-md-2 control-label">详细地址：</label>
+							<div class="col-sm-8 col-xs-12">
+								<p class="form-control-static">
+									{{data.areaInfo}} {{data.detail}}
+								</p>
+							</div>
+						</div>
+
+						{{ forms.label('开始时间', data.startTime) }}
+						{{ forms.label('结束时间', data.endTime) }}
+						{{ forms.label('人数', data.people) }}
+						{{ forms.label('期望价格', data.price) }}
+
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 col-md-2 control-label">是否提供场地：</label>
+							<div class="col-sm-8 col-xs-12">
+								<p class="form-control-static">
+									{%if item.place%}是
+									{%else%}否
+									{%endif%}
+								</p>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 col-md-2 control-label">是否上门：</label>
+							<div class="col-sm-8 col-xs-12">
+								<p class="form-control-static">
+									{%if item.home%}是
+									{%else%}否
+									{%endif%}
+								</p>
+							</div>
+						</div>
+
+						{{ forms.label('需求', data.require) }}
+                        {{ forms.submit() }}
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+    $(function () {
+        var e = "";
+        $("#form").validate({
+            rules: {
+                orderNo: "required",
+                memberId: "required",
+                sex: "required",
+                name: "required",
+                mobile: "required",
+                lng: "required",
+                lat: "required",
+                province: "required",
+                city: "required",
+                area: "required",
+                areaId: "required",
+                address: "required",
+                areaInfo: "required",
+                detail: "required",
+                startTime: "required",
+                endTime: "required",
+                people: "required",
+                minPrice: "required",
+                maxPrice: "required",
+                place: "required",
+                home: "required",
+                createTime: "required",
+            },
+            messages: {
+                orderNo: {
+                    required: e + "请输入订单号"
+                },
+                memberId: {
+                    required: e + "请输入会员id"
+                },
+                sex: {
+                    required: e + "请输入区id"
+                },
+                name: {
+                    required: e + "请输入姓名"
+                },
+                mobile: {
+                    required: e + "请输入手机号码"
+                },
+                lng: {
+                    required: e + "请输入经度"
+                },
+                lat: {
+                    required: e + "请输入纬度"
+                },
+                province: {
+                    required: e + "请输入省份"
+                },
+                city: {
+                    required: e + "请输入城市"
+                },
+                area: {
+                    required: e + "请输入区id"
+                },
+                areaId: {
+                    required: e + "请输入区id"
+                },
+                address: {
+                    required: e + "请输入地址将省市区连接在一起"
+                },
+                areaInfo: {
+                    required: e + "请输入区域信息"
+                },
+                detail: {
+                    required: e + "请输入详细地址"
+                },
+                startTime: {
+                    required: e + "请输入开始时间"
+                },
+                endTime: {
+                    required: e + "请输入结束时间"
+                },
+                people: {
+                    required: e + "请输入人数"
+                },
+                minPrice: {
+                    required: e + "请输入最低价"
+                },
+                maxPrice: {
+                    required: e + "请输入最高价"
+                },
+                place: {
+                    required: e + "请输入是否提供场地"
+                },
+                home: {
+                    required: e + "请输入是否上门"
+                },
+                createTime: {
+                    required: e + "请输入订单创建时间"
+                },
+            },
+            submitHandler: function() {
+              asyncSubmitForm($("#form"));
+            }
+        });
+
+    });
+</script>
+
+{% endblock %}

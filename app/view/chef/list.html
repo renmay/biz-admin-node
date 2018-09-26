@@ -1,0 +1,79 @@
+{% extends "_layout.html" %}
+{% import "component/pagination.njk" as pagination %}
+{% import "component/table.njk" as table %}
+{% import "component/search.njk" as search %}
+
+{# 样式代码 #}
+{% block style %}
+
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+<div class="row">
+    <div class="col-sm-12">
+        <div class="ibox float-e-margins">
+
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <form class="page-search-form">
+                        </form>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="ibox-tools">
+                            <a href="/chef/edit" class="btn btn-primary btn-xm">添加厨师</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="table-responsive">
+                   <form id="table-form">
+                       {%
+                           set columns = [{
+                               title: '姓名',
+                               key: 'name'
+                           },{
+                               title: '英文名',
+                               key: 'englishName'
+                           },{
+                               title: '商品添加时间',
+                               key: 'createTime'
+                           },{
+                               title: '操作',
+                               type: 'operate',
+                                url:'/chef',
+                                btns: [
+                                    'delete', 'edit'
+                                ]
+                           }]
+                       %}
+                       {{ table.base(data.list, columns) }}
+                   </form>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="btn-region clearfix">
+                    <div class="pull-left">
+                        <button href="" id="batch-del-btn" class="btn btn-danger btn-sm js-batch" data-url="/chef/delete" data-confirm="确定删除选中的厨师吗?" data-original-title="" title="">批量删除</button>
+                    </div>
+                    <div class="pull-right">
+                        {{ pagination.pagination(data, params, '/chef') }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+
+
+</script>
+
+{% endblock %}

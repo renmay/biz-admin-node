@@ -1,0 +1,325 @@
+{% extends "_layout.html" %}
+{% import "component/pagination.njk" as pagination %}
+{% import "component/table.njk" as table %}
+{% import "component/search.njk" as search %}
+
+{# 样式代码 #}
+{% block style %}
+
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <form class="page-search-form">
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">评分</span>
+                                        <select class="form-control m-b" name="orderByGrade">
+                                            <option value="">全部</option>
+                                            <option {% if params.orderByGrade== 1 %} selected {% endif %} value="1">
+                                                由低到高
+                                            </option>
+                                            <option {% if params.orderByGrade== -1 %} selected {% endif %} value="-1">
+                                                由高到低
+                                            </option>
+                                        </select>
+                                        <span class="input-group-btn">
+                                    </span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">点击量</span>
+                                        <select class="form-control m-b" name="orderByClickCount">
+                                            <option value="">全部</option>
+                                            <option {% if params.orderByClickCount== 1 %} selected {% endif %}
+                                                    value="1">由低到高
+                                            </option>
+                                            <option {% if params.orderByClickCount== -1 %} selected {% endif %}
+                                                    value="-1">由高到低
+                                            </option>
+                                        </select>
+                                        <span class="input-group-btn">
+
+                                    </span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">成交量</span>
+                                        <select class="form-control m-b" name="orderBySales">
+                                            <option value="">全部</option>
+                                            <option {% if params.orderBySales== 1 %} selected {% endif %} value="1">
+                                                由低到高
+                                            </option>
+                                            <option {% if params.orderBySales== -1 %} selected {% endif %} value="-1">
+                                                由高到低
+                                            </option>
+                                        </select>
+                                        <span class="input-group-btn">
+
+                                    </span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input type="text" name="likeName" id="likeName" value="{{params.likeName}}"
+                                               placeholder="请输入店铺名称" class="input-sm form-control"/>
+                                        <span class="input-group-btn">
+                                <button type="button" class="btn btn-sm btn-info page-reset-btn">重置</button>
+                                <button type="button" class="btn btn-sm btn-info page-search-btn"><i
+                                        class="fa fa-search"></i>搜索</button>
+                                </span>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input type="text" name="likeMobile" id="likeMobile"
+                                               value="{{params.likeMobile}}"
+                                               placeholder="请输入店铺联系电话" class="input-sm form-control"/>
+                                        <span class="input-group-btn">
+                                <button type="button" class="btn btn-sm btn-info page-reset-btn">重置</button>
+                                <button type="button" class="btn btn-sm btn-info page-search-btn"><i
+                                        class="fa fa-search"></i>搜索</button>
+                                </span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input type="text" name="likeLinkMan" id="likeLinkMan"
+                                               value="{{params.likeLinkMan}}"
+                                               placeholder="请输入店铺联系人" class="input-sm form-control"/>
+                                        <span class="input-group-btn">
+                                <button type="button" class="btn btn-sm btn-info page-reset-btn">重置</button>
+                                <button type="button" class="btn btn-sm btn-info page-search-btn"><i
+                                        class="fa fa-search"></i>搜索</button>
+                                </span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="ibox-tools">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="table-responsive">
+                        <form id="table-form">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>店铺名称</th>
+                                    <th>行业</th>
+                                    <th>联系人</th>
+                                    <th>联系电话</th>
+                                    <th>成交量</th>
+                                    <th>评分</th>
+                                    <th>评论数</th>
+                                    <th>点击量</th>
+                                    <th>创建时间</th>
+                                    <th>营业状态</th>
+                                    <th>排序权重</th>
+                                    <th>店铺商品</th>
+                                    <th>商家</th>
+                                    <th>店铺url</th>
+                                    <th>店铺id</th>
+                                    <th>是否自营</th>
+                                    <th>设为自营</th>
+                                    <th>模块</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for item in data.list %}
+                                <tr>
+
+                                    <td>{{item.name}}</td>
+                                    <td>
+                                        {% if item.type == 1 %}酒店
+                                        {% elif item.type == 2 %}餐饮
+                                        {% elif item.type == 3 %}娱乐
+                                        {% elif item.type == 4 %}景区
+                                        {% elif item.type == 5 %}特产
+                                        {% elif item.type == 5 %}旅行社
+                                        {% endif %}
+                                    </td>
+                                    <td>{{item.linkMan}}</td>
+                                    <td>{{item.mobile}}</td>
+                                    <td>{{item.sales}}</td>
+                                    <td>{{item.grade}}</td>
+                                    <td>{{item.commentCount}}</td>
+                                    <td>{{item.clickCount}}</td>
+                                    <td>{{item.createTime}}</td>
+                                    <td>{% if item.status == 1 %}营业中
+                                        {% elif item.status == 0 %}
+                                        <span style="color: #b40000;">店铺关停</span>
+                                        {% endif %}
+                                    </td>
+                                    <td data-id="{{ item.id }}">
+                                        {{item.sort}}
+                                        <a class="sort" data-id="{{item.id}}">&nbsp;&nbsp;<i
+                                                class="fa fa-pencil-square-o" aria-hidden="true"
+                                                data-id="{{item.id}}"></i></a>
+                                    </td>
+                                    <td data-id="{{ item.id }}">
+                                        <a href="/goods?storeId={{item.id}}">查看商品</a>
+                                    </td>
+                                    <td>
+                                        <a href="/merchant?storeId={{ item.id }}">查看商家</a>
+                                    </td>
+                                    <td>
+                                        /store/{{item.id}}
+                                    </td>
+                                    <td>
+                                        {{item.id}}
+                                    </td>
+                                    <td>
+                                        {% if item.isOfficial == true %}
+                                        是
+                                        {% elif item.isOfficial == false %}
+                                        否
+                                        {% endif %}
+                                    </td>
+                                    <td data-id="{{ item.id }}">
+                                        {% if item.isOfficial == true %}
+                                        <a class="official" data-id="{{item.id}}" data-href="/store/unOfficial">取消设置</a>
+                                        {% elif item.isOfficial == false %}
+                                        <a class="official" data-id="{{item.id}}" data-href="/store/isOfficial">设置</a>
+                                        {% endif %}
+                                    </td>
+                                    <td data-id="{{ item.id }}">
+                                        <a href="/storeModule?storeId={{ item.id }}&type={{item.type}}">查看模块</a>
+                                    </td>
+                                    <td data-id="{{ item.id }}">
+                                        {% if item.status == 1 %}
+                                        <a class="operate" data-id="{{item.id}}" data-href="/store/close">关停店铺</a>
+                                        {% elif item.status == 0 %}
+                                        <a class="operate" data-id="{{item.id}}" data-href="/store/open">恢复营业</a>
+                                        {% endif %}
+                                        <a href="/store/edit?id={{item.id}}">查看店铺</a>
+                                    </td>
+                                </tr>
+                                {% else %}
+                                暂无数据
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="btn-region clearfix">
+                        <div class="pull-left">
+                            <!--<button href="" id="batch-del-btn" class="btn btn-danger btn-sm js-batch" data-url="/store/delete" data-confirm="确定删除选中的店铺吗?" data-original-title="" title="">批量删除</button>-->
+                        </div>
+                        <div class="pull-right">
+                            {{ pagination.pagination(data, params, '/store/restaurant') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+  $(".sort").click(function () {
+    let id = $(this).attr("data-id");
+    console.log(id);
+    layer.open({
+      type: 2,
+      fixed: false, //不固定
+      title: '',
+      shadeClose: true,
+      shade: false,
+      maxmin: true, //开启最大化最小化按钮
+      area: ['800px', '400px'],
+      content: [
+        '/store/sort?id=' + id],
+      end: function () {
+        location.reload();
+      }
+    });
+  });
+
+  $(function () {
+    $(".official").on("click", function () {
+      id = $(this).attr("data-id");
+      console.log(id);
+      let url = $(this).attr("data-href");
+      layer.confirm('你确定执行此操作?', {icon: 3, title: '提示'}, function (index) {
+        $.ajax({
+          url: url,
+          data: {"id": id},
+          dataType: 'json',
+          type: 'post',
+          success: function (data) {
+            if (data.code == 200) {
+              window.location.reload();
+            }
+          }
+        });
+        layer.close(index);
+      });
+    });
+  });
+
+  $(function () {
+    $(".operate").on("click", function () {
+      id = $(this).attr("data-id");
+      console.log(id);
+      let url = $(this).attr("data-href");
+      layer.confirm('你确定执行此操作?', {icon: 3, title: '提示'}, function (index) {
+        $.ajax({
+          url: url,
+          data: {"id": id},
+          dataType: 'json',
+          type: 'post',
+          success: function (data) {
+            if (data.code == 200) {
+              window.location.reload();
+            }
+          }
+        });
+        layer.close(index);
+      });
+    });
+  });
+
+
+
+  $(".bind").click(function () {
+    let id = $(this).attr("data-id");
+    console.log(id);
+    layer.open({
+      type: 2,
+      fixed: false, //不固定
+      title: '',
+      shadeClose: true,
+      shade: false,
+      maxmin: true, //开启最大化最小化按钮
+      area: ['800px', '400px'],
+      content: [
+        '/store/bind?storeId=' + id],
+      end: function () {
+        location.reload();
+      }
+    });
+
+  });
+</script>
+
+{% endblock %}

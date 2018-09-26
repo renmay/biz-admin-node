@@ -1,0 +1,172 @@
+{% extends "_layout.html" %}
+{% import "component/forms.njk" as forms %}
+
+{# 样式代码 #}
+{% block style %}
+<link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+<style>
+
+</style>
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>商品详情</h5>
+                    <!--<div class="col-sm-8 col-sm-offset-9">-->
+                    <!--&lt;!&ndash;<button class="btn btn-info" type="button"><a href="/goods" style="color: white;">返回</a></button>&ndash;&gt;-->
+                    <!--</div>-->
+
+
+                </div>
+
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t from" id="form" action="/goods/edit" method="post"
+                          data-href="/goods">
+                        {{ forms.hidden('id', data.id) }}
+                        {{ forms.readonly('商品名称', 'name', data.name, '请输入商品名称', '') }}
+
+                        {{ forms.readonly('销售价', 'fixPrice', data.fixPrice, '请输入商品销售价', '') }}
+                        {{ forms.readonly('市场价', 'marketPrice', data.marketPrice, '请输入商品市场价', '') }}
+                        {{ forms.readonly('销售量', 'saleCount', data.saleCount, '请输入商品销售量', '') }}
+                        {{ forms.readonly('库存', 'inventory', data.inventory, '请输入商品库存', '') }}
+                        {{ forms.readonly('点击量', 'clicksCount', data.clicksCount, '请输入产品点击量', '') }}
+                        {{ forms.readonly('评论数', 'commentCount', data.commentCount, '请输入商品评论数') }}
+                        {{ forms.readonly('收藏量', 'collectCount', data.collectCount, '请输入商品收藏量') }}
+
+                        {{ forms.readonly('上架时间', 'createTime', data.createTime, '请输入上架时间') }}
+                        {{ forms.readonly('修改时间', 'modifyTime', data.modifyTime, '请输入修改时间') }}
+
+                        {{ forms.images(
+                        label = '产品首图',
+                        fileList = [{
+                        name: 'url',
+                        value: data.url,
+                        url: ctx.helper.showImage(data.url, 160, 160, 'fixed'),
+                        text: '标题图'
+                        }]
+                        )}}
+
+                        <input type="text" value="{{data.id}}" class="offId" hidden>
+                        <div style="position: relative;">
+                            {{ forms.submit() }}
+                            <button class="btn but-info" id="history"><a href="/goods" class="btn btn-info"
+                                                                         style="position: absolute;right: 26%;top: 0;">返回</a>
+                            </button>
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+    {#js代码#}
+    {% block js %}
+    <script>
+        $(function () {
+            var e = "";
+            $("#form").validate({
+                rules: {},
+                messages: {},
+                submitHandler: function () {
+                    asyncSubmitForm($("#form"));
+                }
+            });
+
+        });
+    </script>
+    <script>
+        $('#history').click(function () {
+            $(this).back();
+        });
+
+
+
+        $(function () {
+            holder = $('<span class="words-split"></span>');
+            hashtable = new Array();
+            el = $("#result");
+            el.after(holder);
+            list = el.val();
+
+            if (list) {
+                let facility = JSON.parse(list);
+                facility.filter(f => {
+                    key = f.key;
+                    value = f.value;
+                    holder.append($('<a href="javascript:void(0)">' + key + " :" + value + '<span name="' + key + '"></span>&nbsp;&nbsp;<i class="fa fa-trash dbicon" aria-hidden="true"></i></a>'));
+                    var object = {};
+                    object['key'] = key;
+                    object['value'] = value;
+                    hashtable.push(object);
+                });
+            }
+            holder.on('click', 'a>i', function () {	//刪除
+                resultKey = $(this).parent().find('span').attr('name');
+                hashtable.filter(e => {
+                    if (e.key == resultKey) {
+                        hashtable.splice(hashtable.indexOf(e), 1);
+                    }
+                });
+                $(this).parent().remove();
+                $("#result").val(JSON.stringify(hashtable));
+            });
+
+
+            $("#btn").on('click', function () {
+                key = $("#key").val();
+                value = $("#value").val();
+
+                hashtable.filter(e => {
+                    if (e.key == key) {
+                        alert("设施已存在，请删除后重新添加");
+                        return;
+                    }
+                });
+
+                if (key != "" && value != "") {
+                    holder.append($('<a href="javascript:void(0)">' + key + " :" + value + '<span name="' + key + '"></span>&nbsp;&nbsp;<i class="fa fa-trash dbicon" aria-hidden="true"></i></a>'));
+                    var object = {};
+                    object['key'] = key;
+                    object['value'] = value;
+                    hashtable.push(object);
+                    $("#result").val(JSON.stringify(hashtable));
+                    $("#key").val("");
+                    $("#value").val("");
+                }
+            });
+        });
+
+        function putOff() {
+            offId = $(".offId").val();
+            $.ajax({
+                cache: false,
+                type: 'post',
+                url: '/goods/putOff',
+                data: {
+                    "id": offId,
+                },
+                error: function () {
+                    alert('下架失败');
+                },
+                success: function () {
+                    // alert("此商品已下架");
+                    layer.alert('此商品已下架', {
+                        icon: 1,
+                        skin: 'layer-ext-moon',
+                        time: 20000, //20s后自动关闭
+                    })
+                }
+
+            });
+            location.reload();
+        }
+    </script>
+    {% endblock %}

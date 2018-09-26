@@ -1,0 +1,454 @@
+2018-08-31 15:51:35,688 INFO 53407 [egg-logrotator] app logger reload: got log-reload message
+2018-09-06 15:07:02,287 INFO 14901 [egg:logger] init all loggers with options: {"dir":"/Users/renmay/biz-node/biz-admin/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"biz-admin-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-09-06 15:07:02,334 INFO 14901 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-09-06 15:07:02,334 INFO 14901 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-09-06 15:07:02,707 INFO 14901 [egg-redis] connecting redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 15:07:03,273 INFO 14901 [egg-static] starting static serve  -> /Users/renmay/biz-node/biz-admin/app/public
+2018-09-06 15:07:03,279 INFO 14901 [egg-security] use methodnoallow middleware
+2018-09-06 15:07:03,281 INFO 14901 [egg-security] use noopen middleware
+2018-09-06 15:07:03,284 INFO 14901 [egg-security] use nosniff middleware
+2018-09-06 15:07:03,291 INFO 14901 [egg-security] use xssProtection middleware
+2018-09-06 15:07:03,292 INFO 14901 [egg-security] use xframe middleware
+2018-09-06 15:07:03,297 INFO 14901 [egg-security] use dta middleware
+2018-09-06 15:07:03,297 INFO 14901 [egg-security] compose 6 middlewares into one security middleware
+2018-09-06 15:07:03,570 INFO 14901 [egg:core] dump config after load, 43ms
+2018-09-06 15:07:03,626 INFO 14901 [egg:core] dump config after ready, 40ms
+2018-09-06 15:07:03,727 INFO 14901 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 15:07:03,763 INFO 14901 [egg-watcher:app] watcher start success
+2018-09-06 15:07:03,875 INFO 14901 [egg-redis] instance[0] status OK, redis currentTime: #
+2018-09-06 15:08:47,642 INFO 14928 [egg:logger] init all loggers with options: {"dir":"/Users/renmay/biz-node/biz-admin/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"biz-admin-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-09-06 15:08:47,682 INFO 14928 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-09-06 15:08:47,682 INFO 14928 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-09-06 15:08:47,800 INFO 14928 [egg-redis] connecting redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 15:08:47,921 INFO 14928 [egg-static] starting static serve  -> /Users/renmay/biz-node/biz-admin/app/public
+2018-09-06 15:08:47,925 INFO 14928 [egg-security] use methodnoallow middleware
+2018-09-06 15:08:47,926 INFO 14928 [egg-security] use noopen middleware
+2018-09-06 15:08:47,928 INFO 14928 [egg-security] use nosniff middleware
+2018-09-06 15:08:47,929 INFO 14928 [egg-security] use xssProtection middleware
+2018-09-06 15:08:47,929 INFO 14928 [egg-security] use xframe middleware
+2018-09-06 15:08:47,930 INFO 14928 [egg-security] use dta middleware
+2018-09-06 15:08:47,930 INFO 14928 [egg-security] compose 6 middlewares into one security middleware
+2018-09-06 15:08:47,986 INFO 14928 [egg:core] dump config after load, 4ms
+2018-09-06 15:08:47,997 INFO 14928 [egg:core] dump config after ready, 6ms
+2018-09-06 15:08:48,022 INFO 14928 [egg-watcher:app] watcher start success
+2018-09-06 15:08:48,035 INFO 14928 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 15:08:48,191 INFO 14928 [egg-redis] instance[0] status OK, redis currentTime: #
+2018-09-06 15:08:56,552 INFO 14931 [egg:logger] init all loggers with options: {"dir":"/Users/renmay/biz-node/biz-admin/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"biz-admin-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-09-06 15:08:56,585 INFO 14931 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-09-06 15:08:56,585 INFO 14931 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-09-06 15:08:56,672 INFO 14931 [egg-redis] connecting redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 15:08:56,766 INFO 14931 [egg-static] starting static serve  -> /Users/renmay/biz-node/biz-admin/app/public
+2018-09-06 15:08:56,768 INFO 14931 [egg-security] use methodnoallow middleware
+2018-09-06 15:08:56,769 INFO 14931 [egg-security] use noopen middleware
+2018-09-06 15:08:56,769 INFO 14931 [egg-security] use nosniff middleware
+2018-09-06 15:08:56,769 INFO 14931 [egg-security] use xssProtection middleware
+2018-09-06 15:08:56,769 INFO 14931 [egg-security] use xframe middleware
+2018-09-06 15:08:56,770 INFO 14931 [egg-security] use dta middleware
+2018-09-06 15:08:56,770 INFO 14931 [egg-security] compose 6 middlewares into one security middleware
+2018-09-06 15:08:56,807 INFO 14931 [egg:core] dump config after load, 6ms
+2018-09-06 15:08:56,820 INFO 14931 [egg:core] dump config after ready, 7ms
+2018-09-06 15:08:56,833 INFO 14931 [egg-watcher:app] watcher start success
+2018-09-06 15:08:56,843 INFO 14931 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 15:08:56,957 INFO 14931 [egg-redis] instance[0] status OK, redis currentTime: #
+2018-09-06 15:09:08,267 INFO 14936 [egg:logger] init all loggers with options: {"dir":"/Users/renmay/biz-node/biz-admin/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"biz-admin-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-09-06 15:09:08,301 INFO 14936 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-09-06 15:09:08,301 INFO 14936 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-09-06 15:09:08,413 INFO 14936 [egg-redis] connecting redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 15:09:08,694 INFO 14936 [egg-static] starting static serve  -> /Users/renmay/biz-node/biz-admin/app/public
+2018-09-06 15:09:08,697 INFO 14936 [egg-security] use methodnoallow middleware
+2018-09-06 15:09:08,697 INFO 14936 [egg-security] use noopen middleware
+2018-09-06 15:09:08,698 INFO 14936 [egg-security] use nosniff middleware
+2018-09-06 15:09:08,699 INFO 14936 [egg-security] use xssProtection middleware
+2018-09-06 15:09:08,699 INFO 14936 [egg-security] use xframe middleware
+2018-09-06 15:09:08,700 INFO 14936 [egg-security] use dta middleware
+2018-09-06 15:09:08,700 INFO 14936 [egg-security] compose 6 middlewares into one security middleware
+2018-09-06 15:09:08,777 INFO 14936 [egg:core] dump config after load, 7ms
+2018-09-06 15:09:08,795 INFO 14936 [egg:core] dump config after ready, 8ms
+2018-09-06 15:09:08,806 INFO 14936 [egg-watcher:app] watcher start success
+2018-09-06 15:09:08,916 INFO 14936 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 15:09:09,374 INFO 14936 [egg-redis] instance[0] status OK, redis currentTime: #
+2018-09-06 15:09:15,168 INFO 14939 [egg:logger] init all loggers with options: {"dir":"/Users/renmay/biz-node/biz-admin/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"biz-admin-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-09-06 15:09:15,198 INFO 14939 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-09-06 15:09:15,198 INFO 14939 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-09-06 15:09:15,260 INFO 14939 [egg-redis] connecting redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 15:09:15,329 INFO 14939 [egg-static] starting static serve  -> /Users/renmay/biz-node/biz-admin/app/public
+2018-09-06 15:09:15,331 INFO 14939 [egg-security] use methodnoallow middleware
+2018-09-06 15:09:15,332 INFO 14939 [egg-security] use noopen middleware
+2018-09-06 15:09:15,332 INFO 14939 [egg-security] use nosniff middleware
+2018-09-06 15:09:15,333 INFO 14939 [egg-security] use xssProtection middleware
+2018-09-06 15:09:15,333 INFO 14939 [egg-security] use xframe middleware
+2018-09-06 15:09:15,333 INFO 14939 [egg-security] use dta middleware
+2018-09-06 15:09:15,333 INFO 14939 [egg-security] compose 6 middlewares into one security middleware
+2018-09-06 15:09:15,370 INFO 14939 [egg:core] dump config after load, 7ms
+2018-09-06 15:09:15,389 INFO 14939 [egg:core] dump config after ready, 11ms
+2018-09-06 15:09:15,401 INFO 14939 [egg-watcher:app] watcher start success
+2018-09-06 15:09:15,490 INFO 14939 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 15:09:15,569 INFO 14939 [egg-redis] instance[0] status OK, redis currentTime: #
+2018-09-06 15:09:24,069 INFO 14942 [egg:logger] init all loggers with options: {"dir":"/Users/renmay/biz-node/biz-admin/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"biz-admin-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-09-06 15:09:24,099 INFO 14942 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-09-06 15:09:24,099 INFO 14942 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-09-06 15:09:24,167 INFO 14942 [egg-redis] connecting redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 15:09:24,220 INFO 14942 [egg-static] starting static serve  -> /Users/renmay/biz-node/biz-admin/app/public
+2018-09-06 15:09:24,221 INFO 14942 [egg-security] use methodnoallow middleware
+2018-09-06 15:09:24,222 INFO 14942 [egg-security] use noopen middleware
+2018-09-06 15:09:24,222 INFO 14942 [egg-security] use nosniff middleware
+2018-09-06 15:09:24,222 INFO 14942 [egg-security] use xssProtection middleware
+2018-09-06 15:09:24,223 INFO 14942 [egg-security] use xframe middleware
+2018-09-06 15:09:24,223 INFO 14942 [egg-security] use dta middleware
+2018-09-06 15:09:24,223 INFO 14942 [egg-security] compose 6 middlewares into one security middleware
+2018-09-06 15:09:24,257 INFO 14942 [egg:core] dump config after load, 8ms
+2018-09-06 15:09:24,275 INFO 14942 [egg:core] dump config after ready, 7ms
+2018-09-06 15:09:24,284 INFO 14942 [egg-watcher:app] watcher start success
+2018-09-06 15:09:24,302 INFO 14942 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 15:09:24,434 INFO 14942 [egg-redis] instance[0] status OK, redis currentTime: #
+2018-09-06 15:09:53,594 INFO 14948 [egg:logger] init all loggers with options: {"dir":"/Users/renmay/biz-node/biz-admin/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"biz-admin-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-09-06 15:09:53,630 INFO 14948 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-09-06 15:09:53,630 INFO 14948 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-09-06 15:09:53,741 INFO 14948 [egg-redis] connecting redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 15:09:53,862 INFO 14948 [egg-static] starting static serve  -> /Users/renmay/biz-node/biz-admin/app/public
+2018-09-06 15:09:53,864 INFO 14948 [egg-security] use methodnoallow middleware
+2018-09-06 15:09:53,865 INFO 14948 [egg-security] use noopen middleware
+2018-09-06 15:09:53,866 INFO 14948 [egg-security] use nosniff middleware
+2018-09-06 15:09:53,867 INFO 14948 [egg-security] use xssProtection middleware
+2018-09-06 15:09:53,868 INFO 14948 [egg-security] use xframe middleware
+2018-09-06 15:09:53,868 INFO 14948 [egg-security] use dta middleware
+2018-09-06 15:09:53,868 INFO 14948 [egg-security] compose 6 middlewares into one security middleware
+2018-09-06 15:09:53,923 INFO 14948 [egg:core] dump config after load, 5ms
+2018-09-06 15:09:53,933 INFO 14948 [egg:core] dump config after ready, 5ms
+2018-09-06 15:09:53,958 INFO 14948 [egg-watcher:app] watcher start success
+2018-09-06 15:09:53,971 INFO 14948 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 15:09:54,123 INFO 14948 [egg-redis] instance[0] status OK, redis currentTime: #
+2018-09-06 15:10:00,121 INFO 14951 [egg:logger] init all loggers with options: {"dir":"/Users/renmay/biz-node/biz-admin/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"biz-admin-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-09-06 15:10:00,150 INFO 14951 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-09-06 15:10:00,150 INFO 14951 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-09-06 15:10:00,220 INFO 14951 [egg-redis] connecting redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 15:10:00,273 INFO 14951 [egg-static] starting static serve  -> /Users/renmay/biz-node/biz-admin/app/public
+2018-09-06 15:10:00,275 INFO 14951 [egg-security] use methodnoallow middleware
+2018-09-06 15:10:00,276 INFO 14951 [egg-security] use noopen middleware
+2018-09-06 15:10:00,276 INFO 14951 [egg-security] use nosniff middleware
+2018-09-06 15:10:00,276 INFO 14951 [egg-security] use xssProtection middleware
+2018-09-06 15:10:00,277 INFO 14951 [egg-security] use xframe middleware
+2018-09-06 15:10:00,277 INFO 14951 [egg-security] use dta middleware
+2018-09-06 15:10:00,277 INFO 14951 [egg-security] compose 6 middlewares into one security middleware
+2018-09-06 15:10:00,307 INFO 14951 [egg:core] dump config after load, 5ms
+2018-09-06 15:10:00,318 INFO 14951 [egg:core] dump config after ready, 6ms
+2018-09-06 15:10:00,326 INFO 14951 [egg-watcher:app] watcher start success
+2018-09-06 15:10:00,343 INFO 14951 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 15:10:00,444 INFO 14951 [egg-redis] instance[0] status OK, redis currentTime: #
+2018-09-06 15:10:07,004 INFO 14954 [egg:logger] init all loggers with options: {"dir":"/Users/renmay/biz-node/biz-admin/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"biz-admin-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-09-06 15:10:07,033 INFO 14954 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-09-06 15:10:07,033 INFO 14954 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-09-06 15:10:07,094 INFO 14954 [egg-redis] connecting redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 15:10:07,146 INFO 14954 [egg-static] starting static serve  -> /Users/renmay/biz-node/biz-admin/app/public
+2018-09-06 15:10:07,150 INFO 14954 [egg-security] use methodnoallow middleware
+2018-09-06 15:10:07,150 INFO 14954 [egg-security] use noopen middleware
+2018-09-06 15:10:07,151 INFO 14954 [egg-security] use nosniff middleware
+2018-09-06 15:10:07,151 INFO 14954 [egg-security] use xssProtection middleware
+2018-09-06 15:10:07,151 INFO 14954 [egg-security] use xframe middleware
+2018-09-06 15:10:07,151 INFO 14954 [egg-security] use dta middleware
+2018-09-06 15:10:07,151 INFO 14954 [egg-security] compose 6 middlewares into one security middleware
+2018-09-06 15:10:07,189 INFO 14954 [egg:core] dump config after load, 5ms
+2018-09-06 15:10:07,204 INFO 14954 [egg:core] dump config after ready, 7ms
+2018-09-06 15:10:07,237 INFO 14954 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 15:10:07,243 INFO 14954 [egg-watcher:app] watcher start success
+2018-09-06 15:10:07,340 INFO 14954 [egg-redis] instance[0] status OK, redis currentTime: #
+2018-09-06 15:10:08,855 INFO 14956 [egg:logger] init all loggers with options: {"dir":"/Users/renmay/biz-node/biz-admin/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"biz-admin-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-09-06 15:10:08,884 INFO 14956 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-09-06 15:10:08,884 INFO 14956 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-09-06 15:10:08,944 INFO 14956 [egg-redis] connecting redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 15:10:08,996 INFO 14956 [egg-static] starting static serve  -> /Users/renmay/biz-node/biz-admin/app/public
+2018-09-06 15:10:08,998 INFO 14956 [egg-security] use methodnoallow middleware
+2018-09-06 15:10:08,998 INFO 14956 [egg-security] use noopen middleware
+2018-09-06 15:10:08,999 INFO 14956 [egg-security] use nosniff middleware
+2018-09-06 15:10:08,999 INFO 14956 [egg-security] use xssProtection middleware
+2018-09-06 15:10:08,999 INFO 14956 [egg-security] use xframe middleware
+2018-09-06 15:10:09,000 INFO 14956 [egg-security] use dta middleware
+2018-09-06 15:10:09,000 INFO 14956 [egg-security] compose 6 middlewares into one security middleware
+2018-09-06 15:10:09,045 INFO 14956 [egg:core] dump config after load, 6ms
+2018-09-06 15:10:09,057 INFO 14956 [egg:core] dump config after ready, 7ms
+2018-09-06 15:10:09,070 INFO 14956 [egg-watcher:app] watcher start success
+2018-09-06 15:10:09,092 INFO 14956 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 15:10:09,244 INFO 14956 [egg-redis] instance[0] status OK, redis currentTime: #
+2018-09-06 15:11:15,742 INFO 14971 [egg:logger] init all loggers with options: {"dir":"/Users/renmay/biz-node/biz-admin/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"biz-admin-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-09-06 15:11:15,819 INFO 14971 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-09-06 15:11:15,819 INFO 14971 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-09-06 15:11:15,985 INFO 14971 [egg-redis] connecting redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 15:11:16,143 INFO 14971 [egg-static] starting static serve  -> /Users/renmay/biz-node/biz-admin/app/public
+2018-09-06 15:11:16,151 INFO 14971 [egg-security] use methodnoallow middleware
+2018-09-06 15:11:16,154 INFO 14971 [egg-security] use noopen middleware
+2018-09-06 15:11:16,157 INFO 14971 [egg-security] use nosniff middleware
+2018-09-06 15:11:16,159 INFO 14971 [egg-security] use xssProtection middleware
+2018-09-06 15:11:16,161 INFO 14971 [egg-security] use xframe middleware
+2018-09-06 15:11:16,162 INFO 14971 [egg-security] use dta middleware
+2018-09-06 15:11:16,162 INFO 14971 [egg-security] compose 6 middlewares into one security middleware
+2018-09-06 15:11:16,227 INFO 14971 [egg:core] dump config after load, 11ms
+2018-09-06 15:11:16,240 INFO 14971 [egg:core] dump config after ready, 5ms
+2018-09-06 15:11:16,267 INFO 14971 [egg-watcher:app] watcher start success
+2018-09-06 15:11:16,269 INFO 14971 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 15:11:16,396 INFO 14971 [egg-redis] instance[0] status OK, redis currentTime: #
+2018-09-06 15:11:23,522 INFO 14975 [egg:logger] init all loggers with options: {"dir":"/Users/renmay/biz-node/biz-admin/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"biz-admin-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-09-06 15:11:23,564 INFO 14975 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-09-06 15:11:23,564 INFO 14975 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-09-06 15:11:23,868 INFO 14975 [egg-redis] connecting redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 15:11:24,173 INFO 14975 [egg-static] starting static serve  -> /Users/renmay/biz-node/biz-admin/app/public
+2018-09-06 15:11:24,177 INFO 14975 [egg-security] use methodnoallow middleware
+2018-09-06 15:11:24,177 INFO 14975 [egg-security] use noopen middleware
+2018-09-06 15:11:24,180 INFO 14975 [egg-security] use nosniff middleware
+2018-09-06 15:11:24,181 INFO 14975 [egg-security] use xssProtection middleware
+2018-09-06 15:11:24,182 INFO 14975 [egg-security] use xframe middleware
+2018-09-06 15:11:24,183 INFO 14975 [egg-security] use dta middleware
+2018-09-06 15:11:24,183 INFO 14975 [egg-security] compose 6 middlewares into one security middleware
+2018-09-06 15:11:24,250 INFO 14975 [egg:core] dump config after load, 8ms
+2018-09-06 15:11:24,263 INFO 14975 [egg:core] dump config after ready, 6ms
+2018-09-06 15:11:24,298 INFO 14975 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 15:11:24,302 INFO 14975 [egg-watcher:app] watcher start success
+2018-09-06 15:11:24,426 INFO 14975 [egg-redis] instance[0] status OK, redis currentTime: #
+2018-09-06 15:11:33,081 INFO 14978 [egg:logger] init all loggers with options: {"dir":"/Users/renmay/biz-node/biz-admin/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"biz-admin-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-09-06 15:11:33,113 INFO 14978 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-09-06 15:11:33,113 INFO 14978 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-09-06 15:11:33,179 INFO 14978 [egg-redis] connecting redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 15:11:33,243 INFO 14978 [egg-static] starting static serve  -> /Users/renmay/biz-node/biz-admin/app/public
+2018-09-06 15:11:33,245 INFO 14978 [egg-security] use methodnoallow middleware
+2018-09-06 15:11:33,246 INFO 14978 [egg-security] use noopen middleware
+2018-09-06 15:11:33,248 INFO 14978 [egg-security] use nosniff middleware
+2018-09-06 15:11:33,249 INFO 14978 [egg-security] use xssProtection middleware
+2018-09-06 15:11:33,249 INFO 14978 [egg-security] use xframe middleware
+2018-09-06 15:11:33,249 INFO 14978 [egg-security] use dta middleware
+2018-09-06 15:11:33,249 INFO 14978 [egg-security] compose 6 middlewares into one security middleware
+2018-09-06 15:11:33,294 INFO 14978 [egg:core] dump config after load, 8ms
+2018-09-06 15:11:33,331 INFO 14978 [egg:core] dump config after ready, 28ms
+2018-09-06 15:11:33,358 INFO 14978 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 15:11:33,365 INFO 14978 [egg-watcher:app] watcher start success
+2018-09-06 15:11:33,481 INFO 14978 [egg-redis] instance[0] status OK, redis currentTime: #
+2018-09-06 17:28:29,950 INFO 17498 [egg:logger] init all loggers with options: {"dir":"/Users/renmay/biz-node/biz-admin/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"biz-admin-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-09-06 17:28:29,984 INFO 17498 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-09-06 17:28:29,984 INFO 17498 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-09-06 17:28:30,049 INFO 17498 [egg-redis] connecting redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 17:28:30,224 INFO 17498 [egg-static] starting static serve  -> /Users/renmay/biz-node/biz-admin/app/public
+2018-09-06 17:28:30,227 INFO 17498 [egg-security] use methodnoallow middleware
+2018-09-06 17:28:30,229 INFO 17498 [egg-security] use noopen middleware
+2018-09-06 17:28:30,231 INFO 17498 [egg-security] use nosniff middleware
+2018-09-06 17:28:30,231 INFO 17498 [egg-security] use xssProtection middleware
+2018-09-06 17:28:30,233 INFO 17498 [egg-security] use xframe middleware
+2018-09-06 17:28:30,233 INFO 17498 [egg-security] use dta middleware
+2018-09-06 17:28:30,234 INFO 17498 [egg-security] compose 6 middlewares into one security middleware
+2018-09-06 17:28:30,354 INFO 17498 [egg:core] dump config after load, 16ms
+2018-09-06 17:28:30,374 INFO 17498 [egg:core] dump config after ready, 10ms
+2018-09-06 17:28:30,408 INFO 17498 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 17:28:30,416 INFO 17498 [egg-watcher:app] watcher start success
+2018-09-06 17:28:30,539 INFO 17498 [egg-redis] instance[0] status OK, redis currentTime: #
+2018-09-06 17:28:47,743 INFO 17519 [egg:logger] init all loggers with options: {"dir":"/Users/renmay/biz-node/biz-admin/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"biz-admin-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-09-06 17:28:47,777 INFO 17519 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-09-06 17:28:47,777 INFO 17519 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-09-06 17:28:47,845 INFO 17519 [egg-redis] connecting redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 17:28:47,953 INFO 17519 [egg-static] starting static serve  -> /Users/renmay/biz-node/biz-admin/app/public
+2018-09-06 17:28:47,956 INFO 17519 [egg-security] use methodnoallow middleware
+2018-09-06 17:28:47,956 INFO 17519 [egg-security] use noopen middleware
+2018-09-06 17:28:47,957 INFO 17519 [egg-security] use nosniff middleware
+2018-09-06 17:28:47,958 INFO 17519 [egg-security] use xssProtection middleware
+2018-09-06 17:28:47,959 INFO 17519 [egg-security] use xframe middleware
+2018-09-06 17:28:47,959 INFO 17519 [egg-security] use dta middleware
+2018-09-06 17:28:47,959 INFO 17519 [egg-security] compose 6 middlewares into one security middleware
+2018-09-06 17:28:48,013 INFO 17519 [egg:core] dump config after load, 6ms
+2018-09-06 17:28:48,026 INFO 17519 [egg:core] dump config after ready, 6ms
+2018-09-06 17:28:48,059 INFO 17519 [egg-watcher:app] watcher start success
+2018-09-06 17:28:48,061 INFO 17519 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 17:28:48,210 INFO 17519 [egg-redis] instance[0] status OK, redis currentTime: #
+2018-09-06 17:31:46,313 INFO 17645 [egg:logger] init all loggers with options: {"dir":"/Users/renmay/biz-node/biz-admin/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"biz-admin-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-09-06 17:31:46,352 INFO 17645 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-09-06 17:31:46,352 INFO 17645 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-09-06 17:31:46,418 INFO 17645 [egg-redis] connecting redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 17:31:46,535 INFO 17645 [egg-static] starting static serve  -> /Users/renmay/biz-node/biz-admin/app/public
+2018-09-06 17:31:46,538 INFO 17645 [egg-security] use methodnoallow middleware
+2018-09-06 17:31:46,538 INFO 17645 [egg-security] use noopen middleware
+2018-09-06 17:31:46,539 INFO 17645 [egg-security] use nosniff middleware
+2018-09-06 17:31:46,540 INFO 17645 [egg-security] use xssProtection middleware
+2018-09-06 17:31:46,541 INFO 17645 [egg-security] use xframe middleware
+2018-09-06 17:31:46,541 INFO 17645 [egg-security] use dta middleware
+2018-09-06 17:31:46,541 INFO 17645 [egg-security] compose 6 middlewares into one security middleware
+2018-09-06 17:31:46,603 INFO 17645 [egg:core] dump config after load, 8ms
+2018-09-06 17:31:46,621 INFO 17645 [egg:core] dump config after ready, 11ms
+2018-09-06 17:31:46,662 INFO 17645 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 17:31:46,670 INFO 17645 [egg-watcher:app] watcher start success
+2018-09-06 17:31:46,769 INFO 17645 [egg-redis] instance[0] status OK, redis currentTime: #
+2018-09-06 17:55:29,710 INFO 18169 [egg:logger] init all loggers with options: {"dir":"/Users/renmay/biz-node/biz-admin/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"biz-admin-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-09-06 17:55:29,782 INFO 18169 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-09-06 17:55:29,782 INFO 18169 [egg-schedule]: register schedule /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-09-06 17:55:29,852 INFO 18169 [egg-redis] connecting redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 17:55:29,973 INFO 18169 [egg-static] starting static serve  -> /Users/renmay/biz-node/biz-admin/app/public
+2018-09-06 17:55:29,976 INFO 18169 [egg-security] use methodnoallow middleware
+2018-09-06 17:55:29,977 INFO 18169 [egg-security] use noopen middleware
+2018-09-06 17:55:29,979 INFO 18169 [egg-security] use nosniff middleware
+2018-09-06 17:55:29,979 INFO 18169 [egg-security] use xssProtection middleware
+2018-09-06 17:55:29,981 INFO 18169 [egg-security] use xframe middleware
+2018-09-06 17:55:29,982 INFO 18169 [egg-security] use dta middleware
+2018-09-06 17:55:29,982 INFO 18169 [egg-security] compose 6 middlewares into one security middleware
+2018-09-06 17:55:30,047 INFO 18169 [egg:core] dump config after load, 6ms
+2018-09-06 17:55:30,057 INFO 18169 [egg:core] dump config after ready, 5ms
+2018-09-06 17:55:30,087 INFO 18169 [egg-watcher:app] watcher start success
+2018-09-06 17:55:30,145 INFO 18169 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 17:55:30,275 INFO 18169 [egg-redis] instance[0] status OK, redis currentTime: #
+2018-09-06 17:55:31,303 INFO 18169 [egg-view-nunjucks] loading templates from ["/Users/renmay/biz-node/biz-admin/app/view"]
+2018-09-06 18:13:25,798 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 18:23:42,492 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 18:33:59,101 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 18:43:56,508 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-06 18:43:56,509 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 18:54:13,089 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-06 18:54:13,090 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 19:04:29,702 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-06 19:04:29,704 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 19:14:47,312 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 19:24:43,925 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 19:35:00,545 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 19:45:18,150 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-06 19:45:18,150 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 19:55:35,195 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 20:05:31,778 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 20:15:49,365 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 20:16:13,921 INFO 18169 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 20:26:05,955 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 20:36:25,473 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-06 20:36:25,473 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 20:46:22,045 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 20:56:38,624 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-06 20:56:38,624 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 21:06:56,215 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 21:17:14,504 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 21:27:11,092 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 21:37:28,687 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 21:47:45,283 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 21:58:01,894 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 22:07:59,695 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-06 22:07:59,695 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 22:18:17,324 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 22:18:38,397 INFO 18169 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-09-06 22:28:33,919 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-06 22:28:33,919 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 22:38:52,501 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-06 22:38:52,502 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 22:48:50,089 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-06 22:48:50,089 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 22:59:06,679 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-06 22:59:06,679 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 23:09:23,268 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 23:19:41,518 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-06 23:19:41,519 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 23:29:39,121 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-06 23:29:39,121 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 23:39:55,727 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-06 23:39:55,727 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-06 23:50:12,308 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-06 23:50:12,309 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 00:00:31,526 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 00:00:31,527 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 00:10:28,126 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 00:20:44,739 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 00:21:01,843 INFO 18169 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-09-07 00:31:02,330 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 00:31:02,330 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 00:41:20,222 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 00:41:20,223 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 00:51:16,807 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 01:01:33,409 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 01:11:50,999 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 01:22:09,534 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 01:22:09,535 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 01:32:06,128 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 01:42:23,742 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 01:42:23,742 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 01:52:40,312 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 01:52:40,313 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 02:02:58,525 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 02:12:56,172 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 02:23:12,760 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 02:23:26,409 INFO 18169 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-09-07 02:33:29,351 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 02:33:29,351 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 02:43:47,144 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 02:43:47,146 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 02:53:43,737 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 03:04:01,319 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 03:04:01,320 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 03:14:17,919 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 03:14:17,920 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 03:24:36,539 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 03:24:36,540 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 03:34:33,138 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 03:44:50,731 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 03:55:07,334 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 03:55:07,334 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 04:05:25,546 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 04:05:25,547 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 04:15:23,123 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 04:25:39,701 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 04:25:50,669 INFO 18169 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-09-07 04:35:56,301 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 04:35:56,301 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 04:46:15,519 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 04:46:15,519 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 04:56:12,108 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 04:56:12,108 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 05:06:28,725 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 05:16:46,325 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 05:16:46,325 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 05:27:04,529 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 05:37:01,136 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 05:47:18,780 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 05:47:18,780 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 05:57:35,352 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 05:57:35,352 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 06:07:53,242 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 06:07:53,243 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 06:17:50,837 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 06:28:07,437 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 06:28:07,437 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 06:28:15,186 INFO 18169 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-09-07 06:38:24,021 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 06:38:24,021 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 06:48:42,539 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 06:58:40,117 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 07:08:56,769 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 07:19:13,353 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 07:19:13,353 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 07:29:32,552 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 07:29:32,553 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 07:39:29,199 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 07:49:45,790 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 07:49:45,791 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 08:00:03,408 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 08:00:03,408 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 08:10:21,557 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 08:10:21,558 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 08:20:18,130 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 08:30:34,742 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 08:30:34,742 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 08:30:38,730 INFO 18169 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-09-07 08:40:52,361 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 08:51:10,531 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 08:51:10,532 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 09:01:07,136 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 09:11:23,753 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 09:11:23,753 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 09:21:41,356 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 09:21:41,356 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 09:31:59,557 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 09:31:59,558 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 09:37:56,147 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 09:42:40,117 INFO 18169 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-09-07 11:24:21,813 INFO 18169 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-09-07 12:20:34,511 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 12:30:31,077 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 12:40:47,661 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 12:51:05,261 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 12:51:05,262 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 13:01:21,851 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 13:01:21,852 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 13:08:12,956 WARN 18169 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2018-09-07 13:08:12,957 WARN 18169 [ClusterClient:Watcher] follower closed, and try to init it again
+2018-09-07 13:14:23,357 INFO 18169 [egg-redis] connect success on redis://:Wd123456@120.79.0.38:6379/5
+2018-09-07 15:02:29,174 INFO 18169 [egg-logrotator] clean all log before 31 days
+2018-09-07 15:02:29,178 INFO 18169 [-/127.0.0.1/-/69ms SCHEDULE /__schedule?path=/Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js&type=worker&cron=0%200%20*%20*%20*] [egg-schedule] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js execute succeed, used 67ms
+2018-09-07 15:02:29,968 INFO 18169 [egg-logrotator] broadcast log-reload
+2018-09-07 15:02:29,969 INFO 18169 [egg-logrotator] rotate files success by DayRotator, files ["/Users/renmay/biz-node/biz-admin/logs/common-error.log -> /Users/renmay/biz-node/biz-admin/logs/common-error.log.2018-09-06","/Users/renmay/biz-node/biz-admin/logs/biz-admin-web.log -> /Users/renmay/biz-node/biz-admin/logs/biz-admin-web.log.2018-09-06","/Users/renmay/biz-node/biz-admin/logs/egg-web.log -> /Users/renmay/biz-node/biz-admin/logs/egg-web.log.2018-09-06","/Users/renmay/biz-node/biz-admin/logs/biz-admin/egg-schedule.log -> /Users/renmay/biz-node/biz-admin/logs/biz-admin/egg-schedule.log.2018-09-06","/Users/renmay/biz-node/biz-admin/logs/egg-agent.log -> /Users/renmay/biz-node/biz-admin/logs/egg-agent.log.2018-09-06"]
+2018-09-07 15:02:29,969 INFO 18169 [-/127.0.0.1/-/9ms SCHEDULE /__schedule?path=/Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js&type=worker&cron=1%200%200%20*%20*%20*] [egg-schedule] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js execute succeed, used 9ms

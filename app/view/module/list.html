@@ -1,0 +1,180 @@
+{% extends "_layout.html" %}
+{% import "component/pagination.njk" as pagination %}
+{% import "component/table.njk" as table %}
+{% import "component/search.njk" as search %}
+
+{# 样式代码 #}
+{% block style %}
+
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <form class="page-search-form">
+                                <div class="input-group col-sm-4">
+                                    <input type="text" name="likeName" id="likeName" value="{{data.likeName}}"
+                                           placeholder="请输入模块名称" class="input-sm form-control"/>
+                                    <span class="input-group-btn">
+                                <button type="button" class="btn btn-sm btn-info page-reset-btn">重置</button>
+                                <button type="button" class="btn btn-sm btn-info page-search-btn"><i
+                                        class="fa fa-search"></i>搜索</button>
+                                </span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="ibox-tools">
+                                <a href="/module/add" class="btn btn-info btn-xm">添加模块</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="table-responsive">
+                        <form id="table-form">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>模块名称</th>
+                                    <th>模块拼音</th>
+                                    <th>图标</th>
+                                    <th>价格</th>
+                                    <th>状态</th>
+                                    <th>类型</th>
+                                    <th>添加时间</th>
+                                    <th>开启/暂停</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for item in data.list %}
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" value="{{ item.id }}" class="i-checks" name="check">
+                                    </td>
+                                    <td width="100">{{ item.name }}</td>
+                                    <td width="100">{{ item.key}}</td>
+                                    <td class="image" style="padding-right: 3%;">
+                                        <a href="/module/edit?id={{ item.icon }}"><img alt="image" class="image"
+                                                                                       src="{{ ctx.helper.showImage(item.icon, 50, 50, 'fixed') }}"></a>
+                                    </td>
+                                    <td>¥{{ item.price }}</td>
+                                    <td>
+                                        {% if item.status == 1 %}
+                                        <span>正常</span>
+                                        {% elseif item.status == 2 %}
+                                        <span>禁用</span>
+                                        {% else%}
+                                        <span style="color: #b40000;">已删除</span>
+                                        {% endif %}
+                                    </td>
+
+                                    <td>
+                                        {% if item.type == 1 %}
+                                        <span>免费</span>
+                                        {% elseif item.type == 2 %}
+                                        <span>一次性收费</span>
+                                        {% elseif item.type == 3 %}
+                                        <span>按月收费</span>
+                                        {% else%}
+                                        <span>按年收费</span>
+                                        {% endif %}
+                                    </td>
+
+                                    <td>{{ item.createTime }}</td>
+                                    <td data-id="{{ item.id }}" data-status="{{item.status}}">
+                                        {% if item.status== 1 %}
+                                        <a class="update" data-status="{{item.status}}" data-id="{{ item.id }}"
+                                           data-href="/module/update">禁用</a>
+                                        {% elseif item.status == 2 %}
+                                        <a class="update" data-id="{{ item.id }}" data-status="{{item.status}}"
+                                           data-href="/module/update">开启</a>
+                                        {% else %}
+                                        {% endif %}
+                                    </td>
+                                    <td data-id="{{ item.id }}">
+                                        <a href="/module/edit?id={{item.id}}">编辑</a>
+                                        <a class="del" data-id="{{ item.id }}" data-href="/module/delete">删除</a>
+                                    </td>
+                                </tr>
+                                {% else %}
+                                暂无数据
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="btn-region clearfix">
+                        <div class="pull-left">
+                            <button href="" id="batch-del-btn" class="btn btn-danger btn-sm js-batch"
+                                    data-url="/module/delete" data-confirm="确定删除选中的模块吗?" data-original-title=""
+                                    title="">批量删除
+                            </button>
+                        </div>
+                        <div class="pull-right">
+                            {{ pagination.pagination(data, params, '/module') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+  $(function () {
+    $(".update").on("click", function () {
+      id = $(this).attr("data-id");
+      let status = $(this).attr("data-status");
+      let newStatus = 0;
+      if (status == 1) {
+        newStatus = 2
+        layer.confirm('禁用后所有商家不可使用此模块，是否确认禁用？', {icon: 3, title: '提示'}, function (index) {
+          $.ajax({
+            url: '/module/update?id=' + id + '&status=' + newStatus,
+            dataType: 'json',
+            type: 'get',
+            success: function (data) {
+              if (data.code == 200) {
+                window.location.reload();
+              }
+            }
+          });
+          layer.close(index);
+        });
+      } else if (status == 2) {
+        newStatus = 1
+        layer.confirm('你确定执行此操作?', {icon: 3, title: '提示'}, function (index) {
+          $.ajax({
+            url: '/module/update?id=' + id + '&status=' + newStatus,
+            dataType: 'json',
+            type: 'get',
+            success: function (data) {
+              if (data.code == 200) {
+                window.location.reload();
+              }
+            }
+          });
+          layer.close(index);
+        });
+
+      }
+    });
+  });
+
+</script>
+
+{% endblock %}

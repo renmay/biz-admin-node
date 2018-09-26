@@ -1,0 +1,274 @@
+{% extends "_layout.html" %}
+{% import "component/forms.njk" as forms %}
+
+{# 样式代码 #}
+{% block style %}
+<link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+<style>
+    ul, li{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .date{
+        border: 1px solid #e7eaec;
+        text-align: left;
+        border-left: 0;
+        border-bottom: 0;
+    }
+    .date ul{
+        text-align: left;
+    }
+    .date ul li{
+        float: left;
+        height: 60px;
+        line-height: 60px;
+        border: 1px solid #e7eaec;
+        border-right: 0;
+        border-top: 0;
+        padding:0;
+    }
+
+    .date ul li span{
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .date ul li a{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        color: #ed5565;
+        font-size: 16px;
+        letter-spacing: 5px;
+        display: none;
+    }
+
+    .date ul li:hover span{
+        background: #fff;
+        opacity: 0.3;
+    }
+
+    .date ul li:hover a{
+        display: block;
+        cursor: pointer;
+    }
+
+
+
+    .clear{
+        clear: both;
+    }
+    .goods .title{
+        color: #23b7e5;
+        font-style: normal;
+    }
+
+    .goods table {
+        color:#333333;
+        border-collapse: collapse;
+        border: 1px solid #e7eaec;
+        width: 100%;
+    }
+    .goods table td {
+        padding: 8px;
+        border: 1px solid #e7eaec;
+    }
+
+
+</style>
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>添加订单配送设置</h5>
+
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t from" id="form" action="/order/config/edit" method="post" data-href="/order/config">
+                    	{{ forms.hidden('id', data.id) }}
+
+                        <div id="app">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">可预定日期：</label>
+                                <div class="col-sm-3">
+                                    <input id="bookingDate" name="" value="" class="form-control layer-date" readonly
+                                           placeholder="YYYY/MM/DD" onclick="laydate({istime: false, format: 'YYYY/MM/DD', min: '{{ ctx.helper.currentDate('YYYY/MM/DD')}}' })">
+                                </div>
+                                <button class="btn btn-primary" type="button" @click="addDate">添加预定日期</button>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"></label>
+                                <div class="col-sm-8">
+                                    <div class="date row">
+                                        <ul class="">
+                                            <template v-for="(item, index) in allDate">
+                                                <li class="col-sm-2"><span>${item}</span><a @click="delDate(index)">删除</a></li>
+                                                <input type="hidden" name="bookingDate" v-model="item"/>
+                                            </template>
+                                            <template v-for="item in blankDate">
+                                                <li class="col-sm-2"></li>
+                                            </template>
+                                        </ul>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">开始配送时间</label>
+                            <div class="col-sm-8">
+                                <select class="form-control m-b" name="startTime">
+                                    <option value="07" {{ 'selected' if data.startTime == '07' }}>07</option>
+                                    <option value="08" {{ 'selected' if data.startTime == '08' }}>08</option>
+                                    <option value="09" {{ 'selected' if data.startTime == '09' }}>09</option>
+                                    <option value="10" {{ 'selected' if data.startTime == '10' }}>10</option>
+                                    <option value="11" {{ 'selected' if data.startTime == '11' }}>11</option>
+                                    <option value="12" {{ 'selected' if data.startTime == '12' }}>12</option>
+                                    <option value="13" {{ 'selected' if data.startTime == '13' }}>13</option>
+                                    <option value="14" {{ 'selected' if data.startTime == '14' }}>14</option>
+                                    <option value="15" {{ 'selected' if data.startTime == '15' }}>15</option>
+                                    <option value="16" {{ 'selected' if data.startTime == '16' }}>16</option>
+                                    <option value="17" {{ 'selected' if data.startTime == '17' }}>17</option>
+                                    <option value="18" {{ 'selected' if data.startTime == '18' }}>18</option>
+                                    <option value="19" {{ 'selected' if data.startTime == '19' }}>19</option>
+                                    <option value="20" {{ 'selected' if data.startTime == '20' }}>20</option>
+                                    <option value="21" {{ 'selected' if data.startTime == '21' }}>21</option>
+                                    <option value="22" {{ 'selected' if data.startTime == '22' }}>22</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">结束配送时间</label>
+                            <div class="col-sm-8">
+                                <select class="form-control m-b" name="endTime">
+                                    <option value="09" {{ 'selected' if data.endTime == '09' }}>09</option>
+                                    <option value="10" {{ 'selected' if data.endTime == '10' }}>10</option>
+                                    <option value="11" {{ 'selected' if data.endTime == '11' }}>11</option>
+                                    <option value="12" {{ 'selected' if data.endTime == '12' }}>12</option>
+                                    <option value="13" {{ 'selected' if data.endTime == '13' }}>13</option>
+                                    <option value="14" {{ 'selected' if data.endTime == '14' }}>14</option>
+                                    <option value="15" {{ 'selected' if data.endTime == '15' }}>15</option>
+                                    <option value="16" {{ 'selected' if data.endTime == '16' }}>16</option>
+                                    <option value="17" {{ 'selected' if data.endTime == '17' }}>17</option>
+                                    <option value="18" {{ 'selected' if data.endTime == '18' }}>18</option>
+                                    <option value="19" {{ 'selected' if data.endTime == '19' }}>19</option>
+                                    <option value="20" {{ 'selected' if data.endTime == '20' }}>20</option>
+                                    <option value="21" {{ 'selected' if data.endTime == '21' }}>21</option>
+                                    <option value="22" {{ 'selected' if data.endTime == '22' }}>22</option>
+                                    <option value="23" {{ 'selected' if data.endTime == '23' }}>23</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        {{ forms.number('提前订购时间(天)', 'advanceBookingTime', data.advanceBookingTime, '请输入提前订购时间', 'required') }}
+                        {{ forms.number('退款时间(分钟)', 'refundTime', data.refundTime, '请输入退款时间', 'required') }}
+						{{ forms.number('时间间隔(分钟)', 'range', data.range, '请输入时间间隔 时间格式：分钟', 'required') }}
+						{{ forms.number('延迟配送时间(分钟)', 'delayTime', data.delayTime, '请输入延迟配送时间 时间格式：分钟', 'required') }}
+						{{ forms.number('配送费(元)', 'deliverPrice', data.deliverPrice, '请输入配送费', 'required') }}
+						{{ forms.number('餐具费(元)', 'tablewarePrice', data.tablewarePrice, '请输入餐具费', 'required') }}
+                        {{ forms.submit() }}
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+    var inputForm = new Vue({
+        el: '#app',
+        delimiters: ['${', '}'],
+        data: {
+            lastPage: false,
+            pageNo: 1,
+            date: '',
+            allDate: {{ allDate | dump | safe}},
+            blankDate: []  //用来将表格补充完整
+    },
+    created: function() {
+        for (var i = 0; i < 6 - this.allDate.length % 6; i++){
+            this.blankDate.push(i);
+        }
+    },
+    methods: {
+        delDate: function(index) {
+            this.allDate.splice(index,1);
+
+            if (this.blankDate.length == 6){
+                for (var i = 0; i < 6; i++){
+                    this.blankDate.pop();
+                }
+            }
+
+            if (this.blankDate.length < 6){
+                this.blankDate.push(this.blankDate.length);
+            }
+
+        },
+        addDate: function(event) {//预定日期添加
+            var date = $("#bookingDate").val();
+
+            if ('' == date){
+                layer.msg("请选择预定日期");
+                return;
+            }
+
+            if (!contain(this.allDate, date)){
+                this.allDate.unshift(date);
+                if (this.blankDate.length > 1){
+                    this.blankDate.pop();
+                }else if (this.blankDate.length == 1){
+                    for (var i = 0; i < 5; i++){
+                        this.blankDate.push(i);
+                    }
+                }else{
+                    for (var i = 0; i < 6; i++){
+                        this.blankDate.push(i);
+                    }
+                }
+            }else{
+                layer.msg("改日期已经存在");
+            }
+        }
+    }
+    });
+
+    $(function () {
+        var e = "";
+        $("#form").validate({
+            submitHandler: function() {
+              asyncSubmitForm($("#form"));
+            }
+        });
+
+    });
+    function contain(array, obj){
+        for (var i = 0; i < array.length; i++){
+            if (array[i] == obj)//如果要求数据类型也一致，这里可使用恒等号===
+                return true;
+        }
+        return false;
+    }
+</script>
+
+    <script type="text/javascript">
+        $('.clockpicker').clockpicker();
+    </script>
+{% endblock %}

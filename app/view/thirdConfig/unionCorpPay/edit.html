@@ -1,0 +1,76 @@
+{% extends "_layout.html" %}
+{% import "component/forms.njk" as forms %}
+
+{# 样式代码 #}
+{% block style %}
+<link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>银联打款配置</h5>
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t from" id="form" action="/thirdConfig/union/corp/pay/edit" method="post" data-href="/thirdConfig/union/corp/pay">
+                        {{ forms.text('系统请求url', 'url', data.url, '系统请求url','required') }}
+                        {{ forms.text('版本号', 'verNo', data.verNo, '版本号','required') }}
+                        <!--{{ forms.text('识别入口', 'channelId;', data.channelId;, '商户资金自主管理系统唯一识别入口，固定 为 043;','') }}-->
+                        {{ forms.text('集团号', 'groupId', data.groupId, '集团接入商户资金自主管理系统的集团号， 接入时我司会为商户分配集团号，每个合作 商户单独生成一个六位的集团号','required') }}
+                        {{ forms.text('系统自己的私钥', 'privateKey', data.privateKey, '系统自己的私钥','required') }}
+                        {{ forms.text('银联的私钥', 'unionPrivateKey', data.unionPrivateKey, '银联的私钥','required') }}
+                        {{ forms.text('银联的公钥', 'unionPublicKey', data.unionPublicKey, '银联的公钥','required') }}
+                        <div style="position: relative;">
+                            <a href="/thirdConfig/union/corp/pay" class="btn btn-info"
+                               style="position: absolute;right: 26%;top: 0;">返回</a>
+                            {{ forms.submit() }}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+    {#js代码#}
+    {% block js %}
+    <script>
+      $(function () {
+        var e = "";
+        $("#form").validate({
+          rules: {
+            name: "required",
+            username: {
+              required: true
+            },
+            mobile: {
+              required: true
+            },
+            type: "required",
+            sex: "required",
+          },
+          messages: {
+            name: {
+              required: e + "请输入打印机名称"
+            },
+            username: {
+              required: e + "请输入打印机编码",
+              remote: '打印机已经被添加过'
+            },
+            mobile: {
+              required: e + "请输入打印机密钥"
+            },
+          },
+          submitHandler: function() {
+            asyncSubmitForm($("#form"));
+          }
+        });
+
+      });
+    </script>
+
+    {% endblock %}

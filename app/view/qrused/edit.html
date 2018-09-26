@@ -1,0 +1,202 @@
+{% extends "_layout.html" %}
+{% import "component/forms.njk" as forms %}
+
+{# 样式代码 #}
+{% block style %}
+<link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+<style>
+</style>
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>模块管理</h5>
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t from" id="form" action="/qrused/edit" method="post"
+                          data-href="/qrused">
+                        {{ forms.hidden('id', data.id) }}
+                        {{ forms.text('模块名称', 'name', data.name, '请输入模块名称', 'required') }}
+                        {{ forms.text('模块拼音', 'key', data.key, '请输入模块名称的小写全拼', 'required') }}
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">适用行业(可多选):</label>
+                            <div class="col-sm-10 lablebox">
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" name="industry"
+                                           value="1" {{ 'checked' if data.industry1 }}> 酒店</label>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" name="industry"
+                                           value="2" {{ 'checked' if data.industry2}}> 餐饮</label>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" name="industry"
+                                           value="3" {{ 'checked' if data.industry3}}> 娱乐</label>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" name="industry"
+                                           value="4" {{ 'checked' if data.industry4}}> 景区</label>
+                                <label class="checkbox-inline i-checks">
+                                    <input type="checkbox" name="industry"
+                                           value="5" {{ 'checked' if data.industry5}}> 特产</label><label
+                                    class="checkbox-inline i-checks">
+                                <input type="checkbox" name="industry"
+                                       value="6" {{ 'checked' if data.industry5}}> 旅行社</label>
+                                <!--<label class="checkbox-inline i-checks" id="checkAll" style="font-size: 14px;padding-bottom: 5px;">全选</label>-->
+                            </div>
+                        </div>
+                        <!--{{ forms.select('类型', 'type', data.type, 'required') }}-->
+                        <!--&lt;!&ndash;* 模块的类型 如： 1.免费 2.一次性付费 3. 按月付费 4. 按年付费&ndash;&gt;-->
+
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">类型</label>
+                            <div class="col-sm-8">
+                                <select class="form-control m-b" name="type">
+                                    <option value="1" {{
+                                    'selected' if data.type == 1 }}>免费</option>
+                                    <option value="2" {{
+                                    'selected' if data.type == 2 }}>一次性付费</option>
+                                    <option value="3" {{
+                                    'selected' if data.type == 3 }}>按月付费</option>
+                                    <option value="4" {{
+                                    'selected' if data.type == 4 }}>按年付费</option>
+                                </select>
+                            </div>
+                        </div>
+                        {{ forms.number('价格', 'price', data.price, '请输入模块定价', 'required') }}
+
+                        {{ forms.images(
+                        label = 'icon',
+                        fileList = [{
+                        name: 'icon',
+                        value: data.icon,
+                        url: ctx.helper.showImage(data.icon, 160, 160, 'fixed'),
+                        text: 'icon'
+                        }]
+                        )}}
+
+                        {{ forms.images(
+                        label = 'icon2(可选)',
+                        fileList = [{
+                        name: 'icon2',
+                        value: data.icon2,
+                        url: ctx.helper.showImage(data.icon2, 160, 160, 'fixed'),
+                        text: 'icon'
+                        }]
+                        )}}
+
+                        <div style="position: relative;">
+                            {{ forms.submit() }}
+                            <button class="btn but-info" id=""><a href="/qrused" class="btn btn-info"
+                                                                  style="position: absolute;right: 26%;top: 0;">返回</a>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+    {#js代码#}
+    {% block js %}
+    <script>
+      $(function () {
+        var e = "";
+        $("#form").validate({
+          rules: {
+            name: "required",
+            jingle: "required",
+            price: "required",
+            promotionPrice: "required",
+            marketPrice: "required",
+            serial: "required",
+            spec: "required",
+            storage: "required",
+            createTime: "required",
+            specValue: "required",
+            alarm: "required",
+            sku: "required",
+            image: "required",
+            images: "required",
+          },
+          messages: {
+            name: {
+              required: e + "请输入商品名称（+规格名称）"
+            },
+            jingle: {
+              required: e + "请输入商品广告词"
+            },
+            price: {
+              required: e + "请输入商品价格"
+            },
+            promotionPrice: {
+              required: e + "请输入商品促销价格"
+            },
+            marketPrice: {
+              required: e + "请输入市场价"
+            },
+            serial: {
+              required: e + "请输入商家编号"
+            },
+            spec: {
+              required: e + "请输入商品规格序列化"
+            },
+            storage: {
+              required: e + "请输入商品库存"
+            },
+            createTime: {
+              required: e + "请输入商品添加时间"
+            },
+            specValue: {
+              required: e + "请输入商品规格序列化"
+            },
+            alarm: {
+              required: e + "请输入预警值"
+            },
+            sku: {
+              required: e + "请输入sku"
+            },
+            image: {
+              required: e + "请输入商品首图"
+            },
+            images: {
+              required: e + "请输入商品图片"
+            },
+          },
+          submitHandler: function () {
+            asyncSubmitForm($("#form"));
+          }
+        });
+      });
+    </script>
+
+
+    <!--<script>-->
+    <!--$(function () {-->
+    <!--$("#checkAll").click(function () {-->
+    <!--var precheck = $(this).prevAll().find('.checked');-->
+    <!--var checkd = $("#checkAll").children().html();-->
+    <!--if (precheck.length < 5) {-->
+    <!--$('.icheckbox_square-green').addClass("checked");-->
+    <!--} else {-->
+    <!--$('.icheckbox_square-green').removeClass("checked");-->
+    <!--}-->
+    <!--}-->
+    <!--);-->
+    <!--$('#checkAll').prevAll().click(function () {-->
+    <!--if ($('.checked').length < 6) {-->
+    <!--// $("#checkAll").removeClass("checked");-->
+    <!--$("#checkAll").children().removeClass("checked");-->
+    <!--}-->
+    <!--if ($('.checked').length == 5) {-->
+    <!--$("#checkAll").children().addClass("checked");-->
+    <!--}-->
+    <!--});-->
+    <!--});-->
+    <!--</script>-->
+    {% endblock %}

@@ -1,0 +1,378 @@
+{% macro date(label, name, value = '', format='YYYY/MM/DD hh:mm:ss', istime = true,  class = '', id = '', tip = '') %}
+    <div class="form-group">
+        <label class="col-sm-2 control-label">{{ label }}：</label>
+        <div class="col-sm-3">
+            <input id="{{ id }}" name="{{ name }}" value="{{ value }}" class="form-control layer-date {{ class }}" readonly  placeholder="{{ format }}" onclick="laydate({istime: {{ istime }}, format: '{{ format }}'})">
+            <span class="help-block">{{ tip }}</span>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro dateFormat(label, name, value = '', format='YYYY年MM月DD日', istime = true,  class = '', id = '', tip = '') %}
+    <div class="form-group">
+        <label class="col-sm-2 control-label">{{ label }}：</label>
+        <div class="col-sm-3">
+            <input id="{{ id }}" name="{{ name }}" value="{{ value }}" class="form-control layer-date {{ class }}" readonly  placeholder="{{ format }}" onclick="laydate({istime: {{ istime }}, format: '{{ format }}'})">
+            <span class="help-block">{{ tip }}</span>
+        </div>
+    </div>
+{% endmacro %}
+
+
+{% macro date_range(label, startName, endName, startValue = '', endValue='', format='YYYY/MM/DD hh:mm:ss', istime = true,  class = '', id = '') %}
+    <div class="form-group">
+        <label class="col-sm-2 control-label">{{ label }}：</label>
+        <div class="col-sm-10">
+            <input id="{{ id }}" name="{{ startName }}" value="{{ startValue }}" placeholder="开始日期" class="form-control layer-date {{ class }}" readonly onclick="laydate({istime: {{ istime }}, format: '{{ format }}'})" >
+            <label class="" style="vertical-align: bottom;">-</label>
+            <input id="{{ id }}" name="{{ endName }}" value="{{ endValue }}" placeholder="结束日期" class="form-control layer-date {{ class }}" readonly onclick="laydate({istime: {{ istime }}, format: '{{ format }}'})">
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro time(label, name, value = '', class = '', id = '', tip = '') %}
+    <div class="form-group">
+        <label class="col-sm-2 control-label">{{ label }}：</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control {{ class }}" id="{{ id }}" name="{{ name }}" data-mask="99:99" value="{{ value }}" placeholder="">
+            <span class="help-block">{{ tip }}</span>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro time_range(label, startName, endName, startValue = '', endValue='', class = '', id = '', tip = '') %}
+    <div class="form-group">
+        <label class="col-sm-2 control-label">{{ label }}：</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control layer-date {{ class }}" id="{{ id }}" name="{{ startName }}" data-mask="99:99" value="{{ startValue }}" placeholder="">
+            <label class="" style="vertical-align: bottom;">-</label>
+            <input type="text" class="form-control layer-date {{ class }}" id="{{ id }}" name="{{ endName }}" data-mask="99:99" value="{{ endValue }}" placeholder="">
+            <span class="help-block">{{ tip }}</span>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro input(label, name, value = '', tip = '', class = '', id = '', type = 'text') %}
+    <div class="form-group">
+        <label class="col-xs-12 col-sm-3 col-md-2 control-label">{{ label }}：</label>
+        <div class="col-sm-8 col-xs-12">
+            <input id="{{ id }}" name="{{ name }}" class="form-control {{ class }}" value="{{ value }}" type="{{ type }}">
+            <span class="help-block m-b-none"><i class="fa fa-info-circle"></i> {{ tip }}</span>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro label(label, value) %}
+    <div class="form-group">
+        <label class="col-xs-12 col-sm-3 col-md-2 control-label">{{ label }}：</label>
+        <div class="col-sm-8 col-xs-12">
+            <p class="form-control-static">{{ value }}</p>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro text(label, name, value = '', tip = '',  class = '', id = '') %}
+    <div class="form-group">
+        <label class="col-xs-12 col-sm-3 col-md-2 control-label">{{ label }}：</label>
+        <div class="col-sm-8 col-xs-12">
+            <input id="{{ id }}" name="{{ name }}" class="form-control {{ class }}" value="{{ value }}" type="text">
+            <span class="help-block m-b-none"><i class="fa fa-info-circle"></i> {{ tip }}</span>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro textarea(label, name, value = '', tip = '',  class = '', id = '', rows = '3') %}
+    <div class="form-group">
+        <label class="col-xs-12 col-sm-3 col-md-2 control-label">{{ label }}：</label>
+        <div class="col-sm-8 col-xs-12">
+            <textarea id="{{ id }}" name="{{ name }}" rows="{{ rows }}" class="form-control {{ class }}" type="text">{{ value }}</textarea>
+            <span class="help-block m-b-none"><i class="fa fa-info-circle"></i> {{ tip }}</span>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro number(label, name, value = '', tip = '',  class = '', id = '') %}
+    <div class="form-group">
+        <label class="col-xs-12 col-sm-3 col-md-2 control-label">{{ label }}：</label>
+        <div class="col-sm-8 col-xs-12">
+            <input id="{{ id }}" name="{{ name }}" class="form-control {{ class }}" value="{{ value }}" onkeyup="this.value=this.value.replace(/[^0-9|\.]/g,'')" type="text">
+            <span class="help-block m-b-none"><i class="fa fa-info-circle"></i> {{ tip }}</span>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro int(label, name, value = '', tip = '',  class = '', id = '') %}
+    <div class="form-group">
+        <label class="col-xs-12 col-sm-3 col-md-2 control-label">{{ label }}：</label>
+        <div class="col-sm-8 col-xs-12">
+            <input id="{{ id }}" name="{{ name }}" class="form-control {{ class }}" value="{{ value }}" onkeyup="this.value=this.value.replace(/\D/g,'')" type="text">
+            <span class="help-block m-b-none"><i class="fa fa-info-circle"></i> {{ tip }}</span>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro password(label, name, value = '', tip = '',  class = '', id = '') %}
+    <div class="form-group">
+        <label class="col-xs-12 col-sm-3 col-md-2 control-label">{{ label }}：</label>
+        <div class="col-sm-8 col-xs-12">
+            <input id="{{ id }}" name="{{ name }}" class="form-control {{ class }}" value="{{ value }}" type="password">
+            <span class="help-block m-b-none"><i class="fa fa-info-circle"></i> {{ tip }}</span>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro hidden(name, value = '') %}
+    <input name="{{ name }}" value="{{ value }}" type="hidden">
+{% endmacro %}
+
+{% macro static(label, text, filter) %}
+    <div class="form-group">
+        <label class="col-sm-2 control-label"> {{ label }}</label>
+        <div class="col-sm-10">
+            <p class="form-control-static">
+                {% if filters %}
+                    {{ filters(filter, value) }}
+                    {% else %}
+                        {{ text }}
+                {% endif %}
+            </p>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro checkbox(label, name, checked = false, tip = '', class = '', id = '') %}
+<div class="form-group">
+    <div class="col-sm-8 col-sm-offset-2">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" {{ 'checked' if checked else '' }} class="i-checks" id="{{ id }}" name="{{ name }}">{{ label }}
+            </label>
+        </div>
+    </div>
+</div>
+{% endmacro %}
+
+{% macro radios(label, name, items, checked) %}
+    <div class="form-group">
+        <label class="col-sm-2 control-label">{{ label }}</label>
+        <div class="col-sm-10">
+            {% for item in items %}
+                <label class="checkbox-inline i-checks"><input type="radio" name="{{ name }}" value="{{ item.value }}" {{ 'checked' if item.value == checked else ''}}>{{ item.text }}</label>
+            {% endfor %}
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro checkboxes(label, name, items, checked) %}
+    <div class="form-group">
+        <label class="col-sm-2 control-label">{{ label }}</label>
+        <div class="col-sm-10">
+            {% for item in items %}
+            <label class="checkbox-inline i-checks"><input type="checkbox" name="{{ name }}" value="{{ item.value }}" {{ 'checked' if item.value == checked else ''}}>{{ item.text }}</label>
+            {% endfor %}
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro select(label, name, items, selected) %}
+    <div class="form-group">
+        <label class="col-sm-2 control-label">{{ label }}</label>
+        <div class="col-sm-8">
+            <select class="form-control m-b" name="{{ name }}">
+                {% for item in items %}
+                    <option value="{{ item.value }}" {{ 'selected' if item.value == selected else ''}}>{{ item.text }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+{% endmacro %}
+
+
+{% macro select_with_search(label, name, items, selected) %}
+    <div class="form-group">
+        <label class="col-sm-2 control-label">{{ label }}</label>
+        <div class="col-sm-8">
+            <select data-placeholder="请选择" class="chosen-select" style="min-width:350px;" tabindex="2">
+                <option value="">请选择</option>
+                {% for item in items %}
+                    <option value="{{ item.id }}" {{ 'selected' if item.id == selected else ''}}>{{ item.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+{% endmacro %}
+
+
+{% macro btn(label, id = '', type='button', class = 'btn-primary') %}
+    <div class="form-group">
+        <div class="col-sm-8 col-sm-offset-3">
+            <button class="btn {{ class }}" id="{{ id }}" type="{{ type }}">{{ label }}</button>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro submit(label = '提交', id = '', type='submit', class = 'btn-info') %}
+    <div class="form-group">
+        <div class="col-sm-8 col-sm-offset-9">
+            <button class="btn {{ class }}" id="{{ id }}" type="{{ type }}">{{ label }}</button>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro a(label = '提交', href = '',  id = '', class = 'btn-primary') %}
+    <div class="form-group">
+        <div class="col-sm-8 col-sm-offset-3">
+            <a href="{{ href }}" class="btn {{ class }}" id="{{ id }}">{{ label }}</a>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro btns(btns) %}
+    <div class="form-group">
+        <div class="col-sm-8 col-sm-offset-3">
+            {% for btn in btns %}
+            {{ sigle_btn(btn.label, btn.type if btn.type != undefined else 'button', btn.id, btn.class if btn.class != undefined else 'btn-primary') }}
+            {% endfor %}
+        </div>
+    </div>
+{% endmacro %}
+{% macro sigle_btn(label, type = 'button', id = '', class = 'btn-primary') %}
+    <button class="btn {{ class }}" id = '{{ id }}' type="{{ type }}">{{ label }}</button>
+{% endmacro %}
+
+{% macro a_group(btns) %}
+    <div class="form-group">
+        <div class="col-sm-8 col-sm-offset-3">
+            {% for btn in btns %}
+                {{ sigle_a(btn.label, btn.href if btn.href != undefined else '', btn.id, btn.class if btn.class != undefined else 'btn-primary') }}
+            {% endfor %}
+        </div>
+    </div>
+{% endmacro %}
+{% macro sigle_a(label, href, id = '', class = 'btn-primary') %}
+    <a class="btn {{ class }}" id = '{{ id }}' href="{{ href }}">{{ label }}</a>
+{% endmacro %}
+
+
+
+{% macro upload(label, name, value, staticUrl = '', type = 'image') %}
+    {% if 'file' == type %}
+    {% else %}
+    <div class="form-group">
+        <label class="col-sm-2 control-label">{{ label }}：</label>
+        <div class="col-sm-10">
+            <div class="col-sm-3">
+                <div class="form-img-preview">
+                    <img src="{{ value if value else staticUrl+'/img/no-image.png' }}" class="img-thumbnail">
+                    <input type="hidden" class="image-hidden-input" name="{{ name }}" value="{{ value }}">
+                </div>
+                <h4></h4>
+                <div class="btn-group">
+                    <label title="上传图片" class="btn btn-info image-upload-btn">上传图片</label>
+                    <label title="删除图片" class="btn btn-info image-del-btn">删除图片</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+{% endmacro %}
+
+
+{% macro mul_upload(label, name, fileList = [], type = 'image', default = '/img/no-image.png') %}
+    {% if 'file' == type %}
+    {% else %}
+        <div class="form-group">
+            <label class="col-sm-2 control-label">{{ label }}：</label>
+            <div class="col-sm-10">
+                {% for item in fileList %}
+                <div class="col-sm-3">
+                    <div class="form-img-preview">
+                        <img src="{{ item.url if item.url else default }}" class="img-thumbnail">
+                        <input type="hidden" class="image-hidden-input" name="{{ name }}" value="">
+                    </div>
+                    <h4></h4>
+                    <div class="btn-group">
+                        <label title="上传图片" class="btn btn-info image-upload-btn">上传图片</label>
+                        <label title="删除图片" class="btn btn-info image-del-btn">删除图片</label>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+{% endmacro %}
+
+
+
+{% macro images(label = '图片上传', fileList = [], default = '/img/no-image.png') %}
+    <div class="form-group">
+        <label class="col-sm-2 control-label">{{ label }}：</label>
+        <div class="col-sm-10">
+            {% for item in fileList %}
+                <div class="col-sm-3">
+                    <div class="form-img-preview">
+                        <img src="{{ item.url if item.url else default }}" class="img-thumbnail">
+                        <input type="hidden" class="image-hidden-input" name="{{ item.name }}" value="{{ item.value }}">
+                    </div>
+                    <h4></h4>
+                    <div class="btn-group">
+                        <label title="上传图片" class="btn btn-info image-upload-btn">上传图片</label>
+                        <label title="删除图片" class="btn btn-info image-del-btn">删除图片</label>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endmacro %}
+
+
+{% macro editer(label, name, value, width=10) %}
+    <div class="form-group">
+        <label class="col-sm-2 control-label">{{ label }}：</label>
+        <div class="col-sm-{{ width }}">
+            <textarea name="{{ name }}" class="summernote">{{ value }}</textarea>
+        </div>
+    </div>
+{% endmacro %}
+
+
+{% macro editor(label, name, value, width=10) %}
+    <div class="form-group">
+        <label class="col-sm-2 control-label">{{ label }}：</label>
+        <div class="col-sm-8">
+            <textarea name="{{ name }}" class="summernote">{{ value }}</textarea>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro filters(filter, value) %}
+    {% for item in filter %}
+        {% if item.value == value %}
+            <td>{{ item.text }}</td>
+        {% endif %}
+    {% endfor %}
+{% endmacro %}
+
+{% macro keyvalue(label, type, name, value, width=10) %}
+    {% if 1 == type %}
+    <div class="form-group">
+        <label class="col-sm-2 control-label">{{label}}：</label>
+        <div class="col-sm-10 attach">
+            <input type="text" id="key" class="form-control key" placeholder="请输入设施，如：上网"/>
+            <input type="text" id="value" class="form-control value" placeholder="简单说明，如：WiFi和宽带"/>
+            <input class="btn btn-primary" type="button" id="btn" value="添加"/><br>
+            <input type="hidden" name={{ name }} value="{{ value }}" id="result"/>
+        </div>
+    </div>
+    {% endif %}
+{% endmacro %}
+
+
+{% macro readonly(label, name, value = '', tip = '', class = '', id = '', type = 'text') %}
+    <div class="form-group">
+        <label class="col-xs-12 col-sm-3 col-md-2 control-label">{{ label }}：</label>
+        <div class="col-sm-8 col-xs-12">
+            <input id="{{ id }}" name="{{ name }}" class="form-control {{ class }}" value="{{ value }}" type="{{ type }}" readonly>
+        </div>
+    </div>
+{% endmacro %}

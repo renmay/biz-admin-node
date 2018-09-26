@@ -1,0 +1,205 @@
+{% extends "_layout.html" %}
+{% import "component/pagination.njk" as pagination %}
+{% import "component/table.njk" as table %}
+{% import "component/search.njk" as search %}
+{% import "component/constant.njk" as constant %}
+{% import "component/forms.njk" as forms %}
+
+
+{# 样式代码 #}
+{% block style %}
+
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <form class="page-search-form">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">订单状态</span>
+                                            <select class="form-control m-b" name="status">
+                                                <option value="">全部</option>
+                                                <option {% if params.status == 1%}selected{% endif %} value="1">待支付</option>
+                                                <option {% if params.status == 2%}selected{% endif %} value="2">待接单</option>
+                                                <option {% if params.status == 3%}selected{% endif %} value="3">待核销（使用）</option>
+                                                <option {% if params.status == 4%}selected{% endif %} value="4">待评价</option>
+                                                <option {% if params.status == 5%}selected{% endif %} value="5">待退款</option>
+                                                <option {% if params.status == 6%}selected{% endif %} value="6">待发货</option>
+                                                <option {% if params.status == 7%}selected{% endif %} value="7">已发货</option>
+                                                <option {% if params.status == 11%}selected{% endif %} value="11">同意退款</option>
+                                                <option {% if params.status == 8%}selected{% endif %} value="8">退款完成</option>
+                                                <option {% if params.status == 10%}selected{% endif %} value="10">申请退款</option>
+                                                <option {% if params.status == 9%}selected{% endif %} value="9">完成</option>
+                                                <option {% if params.status == 0%}selected{% endif %} value="0">删除</option>
+                                                <option {% if params.status == -9%}selected{% endif %} value="-9">无效订单</option>
+                                                <option {% if params.status == -1%}selected{% endif %} value="-1">用户取消</option>
+                                                <option {% if params.status == -2%}selected{% endif %} value="-2">超时未支付取消</option>
+                                                <option {% if params.status == -3%}selected{% endif %} value="-3">商家取消</option>
+                                                <option {% if params.status == -4%}selected{% endif %} value="-4">超时未接单取消</option>
+                                                <option {% if params.status == -5%}selected{% endif %} value="-5">拒绝退款</option>
+                                                <option {% if params.status == 31%}selected{% endif %} value="31">出票中</option>
+                                                <option {% if params.status== 52%}selected{% endif %} value="52">退票处理中</option>
+                                            </select>
+                                            <span class="input-group-btn">
+
+                                    </span>
+                                        </div>
+                                    </div>
+                                    <div class=" col-sm-4">
+                                        <input type="text" name="orderName" id="orderName"
+                                               value="{{params.orderName}}"
+                                               placeholder="请输入订单名称" class="input-sm form-control"/>
+                                    </div>
+
+                                    <div class="input-group col-sm-4">
+                                        <input type="text" name="likeOrderNo" id="likeOrderNo"
+                                               value="{{params.likeOrderNo}}"
+                                               placeholder="请输入订单号" class="input-sm form-control"/>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input id="startTime" name="gtCreateTime" value="{{params.gtCreateTime}}"
+                                               placeholder="开始日期"
+                                               class="form-control layer-date {{ class }}" readonly
+                                               onclick="laydate({istime:  false, format: 'YYYY/MM/DD'})">
+                                        <label class="" style="vertical-align: bottom;">-</label>
+                                        <input id="endTime" name="ltCreateTime" value="{{params.ltCreateTime}}"
+                                               placeholder="结束日期"
+                                               class="form-control layer-date {{ class }}" readonly
+                                               onclick="laydate({istime: false, format: 'YYYY/MM/DD'})">
+                                    </div>
+                                    <div class="col-sm-4 input-group">
+                                        <input type="text" name="likeStoreName" id="likeStoreName"
+                                               value="{{params.likeStoreName}}"
+                                               placeholder="请输入店铺名称" class="input-sm form-control"/>
+                                        <span class="input-group-btn">
+                                <button type="button" class="btn btn-sm btn-info page-reset-btn">重置</button>
+                                <button type="button" class="btn btn-sm btn-info page-search-btn"><i
+                                        class="fa fa-search"></i>搜索</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="table-responsive">
+                        <form id="table-form">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>订单首图</th>
+                                    <th>订单名称</th>
+                                    <th>订单编号</th>
+                                    <th>店铺</th>
+                                    <th>订单价格</th>
+                                    <th>订单数量</th>
+                                    <!--<th>订单来源</th>-->
+                                    <th>创建时间</th>
+                                    <th>支付时间</th>
+                                    <th>订单状态</th>
+                                    <th>查看详情</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for item in data.list %}
+                                <tr>
+                                    <td>
+                                        <!--<input type="checkbox" value="{{ item.id }}" class="i-checks" name="check">-->
+                                    </td>
+                                    <td class="image" style="padding-right: 60px;">
+                                        <a target="_blank" href="{{ ctx.helper.showImage(item.image,600, 600, 'fixed') }}"><img alt="image" class="image"
+                                                                                                                                src="{{ ctx.helper.showImage(item.image, 50, 50, 'fixed') }}"></a>
+                                    </td>
+                                    <td>{{item.orderName}}</td>
+                                    <td>{{item.orderNo}}</td>
+                                    <td>{{item.storeName}}</td>
+                                    <td>{{item.totalPrice}}</td>
+                                    <td>{{item.number}}</td>
+                                    <!--<td>-->
+                                    <!--{% if item.orderSource == 1 %}1-->
+                                    <!--{% elif item.orderSource == 2 %}2-->
+                                    <!--{% endif %}-->
+                                    <!--</td>-->
+
+
+                                    <td>{{item.createTime}}</td>
+                                    <td>{{item.payTime}}</td>
+                                    <!--<td>{{ constant.sex(item.sex) }}</td>-->
+                                    <td>
+                                        {% if item.status == 1 %}待支付
+                                        {% elif item.status == 2 %}待接单
+                                        {% elif item.status == 3 %}待核销（使用）
+                                        {% elif item.status == 4 %}待评价
+                                        {% elif item.status == 5 %}待退款
+                                        {% elif item.status == 6 %}待发货
+                                        {% elif item.status == 7 %}已发货
+                                        {% elif item.status == 8 %}退款完成
+                                        {% elif item.status == 11 %}同意退款
+                                        {% elif item.status == 10 %}申请退款
+                                        {% elif item.status == 9 %}完成
+                                        {% elif item.status == 0 %}删除
+                                        {% elif item.status == -9 %}无效订单
+                                        {% elif item.status == -1 %}用户取消
+                                        {% elif item.status == -2 %}超时未支付取消
+                                        {% elif item.status == -3 %}商家取消
+                                        {% elif item.status == -4 %}超时未接单取消
+                                        {% elif item.status == -5 %}拒绝退款
+                                        {% elif item.status == 31 %}出票中
+                                        {% elif item.status == 52 %}退票处理中
+                                        {% endif %}
+                                    </td>
+                                    <td data-id="{{ item.id }}">
+                                        <a href="/order/edit?id={{item.id}}">查看详情</a>
+                                    </td>
+
+                                </tr>
+                                {% else %}
+                                暂无数据
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="btn-region clearfix">
+                        <div class="pull-left">
+                            <form class="form-horizontal m-t from" id="form" action="/export?params" method="post"
+                                  data-href="/order">
+                                <a class="btn btn-info btn-sm"
+                                href="/export/?type=5&status={{params.status}}&orderName={{params.orderName}}&likeOrderNo={{params.likeOrderNo}}&likeStoreName={{params.likeStoreName}}&likeMemberName={{params.likeMemberName}}&likeMemberMobile={{params.likeMemberMobile}}&gtCreateTime={{params.gtCreateTime}}&ltCreateTime={{params.ltCreateTime}}&likeCheckInNames={{params.likeCheckInNames}}">导出excel</a>
+
+                            </form>
+                        </div>
+                        <div class="pull-right">
+                            {{ pagination.pagination(data, params, '/order/speciality') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+
+
+</script>
+
+{% endblock %}

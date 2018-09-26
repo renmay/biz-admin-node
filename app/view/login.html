@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <title> - 登录</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="{{ ctx.app.config.api.static }}/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ ctx.app.config.api.static }}/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="{{ ctx.app.config.api.static }}/css/animate.css" rel="stylesheet">
+    <link href="{{ ctx.app.config.api.static }}/css/style.css" rel="stylesheet">
+    <link href="{{ ctx.app.config.api.static }}/css/login.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html" />
+    <![endif]-->
+    <script>
+        if (window.top !== window.self) {
+            window.top.location = window.location;
+        }
+    </script>
+
+</head>
+
+<body class="signin">
+<div class="signinpanel">
+    <div class="row">
+        <div class="col-sm-12">
+            <form id="form">
+                <h4 class="no-margins">登录</h4>
+                <p class="m-t-md">欢迎登录平台管理系统</p>
+                <input type="text" name="loginName" class="form-control uname" placeholder="用户名" />
+                <input type="password" name="password" class="form-control pword m-b" placeholder="密码" />
+                <!--<a href="javascript:void(0);" id="modifyPassword">修改密码</a>-->
+                <button class="btn btn-success btn-block" id="login_btn">登录</button>
+            </form>
+        </div>
+    </div>
+    <div class="signup-footer">
+        <div class="pull-left">
+            <!--&copy;-->
+        </div>
+    </div>
+</div>
+<script src="{{ ctx.app.config.api.static }}/js/jquery.min.js?v=2.1.4"></script>
+<script src="{{ ctx.app.config.api.static }}/js/plugins/layer/layer.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#login_btn").on("click", function () {
+            var loading = layer.load(2, {
+                shade: [0.5,'#000'] //0.1透明度的白色背景
+            });
+            $.ajax({
+                url: '/login',
+                method: 'post',
+                data: $("#form").serialize(),
+                dataType: 'json',
+                success: function (data) {
+                    layer.close(loading);
+                    if (data.code == 200){
+                        window.location.href = "/index";
+                    }else{
+                        layer.msg(data.message);
+                    }
+                },
+                error: function () {
+                    layer.close(loading);
+                    layer.msg("参数不合法");
+                }
+            });
+            return false;
+        });
+    });
+
+    $('#modifyPassword').on('click', function () {
+        layer.open({
+            type: 2,
+            fixed: false, //不固定
+            // title: '修改密码',
+            shadeClose: true,
+            shade: false,
+            maxmin: true, //开启最大化最小化按钮
+            area: ['1020px', '700px'],
+            content: '/account/modify/password'
+        });
+    });
+
+
+</script>
+</body>
+
+</html>

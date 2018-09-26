@@ -1,0 +1,28 @@
+{% import "component/forms.njk" as forms %}
+{% extends "_layout_without_side.html" %}
+
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>店铺权重排序</h5>
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t from" id="form" action="/store/sort" method="post"
+                          data-href="/store">
+                        {{ forms.hidden('id', data.id) }}
+                        {{ forms.hidden('url', url) }}
+                        {{ forms.number('排序权重', 'sort', data.sort, '数字越大，权重越高', '') }}
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-8">
+                                <button class="btn btn-info" type="submit">提交</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

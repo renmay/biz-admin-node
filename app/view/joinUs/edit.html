@@ -1,0 +1,90 @@
+{% extends "_layout.html" %}
+{% import "component/forms.njk" as forms %}
+
+{# 样式代码 #}
+{% block style %}
+<link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>添加加入我们</h5>
+
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t from" id="form" action="/join/us/edit" method="post" data-href="/join/us">
+                    	{{ forms.hidden('id', data.id) }}
+						{{ forms.text('状态', 'status', data.status, '请输入状态', 'required') }}
+						{{ forms.text('姓名', 'name', data.name, '请输入姓名', 'required') }}
+						{{ forms.text('电话', 'mobile', data.mobile, '请输入电话', 'required') }}
+						{{ forms.text('电子邮箱', 'email', data.email, '请输入电子邮箱', 'required') }}
+						{{ forms.text('擅长内容', 'skill', data.skill, '请输入擅长内容', 'required') }}
+						{{ forms.text('教育经历', 'education', data.education, '请输入教育经历', 'required') }}
+						{{ forms.text('教育经历', 'job', data.job, '请输入教育经历', 'required') }}
+						{{ forms.text('创建时间', 'createTime', data.createTime, '请输入创建时间', 'required') }}
+                        {{ forms.submit() }}
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+    $(function () {
+        var e = "";
+        $("#form").validate({
+            rules: {
+                status: "required",
+                name: "required",
+                mobile: "required",
+                email: "required",
+                skill: "required",
+                education: "required",
+                job: "required",
+                createTime: "required",
+            },
+            messages: {
+                status: {
+                    required: e + "请输入状态"
+                },
+                name: {
+                    required: e + "请输入姓名"
+                },
+                mobile: {
+                    required: e + "请输入电话"
+                },
+                email: {
+                    required: e + "请输入电子邮箱"
+                },
+                skill: {
+                    required: e + "请输入擅长内容"
+                },
+                education: {
+                    required: e + "请输入教育经历"
+                },
+                job: {
+                    required: e + "请输入教育经历"
+                },
+                createTime: {
+                    required: e + "请输入创建时间"
+                },
+            },
+            submitHandler: function() {
+              asyncSubmitForm($("#form"));
+            }
+        });
+
+    });
+</script>
+
+{% endblock %}

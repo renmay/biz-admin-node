@@ -1,0 +1,122 @@
+{% extends "_layout.html" %}
+{% import "component/forms.njk" as forms %}
+
+{# 样式代码 #}
+{% block style %}
+<link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>添加星座</h5>
+
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t from" id="form" action="/constellation/edit" method="post" data-href="/constellation">
+                    	{{ forms.hidden('id', data.id) }}
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">星座类型</label>
+                            <div class="col-sm-8">
+                                <select class="form-control m-b" name="status">
+                                    <option value="1" {{ 'selected' if data.status == '1' }}>白羊座</option>
+                                    <option value="2" {{ 'selected' if data.status == '2' }}>金牛座</option>
+                                    <option value="3" {{ 'selected' if data.status == '3' }}>双子座</option>
+                                    <option value="4" {{ 'selected' if data.status == '4' }}>巨蟹座</option>
+                                    <option value="5" {{ 'selected' if data.status == '5' }}>狮子座</option>
+                                    <option value="6" {{ 'selected' if data.status == '6' }}>处女座</option>
+                                    <option value="7" {{ 'selected' if data.status == '7' }}>天秤座</option>
+                                    <option value="8" {{ 'selected' if data.status == '8' }}>天蝎座</option>
+                                    <option value="9" {{ 'selected' if data.status == '9' }}>射手座</option>
+                                    <option value="10" {{ 'selected' if data.status == '10' }}>魔羯座</option>
+                                    <option value="11" {{ 'selected' if data.status == '11' }}>水瓶座</option>
+                                    <option value="12" {{ 'selected' if data.status == '12' }}>双鱼座</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        {{ forms.text('名称', 'name', data.name, '请输入星座显示名称', 'required') }}
+
+
+                        {{ forms.images(
+                            label = '背景图片',
+                            fileList = [{
+                                name: 'jewelry',
+                                value: data.jewelry,
+                                url: ctx.helper.showImage(data.jewelry, 160, 160, 'fixed'),
+                                text: '背景图片'
+                            }]
+                        )}}
+
+                        {{ forms.number('排序', 'sort', data.sort, '请输入排序', 'required') }}
+						{{ forms.text('幸运数字', 'number', data.number, '请输入幸运数字', 'required') }}
+						{{ forms.text('幸运颜色', 'color', data.color, '请输入幸运颜色', 'required') }}
+						{{ forms.text('时间范围', 'timeRange', data.timeRange, '请输入时间范围', 'required') }}
+						{{ forms.textarea('介绍', 'info', data.info, '请输入介绍', 'required') }}
+                        {{ forms.submit() }}
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{#js代码#}
+{% block js %}
+<script>
+    $(function () {
+        var e = "";
+        $("#form").validate({
+            rules: {
+                name: "required",
+                jewelry: "required",
+                number: "required",
+                color: "required",
+                timeRange: "required",
+                info: "required"
+            },
+            messages: {
+                name: {
+                    required: e + "请输入名称"
+                },
+                jewelry: {
+                    required: e + "请输入幸运珠宝"
+                },
+                number: {
+                    required: e + "请输入幸运数字"
+                },
+                color: {
+                    required: e + "请输入幸运颜色"
+                },
+                timeRange: {
+                    required: e + "请输入时间范围"
+                },
+                info: {
+                    required: e + "请输入介绍"
+                },
+                createTime: {
+                    required: e + "请输入创建时间"
+                },
+                updateTime: {
+                    required: e + "请输入更新时间"
+                },
+                status: {
+                    required: e + "请输入状态"
+                },
+            },
+            submitHandler: function() {
+              asyncSubmitForm($("#form"));
+            }
+        });
+
+    });
+</script>
+
+{% endblock %}

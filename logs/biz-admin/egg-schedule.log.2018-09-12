@@ -1,0 +1,10 @@
+2018-09-13 00:00:00,284 INFO 3606 [1536768000283116937772170855] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js triggered, send random by agent
+2018-09-13 00:00:00,289 INFO 3606 [Timer] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js next time will execute at 2018-09-14 00:00:00.000
+2018-09-13 00:00:00,297 INFO 3607 [1536768000283116937772170855] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js task received by app
+2018-09-13 00:00:00,300 INFO 3607 [1536768000283116937772170855] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js executing by app
+2018-09-13 00:00:00,305 INFO 3607 [1536768000283116937772170855] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js execute succeed, used 4ms
+2018-09-13 00:00:01,268 INFO 3607 [1536768001261116938750567381] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js task received by app
+2018-09-13 00:00:01,268 INFO 3607 [1536768001261116938750567381] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js executing by app
+2018-09-13 00:00:01,272 INFO 3607 [1536768001261116938750567381] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js execute succeed, used 4ms
+2018-09-13 00:00:01,262 INFO 3606 [1536768001261116938750567381] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js triggered, send random by agent
+2018-09-13 00:00:01,269 INFO 3606 [Timer] /Users/renmay/biz-node/biz-admin/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js next time will execute at 2018-09-14 00:00:01.000

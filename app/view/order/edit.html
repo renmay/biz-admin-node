@@ -1,0 +1,192 @@
+{% extends "_layout.html" %}
+{% import "component/forms.njk" as forms %}
+
+{# 样式代码 #}
+{% block style %}
+<link href="/css/plugins/iCheck/custom.css" rel="stylesheet">
+{% endblock %}
+
+{# bodyd代码#}
+{% block body %}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>订单详情</h5>
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t from" id="form" action="/order/edit" method="post"
+                          data-href="/order">
+                        {{ forms.readonly('订单号','',data.orderNo) }}
+                        {{ forms.readonly('订单名称','',data.orderName) }}
+                        {{ forms.readonly('店铺名称','',data.storeName) }}
+
+                        {{ forms.readonly('订单数量','',data.number) }}
+                        {{ forms.readonly('配送费','',data.deliverPrice) }}
+                        {{ forms.readonly('桌台号','',data.tablewareNumber) }}
+                        {{ forms.readonly('餐具费','',data.tablewarePrice) }}
+                        {{ forms.readonly('提醒时间','',data.reminderTime) }}
+                        {{ forms.readonly('送达时间','',data.arriveTime) }}
+                        {{ forms.readonly('优惠金额','',data.reducedPrice) }}
+                        {{ forms.readonly('订单总金额','',data.totalPrice) }}
+                        {{ forms.readonly('商品金额','',data.goodsPrice) }}
+                        {{ forms.readonly('实际付款金额','',data.price) }}
+
+
+                        {{ forms.readonly('订单支付时间','',data.payTime) }}
+                        {{ forms.readonly('结束时间','',data.finishTime) }}
+
+                        {% if data.status == 1 %}
+                        {{ forms.readonly('订单状态', '','待支付') }}
+                        {% elseif data.status == 2 %}
+                        {{ forms.readonly('订单状态', '','待接单') }}
+                        {% elseif data.status == 3 %}
+                        {{ forms.readonly('订单状态', '','待核销（使用）') }}
+                        {% elseif data.status == 4 %}
+                        {{ forms.readonly('订单状态', '','待评价') }}
+                        {% elseif data.status == 5 %}
+                        {{ forms.readonly('订单状态', '','待退款') }}
+                        {% elseif data.status == 6 %}
+                        {{ forms.readonly('订单状态', '','待发货') }}
+                        {% elseif data.status == 7 %}
+                        {{ forms.readonly('订单状态', '','已发货') }}
+                        {% elseif data.status == 8 %}
+                        {{ forms.readonly('订单状态', '','退款完成') }}
+                        {% elseif data.status == 11 %}
+                        {{ forms.readonly('订单状态', '','同意退款') }}
+                        {% elseif data.status == 10 %}
+                        {{ forms.readonly('订单状态', '','申请退款') }}
+                        {% elseif data.status == 9 %}
+                        {{ forms.readonly('订单状态', '','完成') }}
+                        {% elseif data.status == 0 %}
+                        {{ forms.readonly('订单状态', '','删除') }}
+                        {% elseif data.status == -9 %}
+                        {{ forms.readonly('订单状态', '','无效订单') }}
+                        {% elseif data.status == -1 %}
+                        {{ forms.readonly('订单状态', '','用户取消') }}
+                        {% elseif data.status == -2 %}
+                        {{ forms.readonly('订单状态', '','超时未支付取消') }}
+                        {% elseif data.status == -3 %}
+                        {{ forms.readonly('订单状态', '','商家取消') }}
+                        {% elseif data.status == -4 %}
+                        {{ forms.readonly('订单状态', '','超时未接单取消') }}
+                        {% elseif data.status == -5 %}
+                        {{ forms.readonly('订单状态', '','拒绝退款') }}
+                        {% elseif data.status == 52 %}
+                        {{ forms.readonly('订单状态', '','退票处理中') }}
+                        {% elseif data.status == 31 %}
+                        {{ forms.readonly('订单状态', '','出票中') }}
+                        {% else %}
+                        {% endif %}
+
+
+                        {{ forms.readonly('备注','',data.remark) }}
+                        {{ forms.readonly('留言','',data.message) }}
+                        <hr>
+                        {{ forms.readonly('会员Id','',data.memberId) }}
+
+                        {{ forms.readonly('用户姓名','',data.name) }}
+                        {{ forms.readonly('用户手机号码','',data.mobile) }}
+
+
+                        {% if data.sex == 1 %}
+                        {{ forms.readonly('性别', '', '男') }}
+                        {% elseif data.sex == 0 %}
+                        {{ forms.readonly('性别', '', '女') }}
+                        {% else %}
+                        {% endif %}
+
+                        {% if data.type == 1 %}
+                        {{ forms.readonly('行业', '', '酒店') }}
+                        {% elseif data.type == 2 %}
+                        {{ forms.readonly('行业', '', '餐饮') }}
+                        {% elseif data.type == 3 %}
+                        {{ forms.readonly('行业', '', '娱乐') }}
+                        {% elseif data.type == 4 %}
+                        {{ forms.readonly('行业', '', '景区') }}
+                        {% elseif data.type == 5 %}
+                        {{ forms.readonly('行业', '', '特产') }}
+                        {% elseif data.type == 6 %}
+                        {{ forms.readonly('行业', '', '旅行社') }}
+                        {% else %}
+                        {% endif %}
+                        <hr>
+                        {% for item in data.orderItem %}
+
+                        {{ forms.readonly('商品名称','',item.name)}}
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">图片：</label>
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    <div class="form-img-preview">
+                                        <img src="{{ctx.helper.showImage(data.image, 160, 160, 'fixed')}}"
+                                             class="img-thumbnail">
+                                        <input type="hidden" class="image-hidden-input" name="image"
+                                               value="{{data.image}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{ forms.readonly('数量','',item.number)}}
+                        {{ forms.readonly('单价','',item.price)}}
+                        {{ forms.readonly('总价','',item.totalPrice)}}
+                        {{ forms.readonly('创建时间','',data.createTime) }}
+
+                        {% endfor %}
+
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-10">
+                                <a href="/order" style="margin-right: 20px;" class="btn btn-info" type="button">返回</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
+    {#js代码#}
+    {% block js %}
+    <script>
+      $(function () {
+        var e = "";
+        $("#form").validate({
+          rules: {
+            linkName: "required",
+            username: {
+              required: true
+            },
+            mobile: {
+              required: true
+            },
+            userType: "required",
+            sex: "required",
+          },
+          messages: {
+            linkName: {
+              required: e + "请输入姓名"
+            },
+            username: {
+              required: e + "请输入用户名",
+              remote: '用户已经存在'
+            },
+            mobile: {
+              required: e + "请输入手机号"
+            },
+            userType: {
+              required: e + "请输入类型 1.管理员 2.员工 "
+            },
+            sex: {
+              required: e + "请输入性别"
+            },
+          },
+          submitHandler: function () {
+            asyncSubmitForm($("#form"));
+          }
+        });
+
+      });
+    </script>
+    {% endblock %}
